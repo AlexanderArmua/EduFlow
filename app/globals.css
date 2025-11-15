@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f3f2f2;
+}
+
+@layer components {
+  .sf-card {
+    @apply bg-white border border-salesforce-border rounded-lg shadow-sm;
+  }
+
+  .sf-button {
+    @apply px-4 py-2 rounded-md font-semibold transition-colors duration-200;
+  }
+
+  .sf-button-primary {
+    @apply sf-button bg-salesforce-blue text-white hover:bg-salesforce-darkblue;
+  }
+
+  .sf-button-secondary {
+    @apply sf-button bg-white text-salesforce-blue border-2 border-salesforce-blue hover:bg-salesforce-cloud;
+  }
+
+  .sf-input {
+    @apply w-full px-3 py-2 border border-salesforce-border rounded-md focus:outline-none focus:ring-2 focus:ring-salesforce-blue;
+  }
+
+  .sf-table {
+    @apply w-full border-collapse;
+  }
+
+  .sf-table thead {
+    @apply bg-gray-50 border-b-2 border-salesforce-border;
+  }
+
+  .sf-table th {
+    @apply px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider;
+  }
+
+  .sf-table td {
+    @apply px-6 py-4 text-sm text-gray-900 border-b border-salesforce-border;
+  }
+
+  .sf-table tbody tr:hover {
+    @apply bg-salesforce-cloud cursor-pointer;
+  }
+}

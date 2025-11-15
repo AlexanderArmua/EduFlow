@@ -158,6 +158,9 @@ export interface Translations {
     markAsRead: string;
     totalMessages: string;
     re: string;
+    readReceipt: string;
+    readBy: string;
+    readOn: string;
   };
 
   // Analytics
@@ -226,6 +229,37 @@ export interface Translations {
       meeting: string;
       academic: string;
       break: string;
+    };
+  };
+
+  // Notifications
+  notifications: {
+    title: string;
+    noNotifications: string;
+    markAsRead: string;
+    markAllAsRead: string;
+    viewAll: string;
+    new: string;
+    types: {
+      message: string;
+      exam: string;
+      meeting: string;
+      grade: string;
+      system: string;
+    };
+  };
+
+  // Message Templates
+  templates: {
+    title: string;
+    useTemplate: string;
+    selectTemplate: string;
+    categories: {
+      general: string;
+      homework: string;
+      behavior: string;
+      absence: string;
+      achievement: string;
     };
   };
 
@@ -386,6 +420,9 @@ export const translations: Record<Language, Translations> = {
       markAsRead: 'Mark as Read',
       totalMessages: 'Total Messages',
       re: 're',
+      readReceipt: 'Read Receipt',
+      readBy: 'Read by',
+      readOn: 'Read on',
     },
     analytics: {
       title: 'Analytics Dashboard',
@@ -450,6 +487,33 @@ export const translations: Record<Language, Translations> = {
         meeting: 'Meeting',
         academic: 'Academic',
         break: 'Break',
+      },
+    },
+    notifications: {
+      title: 'Notifications',
+      noNotifications: 'No new notifications',
+      markAsRead: 'Mark as read',
+      markAllAsRead: 'Mark all as read',
+      viewAll: 'View all notifications',
+      new: 'New',
+      types: {
+        message: 'Message',
+        exam: 'Exam',
+        meeting: 'Meeting',
+        grade: 'Grade',
+        system: 'System',
+      },
+    },
+    templates: {
+      title: 'Message Templates',
+      useTemplate: 'Use Template',
+      selectTemplate: 'Select a template',
+      categories: {
+        general: 'General',
+        homework: 'Homework',
+        behavior: 'Behavior',
+        absence: 'Absence',
+        achievement: 'Achievement',
       },
     },
     common: {
@@ -606,6 +670,9 @@ export const translations: Record<Language, Translations> = {
       markAsRead: 'Marcar como Leído',
       totalMessages: 'Total de Mensajes',
       re: 're',
+      readReceipt: 'Confirmación de Lectura',
+      readBy: 'Leído por',
+      readOn: 'Leído el',
     },
     analytics: {
       title: 'Panel de Analíticas',
@@ -670,6 +737,33 @@ export const translations: Record<Language, Translations> = {
         meeting: 'Reunión',
         academic: 'Académico',
         break: 'Receso',
+      },
+    },
+    notifications: {
+      title: 'Notificaciones',
+      noNotifications: 'No hay notificaciones nuevas',
+      markAsRead: 'Marcar como leído',
+      markAllAsRead: 'Marcar todas como leídas',
+      viewAll: 'Ver todas las notificaciones',
+      new: 'Nuevo',
+      types: {
+        message: 'Mensaje',
+        exam: 'Examen',
+        meeting: 'Reunión',
+        grade: 'Calificación',
+        system: 'Sistema',
+      },
+    },
+    templates: {
+      title: 'Plantillas de Mensajes',
+      useTemplate: 'Usar Plantilla',
+      selectTemplate: 'Seleccionar una plantilla',
+      categories: {
+        general: 'General',
+        homework: 'Tareas',
+        behavior: 'Comportamiento',
+        absence: 'Ausencia',
+        achievement: 'Logros',
       },
     },
     common: {
@@ -826,6 +920,9 @@ export const translations: Record<Language, Translations> = {
       markAsRead: '既読にする',
       totalMessages: 'メッセージ総数',
       re: 're',
+      readReceipt: '開封確認',
+      readBy: '既読者',
+      readOn: '既読日時',
     },
     analytics: {
       title: '分析ダッシュボード',
@@ -890,6 +987,33 @@ export const translations: Record<Language, Translations> = {
         meeting: '面談',
         academic: '学事',
         break: '休暇',
+      },
+    },
+    notifications: {
+      title: '通知',
+      noNotifications: '新しい通知はありません',
+      markAsRead: '既読にする',
+      markAllAsRead: 'すべて既読にする',
+      viewAll: 'すべての通知を表示',
+      new: '新規',
+      types: {
+        message: 'メッセージ',
+        exam: '試験',
+        meeting: '面談',
+        grade: '成績',
+        system: 'システム',
+      },
+    },
+    templates: {
+      title: 'メッセージテンプレート',
+      useTemplate: 'テンプレートを使用',
+      selectTemplate: 'テンプレートを選択',
+      categories: {
+        general: '一般',
+        homework: '宿題',
+        behavior: '行動',
+        absence: '欠席',
+        achievement: '達成',
       },
     },
     common: {

@@ -1,7 +1,7 @@
 'use client';
 
 import Navigation from '@/components/Navigation';
-import { parentMessages } from '@/lib/mockData';
+import { parentMessages, messageTemplates } from '@/lib/mockData';
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -11,6 +11,8 @@ export default function CommunicationsPage() {
   const [filterPriority, setFilterPriority] = useState<'All' | 'High' | 'Medium' | 'Low'>('All');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedMessage, setSelectedMessage] = useState<typeof parentMessages[0] | null>(null);
+  const [replyText, setReplyText] = useState('');
+  const [selectedTemplate, setSelectedTemplate] = useState('');
 
   const filteredMessages = parentMessages.filter(msg => {
     const matchesSearch = msg.parentName.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -20,6 +22,16 @@ export default function CommunicationsPage() {
     const matchesPriority = filterPriority === 'All' || msg.priority === filterPriority;
     return matchesSearch && matchesStatus && matchesPriority;
   });
+
+  const handleTemplateSelect = (templateId: string) => {
+    setSelectedTemplate(templateId);
+    if (templateId) {
+      const template = messageTemplates.find(t => t.id === templateId);
+      if (template) {
+        setReplyText(template.content);
+      }
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -162,6 +174,17 @@ export default function CommunicationsPage() {
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <p className="text-gray-900">{selectedMessage.message}</p>
                   </div>
+
+                  {/* Read Receipt */}
+                  {selectedMessage.readDate && selectedMessage.readBy && (
+                    <div className="mt-3 flex items-center gap-2 text-xs text-gray-500 bg-blue-50 p-3 rounded border-l-4 border-blue-400">
+                      <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <span className="font-medium">{t.communications.readReceipt}:</span>
+                      <span>{t.communications.readBy} {selectedMessage.readBy} {t.communications.readOn} {selectedMessage.readDate}</span>
+                    </div>
+                  )}
                 </div>
 
                 {selectedMessage.status === 'Replied' && (
@@ -179,10 +202,62 @@ export default function CommunicationsPage() {
 
                 <div className="border-t border-salesforce-border pt-4">
                   <h3 className="text-sm font-semibold text-gray-700 mb-3">{t.communications.replyToMessage}:</h3>
+
+                  {/* Template Selector */}
+                  <div className="mb-3">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      {t.templates.useTemplate}
+                    </label>
+                    <select
+                      value={selectedTemplate}
+                      onChange={(e) => handleTemplateSelect(e.target.value)}
+                      className="sf-input text-sm"
+                    >
+                      <option value="">{t.templates.selectTemplate}</option>
+                      <optgroup label={t.templates.categories.general}>
+                        {messageTemplates.filter(t => t.category === 'general').map(template => (
+                          <option key={template.id} value={template.id}>
+                            {template.name}
+                          </option>
+                        ))}
+                      </optgroup>
+                      <optgroup label={t.templates.categories.homework}>
+                        {messageTemplates.filter(t => t.category === 'homework').map(template => (
+                          <option key={template.id} value={template.id}>
+                            {template.name}
+                          </option>
+                        ))}
+                      </optgroup>
+                      <optgroup label={t.templates.categories.behavior}>
+                        {messageTemplates.filter(t => t.category === 'behavior').map(template => (
+                          <option key={template.id} value={template.id}>
+                            {template.name}
+                          </option>
+                        ))}
+                      </optgroup>
+                      <optgroup label={t.templates.categories.absence}>
+                        {messageTemplates.filter(t => t.category === 'absence').map(template => (
+                          <option key={template.id} value={template.id}>
+                            {template.name}
+                          </option>
+                        ))}
+                      </optgroup>
+                      <optgroup label={t.templates.categories.achievement}>
+                        {messageTemplates.filter(t => t.category === 'achievement').map(template => (
+                          <option key={template.id} value={template.id}>
+                            {template.name}
+                          </option>
+                        ))}
+                      </optgroup>
+                    </select>
+                  </div>
+
                   <textarea
                     className="sf-input mb-3"
-                    rows={4}
+                    rows={6}
                     placeholder={t.communications.replyPlaceholder}
+                    value={replyText}
+                    onChange={(e) => setReplyText(e.target.value)}
                   ></textarea>
                   <div className="flex gap-3">
                     <button className="sf-button-primary">

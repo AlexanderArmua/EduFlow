@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
+import NotificationDropdown from './NotificationDropdown';
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -49,6 +50,7 @@ export default function Navigation() {
           </div>
           <div className="flex items-center gap-4">
             <LanguageSwitcher />
+            <NotificationDropdown />
             <button
               onClick={handleLogout}
               className="px-4 py-2 text-sm font-medium text-white hover:bg-salesforce-blue rounded-md transition-colors"

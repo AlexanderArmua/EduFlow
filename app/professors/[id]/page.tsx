@@ -5,6 +5,19 @@ import Link from 'next/link';
 import { professors, subjects } from '@/lib/mockData';
 import { use } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+  PieChart,
+  Pie,
+  Cell,
+} from 'recharts';
 
 export default function ProfessorDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
@@ -135,6 +148,83 @@ export default function ProfessorDetailPage({ params }: { params: Promise<{ id: 
                 </div>
               </div>
             </div>
+
+            {/* Teaching Load Visualization */}
+            {professorSubjects.length > 0 && (
+              <div className="sf-card p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">Teaching Load Analysis</h3>
+
+                {/* Students per Subject Bar Chart */}
+                <div className="mb-8">
+                  <h4 className="text-md font-semibold text-gray-700 mb-4">Students per Subject</h4>
+                  <ResponsiveContainer width="100%" height={250}>
+                    <BarChart data={professorSubjects.map(s => ({
+                      name: s.code,
+                      students: s.students,
+                      credits: s.credits
+                    }))}>
+                      <CartesianGrid strokeDasharray="3 3" />
+                      <XAxis dataKey="name" />
+                      <YAxis />
+                      <Tooltip />
+                      <Legend />
+                      <Bar dataKey="students" fill="#0176D3" name="Students" />
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+
+                {/* Credits Distribution */}
+                <div className="mb-6">
+                  <h4 className="text-md font-semibold text-gray-700 mb-4">Credits Distribution</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <ResponsiveContainer width="100%" height={200}>
+                      <PieChart>
+                        <Pie
+                          data={professorSubjects.map(s => ({
+                            name: s.code,
+                            value: s.credits
+                          }))}
+                          cx="50%"
+                          cy="50%"
+                          labelLine={false}
+                          label={(entry) => `${entry.name}: ${entry.value}`}
+                          outerRadius={80}
+                          fill="#8884d8"
+                          dataKey="value"
+                        >
+                          {professorSubjects.map((_, index) => (
+                            <Cell key={`cell-${index}`} fill={['#0176D3', '#032D60', '#54698D', '#006DCC', '#032E61', '#1589EE'][index % 6]} />
+                          ))}
+                        </Pie>
+                        <Tooltip />
+                      </PieChart>
+                    </ResponsiveContainer>
+
+                    {/* Workload Metrics */}
+                    <div className="space-y-3">
+                      <div className="bg-gray-50 p-4 rounded-lg">
+                        <p className="text-xs text-gray-600 mb-1">Total Credits</p>
+                        <p className="text-2xl font-bold text-gray-900">
+                          {professorSubjects.reduce((sum, s) => sum + s.credits, 0)}
+                        </p>
+                      </div>
+                      <div className="bg-gray-50 p-4 rounded-lg">
+                        <p className="text-xs text-gray-600 mb-1">Average Class Size</p>
+                        <p className="text-2xl font-bold text-gray-900">
+                          {Math.round(professorSubjects.reduce((sum, s) => sum + s.students, 0) / professorSubjects.length)}
+                        </p>
+                      </div>
+                      <div className="bg-gray-50 p-4 rounded-lg">
+                        <p className="text-xs text-gray-600 mb-1">Largest Class</p>
+                        <p className="text-2xl font-bold text-gray-900">
+                          {Math.max(...professorSubjects.map(s => s.students))}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

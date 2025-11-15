@@ -197,6 +197,9 @@ npm start
 - [ ] Print-friendly formats
 - [ ] Report sharing functionality
 
+### 🪲 Bugs
+- [ ] When I click on `Total Students` it redirects me to `/subjects` instead of a page that shows students information
+
 ## Notes
 
 This is a **mockup/demo application** designed for presentations. It does not include:

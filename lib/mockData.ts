@@ -52,46 +52,46 @@ export interface ParentMessage {
 export const professors: Professor[] = [
   {
     id: '1',
-    name: 'Dr. Sarah Johnson',
-    email: 'sarah.johnson@eduflow.edu',
-    department: 'Computer Science',
-    phone: '+1 (555) 123-4567',
+    name: 'Dr. Martín Fernández',
+    email: 'martin.fernandez@eduflow.edu.ar',
+    department: 'Informática',
+    phone: '+54 11 4567-8901',
     status: 'Active',
-    subjects: ['CS101', 'CS301']
+    subjects: ['INF101', 'INF301']
   },
   {
     id: '2',
-    name: 'Prof. Michael Chen',
-    email: 'michael.chen@eduflow.edu',
-    department: 'Mathematics',
-    phone: '+1 (555) 234-5678',
+    name: 'Prof. Ana María González',
+    email: 'ana.gonzalez@eduflow.edu.ar',
+    department: 'Matemáticas',
+    phone: '+54 11 4567-8902',
     status: 'Active',
-    subjects: ['MATH201', 'MATH301']
+    subjects: ['MAT201', 'MAT301']
   },
   {
     id: '3',
-    name: 'Dr. Emily Rodriguez',
-    email: 'emily.rodriguez@eduflow.edu',
-    department: 'Physics',
-    phone: '+1 (555) 345-6789',
+    name: 'Dr. Santiago Rodríguez',
+    email: 'santiago.rodriguez@eduflow.edu.ar',
+    department: 'Física',
+    phone: '+54 11 4567-8903',
     status: 'Active',
-    subjects: ['PHY101', 'PHY202']
+    subjects: ['FIS101', 'FIS202']
   },
   {
     id: '4',
-    name: 'Prof. James Williams',
-    email: 'james.williams@eduflow.edu',
-    department: 'Chemistry',
-    phone: '+1 (555) 456-7890',
+    name: 'Prof. Carolina López',
+    email: 'carolina.lopez@eduflow.edu.ar',
+    department: 'Química',
+    phone: '+54 11 4567-8904',
     status: 'Inactive',
-    subjects: ['CHEM101']
+    subjects: ['QUI101']
   },
   {
     id: '5',
-    name: 'Dr. Maria Garcia',
-    email: 'maria.garcia@eduflow.edu',
-    department: 'Literature',
-    phone: '+1 (555) 567-8901',
+    name: 'Dra. Florencia Giménez',
+    email: 'florencia.gimenez@eduflow.edu.ar',
+    department: 'Literatura',
+    phone: '+54 11 4567-8905',
     status: 'Active',
     subjects: ['LIT201', 'LIT301']
   }
@@ -100,62 +100,62 @@ export const professors: Professor[] = [
 export const subjects: Subject[] = [
   {
     id: '1',
-    name: 'Introduction to Programming',
-    code: 'CS101',
+    name: 'Introducción a la Programación',
+    code: 'INF101',
     professorId: '1',
-    professorName: 'Dr. Sarah Johnson',
+    professorName: 'Dr. Martín Fernández',
     credits: 4,
-    semester: 'Fall 2024',
+    semester: '2do Cuatrimestre 2024',
     students: 45
   },
   {
     id: '2',
-    name: 'Data Structures',
-    code: 'CS301',
+    name: 'Estructuras de Datos',
+    code: 'INF301',
     professorId: '1',
-    professorName: 'Dr. Sarah Johnson',
+    professorName: 'Dr. Martín Fernández',
     credits: 4,
-    semester: 'Fall 2024',
+    semester: '2do Cuatrimestre 2024',
     students: 32
   },
   {
     id: '3',
-    name: 'Calculus II',
-    code: 'MATH201',
+    name: 'Análisis Matemático II',
+    code: 'MAT201',
     professorId: '2',
-    professorName: 'Prof. Michael Chen',
+    professorName: 'Prof. Ana María González',
     credits: 3,
-    semester: 'Fall 2024',
+    semester: '2do Cuatrimestre 2024',
     students: 50
   },
   {
     id: '4',
-    name: 'Linear Algebra',
-    code: 'MATH301',
+    name: 'Álgebra Lineal',
+    code: 'MAT301',
     professorId: '2',
-    professorName: 'Prof. Michael Chen',
+    professorName: 'Prof. Ana María González',
     credits: 3,
-    semester: 'Fall 2024',
+    semester: '2do Cuatrimestre 2024',
     students: 28
   },
   {
     id: '5',
-    name: 'General Physics I',
-    code: 'PHY101',
+    name: 'Física General I',
+    code: 'FIS101',
     professorId: '3',
-    professorName: 'Dr. Emily Rodriguez',
+    professorName: 'Dr. Santiago Rodríguez',
     credits: 4,
-    semester: 'Fall 2024',
+    semester: '2do Cuatrimestre 2024',
     students: 60
   },
   {
     id: '6',
-    name: 'Electromagnetism',
-    code: 'PHY202',
+    name: 'Electromagnetismo',
+    code: 'FIS202',
     professorId: '3',
-    professorName: 'Dr. Emily Rodriguez',
+    professorName: 'Dr. Santiago Rodríguez',
     credits: 4,
-    semester: 'Fall 2024',
+    semester: '2do Cuatrimestre 2024',
     students: 35
   }
 ];
@@ -164,42 +164,42 @@ export const notes: Note[] = [
   {
     id: '1',
     subjectId: '1',
-    studentName: 'John Smith',
+    studentName: 'Juan Martínez',
     noteType: 'Attendance',
     date: '2024-11-10',
-    content: 'Absent due to medical appointment'
+    content: 'Ausente por turno médico'
   },
   {
     id: '2',
     subjectId: '1',
-    studentName: 'Emma Davis',
+    studentName: 'Sofía Álvarez',
     noteType: 'Behavioral',
     date: '2024-11-12',
-    content: 'Excellent participation in class discussion'
+    content: 'Excelente participación en la discusión de clase'
   },
   {
     id: '3',
     subjectId: '2',
-    studentName: 'Michael Brown',
+    studentName: 'Tomás Ramírez',
     noteType: 'Academic',
     date: '2024-11-08',
-    content: 'Needs additional support with recursion concepts'
+    content: 'Necesita apoyo adicional con conceptos de recursión'
   },
   {
     id: '4',
     subjectId: '3',
-    studentName: 'Sarah Wilson',
+    studentName: 'Valentina Pérez',
     noteType: 'Achievement',
     date: '2024-11-11',
-    content: 'Top score in midterm exam'
+    content: 'Mejor calificación en el examen parcial'
   },
   {
     id: '5',
     subjectId: '5',
-    studentName: 'David Lee',
+    studentName: 'Mateo Sánchez',
     noteType: 'Attendance',
     date: '2024-11-09',
-    content: 'Late arrival - traffic issues'
+    content: 'Llegada tarde - problemas de tránsito'
   }
 ];
 
@@ -207,8 +207,8 @@ export const scores: Score[] = [
   {
     id: '1',
     subjectId: '1',
-    studentName: 'John Smith',
-    assignment: 'Midterm Exam',
+    studentName: 'Juan Martínez',
+    assignment: 'Examen Parcial',
     score: 85,
     maxScore: 100,
     date: '2024-10-15'
@@ -216,8 +216,8 @@ export const scores: Score[] = [
   {
     id: '2',
     subjectId: '1',
-    studentName: 'Emma Davis',
-    assignment: 'Midterm Exam',
+    studentName: 'Sofía Álvarez',
+    assignment: 'Examen Parcial',
     score: 92,
     maxScore: 100,
     date: '2024-10-15'
@@ -225,8 +225,8 @@ export const scores: Score[] = [
   {
     id: '3',
     subjectId: '1',
-    studentName: 'Michael Brown',
-    assignment: 'Homework 1',
+    studentName: 'Tomás Ramírez',
+    assignment: 'Trabajo Práctico 1',
     score: 78,
     maxScore: 100,
     date: '2024-09-20'
@@ -234,8 +234,8 @@ export const scores: Score[] = [
   {
     id: '4',
     subjectId: '2',
-    studentName: 'Sarah Wilson',
-    assignment: 'Project 1',
+    studentName: 'Valentina Pérez',
+    assignment: 'Proyecto Final',
     score: 95,
     maxScore: 100,
     date: '2024-10-30'
@@ -243,8 +243,8 @@ export const scores: Score[] = [
   {
     id: '5',
     subjectId: '3',
-    studentName: 'David Lee',
-    assignment: 'Quiz 1',
+    studentName: 'Mateo Sánchez',
+    assignment: 'Evaluación 1',
     score: 88,
     maxScore: 100,
     date: '2024-09-25'
@@ -252,8 +252,8 @@ export const scores: Score[] = [
   {
     id: '6',
     subjectId: '1',
-    studentName: 'John Smith',
-    assignment: 'Quiz 2',
+    studentName: 'Juan Martínez',
+    assignment: 'Evaluación 2',
     score: 90,
     maxScore: 100,
     date: '2024-11-05'
@@ -263,50 +263,50 @@ export const scores: Score[] = [
 export const parentMessages: ParentMessage[] = [
   {
     id: '1',
-    parentName: 'Jennifer Smith',
-    studentName: 'John Smith',
-    subject: 'Homework Question',
-    message: 'Hello, my son is having trouble understanding the homework assignment for this week. Could you provide some clarification?',
+    parentName: 'María Martínez',
+    studentName: 'Juan Martínez',
+    subject: 'Consulta sobre tarea',
+    message: 'Hola profesor, mi hijo está teniendo dificultades para entender la tarea de esta semana. ¿Podría brindarle alguna aclaración? Muchas gracias.',
     date: '2024-11-14',
     status: 'Unread',
     priority: 'High'
   },
   {
     id: '2',
-    parentName: 'Robert Davis',
-    studentName: 'Emma Davis',
-    subject: 'Thank You',
-    message: 'Thank you for the extra help you provided to Emma. Her grades have improved significantly!',
+    parentName: 'Roberto Álvarez',
+    studentName: 'Sofía Álvarez',
+    subject: 'Agradecimiento',
+    message: 'Muchas gracias por la ayuda extra que le brindó a Sofía. ¡Sus calificaciones han mejorado significativamente!',
     date: '2024-11-13',
     status: 'Read',
     priority: 'Low'
   },
   {
     id: '3',
-    parentName: 'Linda Brown',
-    studentName: 'Michael Brown',
-    subject: 'Meeting Request',
-    message: 'I would like to schedule a meeting to discuss Michael\'s progress this semester. When would be a good time?',
+    parentName: 'Laura Ramírez',
+    studentName: 'Tomás Ramírez',
+    subject: 'Solicitud de reunión',
+    message: 'Buenos días, me gustaría coordinar una reunión para conversar sobre el progreso de Tomás en este cuatrimestre. ¿Cuándo le vendría bien?',
     date: '2024-11-12',
     status: 'Replied',
     priority: 'Medium'
   },
   {
     id: '4',
-    parentName: 'Thomas Wilson',
-    studentName: 'Sarah Wilson',
-    subject: 'College Recommendation',
-    message: 'Sarah is applying to universities. Would you be willing to write a letter of recommendation?',
+    parentName: 'Carlos Pérez',
+    studentName: 'Valentina Pérez',
+    subject: 'Carta de recomendación',
+    message: 'Estimado profesor, Valentina está aplicando a universidades. ¿Estaría dispuesto a escribir una carta de recomendación? Le agradeceríamos mucho.',
     date: '2024-11-11',
     status: 'Unread',
     priority: 'High'
   },
   {
     id: '5',
-    parentName: 'Patricia Lee',
-    studentName: 'David Lee',
-    subject: 'Absence Notification',
-    message: 'David will be absent next week due to a family event. How can he make up the missed work?',
+    parentName: 'Patricia Sánchez',
+    studentName: 'Mateo Sánchez',
+    subject: 'Notificación de ausencia',
+    message: 'Hola, le informo que Mateo va a faltar la semana próxima por un evento familiar. ¿Cómo puede recuperar el trabajo que se pierda?',
     date: '2024-11-10',
     status: 'Read',
     priority: 'Medium'

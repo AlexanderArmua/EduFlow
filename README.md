@@ -117,6 +117,86 @@ npm run build
 npm start
 ```
 
+## Planned Features & Enhancements
+
+### 📊 Analytics & Metrics Dashboard
+- [ ] Analytics dashboard page with key metrics
+- [ ] Visual charts (Bar, Line, Pie) using Recharts
+- [ ] Enrollment trends by year/semester
+- [ ] Student retention rates
+- [ ] Academic performance metrics by subject/professor
+- [ ] Attendance statistics
+- [ ] Pass/fail rates visualization
+
+### 📅 Calendar & Scheduling
+- [ ] Academic calendar with important dates
+- [ ] Exam schedule view
+- [ ] Teacher availability calendar
+- [ ] Holidays and breaks
+- [ ] Parent-teacher meeting scheduler
+- [ ] Event reminders and notifications
+
+### 💬 Enhanced Communication Tools
+- [ ] Communication history timeline
+- [ ] Bulk messaging capability
+- [ ] Message templates
+- [ ] Read receipts
+- [ ] Response time metrics
+- [ ] Notification center with badges
+
+### 🎓 Student Progress Tracking
+- [ ] Individual student profiles page
+- [ ] Grade progression graphs
+- [ ] Behavioral reports timeline
+- [ ] Attendance records view
+- [ ] Parent engagement scoring
+
+### 👨‍🏫 Professor Performance
+- [ ] Teaching load visualization
+- [ ] Student satisfaction ratings
+- [ ] Class performance comparison
+- [ ] Professional development tracking
+
+### 📋 Administrative Tools
+- [ ] Pending tasks/to-dos list
+- [ ] Document management system
+- [ ] Enhanced grade entry interface
+- [ ] Absence approval workflow
+
+### 💰 Financial Insights
+- [ ] Tuition payment status dashboard
+- [ ] Revenue per course metrics
+- [ ] Cost per student analysis
+- [ ] Budget allocation by department
+
+### 🔔 Notifications & Alerts
+- [ ] Real-time notification center
+- [ ] Priority indicators
+- [ ] Unread message counter
+- [ ] Alert badges throughout app
+
+### 📱 Mobile Optimization
+- [ ] Enhanced responsive design
+- [ ] Touch-friendly interfaces
+- [ ] Mobile quick actions
+
+### 🔗 Integration Features
+- [ ] Export to Excel/PDF
+- [ ] Email integration preview
+- [ ] API documentation page
+- [ ] Enhanced Salesforce branding
+
+### 🏆 Gamification
+- [ ] Achievement badges for students
+- [ ] Leaderboards
+- [ ] Visual progress bars
+
+### 📊 Reporting Center
+- [ ] Custom report builder
+- [ ] Automated weekly/monthly reports
+- [ ] Print-friendly formats
+- [ ] Report sharing functionality
+
 ## Notes
 
 This is a **mockup/demo application** designed for presentations. It does not include:

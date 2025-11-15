@@ -15,6 +15,7 @@ export default function Navigation() {
     { name: t.nav.professors, path: '/professors' },
     { name: t.nav.subjects, path: '/subjects' },
     { name: t.nav.communications, path: '/communications' },
+    { name: t.nav.analytics, path: '/analytics' },
   ];
 
   const handleLogout = () => {

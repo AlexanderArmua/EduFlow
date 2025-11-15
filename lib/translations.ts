@@ -7,6 +7,7 @@ export interface Translations {
     professors: string;
     subjects: string;
     communications: string;
+    analytics: string;
     logout: string;
   };
 
@@ -158,6 +159,28 @@ export interface Translations {
     re: string;
   };
 
+  // Analytics
+  analytics: {
+    title: string;
+    subtitle: string;
+    keyMetrics: string;
+    totalStudents: string;
+    averageGrade: string;
+    attendanceRate: string;
+    activeCourses: string;
+    performanceBySubject: string;
+    gradeTrends: string;
+    departmentDistribution: string;
+    attendanceTrends: string;
+    subject: string;
+    average: string;
+    month: string;
+    grade: string;
+    department: string;
+    students: string;
+    attendance: string;
+  };
+
   // Common
   common: {
     loading: string;
@@ -174,6 +197,7 @@ export const translations: Record<Language, Translations> = {
       professors: 'Professors',
       subjects: 'Subjects',
       communications: 'Parent Communications',
+      analytics: 'Analytics',
       logout: 'Logout',
     },
     login: {
@@ -314,6 +338,26 @@ export const translations: Record<Language, Translations> = {
       totalMessages: 'Total Messages',
       re: 're',
     },
+    analytics: {
+      title: 'Analytics Dashboard',
+      subtitle: 'Track institutional performance and trends',
+      keyMetrics: 'Key Metrics',
+      totalStudents: 'Total Students',
+      averageGrade: 'Average Grade',
+      attendanceRate: 'Attendance Rate',
+      activeCourses: 'Active Courses',
+      performanceBySubject: 'Performance by Subject',
+      gradeTrends: 'Grade Trends Over Time',
+      departmentDistribution: 'Student Distribution by Department',
+      attendanceTrends: 'Attendance Trends',
+      subject: 'Subject',
+      average: 'Average',
+      month: 'Month',
+      grade: 'Grade',
+      department: 'Department',
+      students: 'Students',
+      attendance: 'Attendance',
+    },
     common: {
       loading: 'Loading...',
       error: 'Error',
@@ -327,6 +371,7 @@ export const translations: Record<Language, Translations> = {
       professors: 'Profesores',
       subjects: 'Materias',
       communications: 'Comunicación con Padres',
+      analytics: 'Analíticas',
       logout: 'Cerrar Sesión',
     },
     login: {
@@ -467,6 +512,26 @@ export const translations: Record<Language, Translations> = {
       totalMessages: 'Total de Mensajes',
       re: 're',
     },
+    analytics: {
+      title: 'Panel de Analíticas',
+      subtitle: 'Seguimiento del rendimiento y tendencias institucionales',
+      keyMetrics: 'Métricas Clave',
+      totalStudents: 'Total de Estudiantes',
+      averageGrade: 'Promedio General',
+      attendanceRate: 'Tasa de Asistencia',
+      activeCourses: 'Cursos Activos',
+      performanceBySubject: 'Rendimiento por Materia',
+      gradeTrends: 'Tendencias de Calificaciones',
+      departmentDistribution: 'Distribución de Estudiantes por Departamento',
+      attendanceTrends: 'Tendencias de Asistencia',
+      subject: 'Materia',
+      average: 'Promedio',
+      month: 'Mes',
+      grade: 'Calificación',
+      department: 'Departamento',
+      students: 'Estudiantes',
+      attendance: 'Asistencia',
+    },
     common: {
       loading: 'Cargando...',
       error: 'Error',
@@ -480,6 +545,7 @@ export const translations: Record<Language, Translations> = {
       professors: '教授',
       subjects: '科目',
       communications: '保護者との連絡',
+      analytics: '分析',
       logout: 'ログアウト',
     },
     login: {
@@ -619,6 +685,26 @@ export const translations: Record<Language, Translations> = {
       markAsRead: '既読にする',
       totalMessages: 'メッセージ総数',
       re: 're',
+    },
+    analytics: {
+      title: '分析ダッシュボード',
+      subtitle: '機関のパフォーマンスとトレンドを追跡',
+      keyMetrics: '主要指標',
+      totalStudents: '総学生数',
+      averageGrade: '平均成績',
+      attendanceRate: '出席率',
+      activeCourses: 'アクティブコース',
+      performanceBySubject: '科目別パフォーマンス',
+      gradeTrends: '成績の推移',
+      departmentDistribution: '学部別学生分布',
+      attendanceTrends: '出席率の推移',
+      subject: '科目',
+      average: '平均',
+      month: '月',
+      grade: '成績',
+      department: '学部',
+      students: '学生',
+      attendance: '出席',
     },
     common: {
       loading: '読み込み中...',

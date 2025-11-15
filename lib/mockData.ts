@@ -312,3 +312,66 @@ export const parentMessages: ParentMessage[] = [
     priority: 'Medium'
   }
 ];
+
+// Analytics Data
+export interface SubjectPerformance {
+  subjectName: string;
+  averageScore: number;
+  totalStudents: number;
+}
+
+export interface GradeTrend {
+  month: string;
+  promedio: number;
+}
+
+export interface DepartmentDistribution {
+  department: string;
+  students: number;
+}
+
+export interface AttendanceData {
+  month: string;
+  attendance: number;
+}
+
+export const subjectPerformance: SubjectPerformance[] = [
+  { subjectName: 'Introducción a la Programación', averageScore: 85, totalStudents: 45 },
+  { subjectName: 'Estructuras de Datos', averageScore: 82, totalStudents: 32 },
+  { subjectName: 'Análisis Matemático II', averageScore: 78, totalStudents: 50 },
+  { subjectName: 'Álgebra Lineal', averageScore: 88, totalStudents: 28 },
+  { subjectName: 'Física General I', averageScore: 80, totalStudents: 60 },
+  { subjectName: 'Electromagnetismo', averageScore: 84, totalStudents: 35 },
+];
+
+export const gradeTrends: GradeTrend[] = [
+  { month: 'Marzo', promedio: 75 },
+  { month: 'Abril', promedio: 78 },
+  { month: 'Mayo', promedio: 80 },
+  { month: 'Junio', promedio: 82 },
+  { month: 'Julio', promedio: 79 },
+  { month: 'Agosto', promedio: 83 },
+  { month: 'Septiembre', promedio: 85 },
+  { month: 'Octubre', promedio: 84 },
+  { month: 'Noviembre', promedio: 86 },
+];
+
+export const departmentDistribution: DepartmentDistribution[] = [
+  { department: 'Informática', students: 77 },
+  { department: 'Matemáticas', students: 78 },
+  { department: 'Física', students: 95 },
+  { department: 'Química', students: 0 },
+  { department: 'Literatura', students: 0 },
+];
+
+export const attendanceData: AttendanceData[] = [
+  { month: 'Marzo', attendance: 92 },
+  { month: 'Abril', attendance: 94 },
+  { month: 'Mayo', attendance: 91 },
+  { month: 'Junio', attendance: 93 },
+  { month: 'Julio', attendance: 89 },
+  { month: 'Agosto', attendance: 95 },
+  { month: 'Septiembre', attendance: 94 },
+  { month: 'Octubre', attendance: 96 },
+  { month: 'Noviembre', attendance: 95 },
+];

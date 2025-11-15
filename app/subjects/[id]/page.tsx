@@ -118,10 +118,10 @@ export default function SubjectDetailPage({ params }: { params: Promise<{ id: st
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">{t.subjects.courseInformation}</h3>
                   <div className="bg-gray-50 p-4 rounded-lg space-y-2">
                     <p className="text-sm text-gray-700">
-                      This is a comprehensive {subject.credits}-credit course covering fundamental concepts in {subject.name}.
+                      Esta es una materia integral de {subject.credits} créditos que cubre conceptos fundamentales de {subject.name}.
                     </p>
                     <p className="text-sm text-gray-700">
-                      Taught by {subject.professorName} from the {professor?.department} department.
+                      Dictada por {subject.professorName} del departamento de {professor?.department}.
                     </p>
                   </div>
                 </div>

@@ -35,7 +35,7 @@ export default function Navigation() {
                   key={item.path}
                   href={item.path}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                    pathname === item.path
+                    pathname.startsWith(item.path)
                       ? 'bg-salesforce-blue text-white'
                       : 'text-gray-300 hover:bg-salesforce-blue hover:text-white'
                   }`}

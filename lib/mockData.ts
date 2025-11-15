@@ -376,6 +376,49 @@ export const attendanceData: AttendanceData[] = [
   { month: 'Noviembre', attendance: 95 },
 ];
 
+export interface EnrollmentTrend {
+  period: string;
+  students: number;
+}
+
+export const enrollmentTrends: EnrollmentTrend[] = [
+  { period: '1er Cuatrimestre 2023', students: 220 },
+  { period: '2do Cuatrimestre 2023', students: 235 },
+  { period: '1er Cuatrimestre 2024', students: 242 },
+  { period: '2do Cuatrimestre 2024', students: 250 },
+  { period: '1er Cuatrimestre 2025', students: 268 },
+];
+
+export interface RetentionRate {
+  year: string;
+  retained: number;
+  dropped: number;
+}
+
+export const retentionRates: RetentionRate[] = [
+  { year: '2021', retained: 88, dropped: 12 },
+  { year: '2022', retained: 90, dropped: 10 },
+  { year: '2023', retained: 92, dropped: 8 },
+  { year: '2024', retained: 94, dropped: 6 },
+  { year: '2025', retained: 95, dropped: 5 },
+];
+
+export interface PassFailRate {
+  subject: string;
+  passed: number;
+  failed: number;
+  passRate: number;
+}
+
+export const passFailRates: PassFailRate[] = [
+  { subject: 'Introducción a la Programación', passed: 38, failed: 7, passRate: 84 },
+  { subject: 'Estructuras de Datos', passed: 28, failed: 4, passRate: 88 },
+  { subject: 'Análisis Matemático II', passed: 42, failed: 8, passRate: 84 },
+  { subject: 'Álgebra Lineal', passed: 25, failed: 3, passRate: 89 },
+  { subject: 'Física General I', passed: 52, failed: 8, passRate: 87 },
+  { subject: 'Electromagnetismo', passed: 31, failed: 4, passRate: 89 },
+];
+
 // Calendar Data
 export interface CalendarEvent {
   id: string;

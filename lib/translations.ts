@@ -173,6 +173,9 @@ export interface Translations {
     gradeTrends: string;
     departmentDistribution: string;
     attendanceTrends: string;
+    enrollmentTrends: string;
+    retentionRates: string;
+    passFailRates: string;
     subject: string;
     average: string;
     month: string;
@@ -180,6 +183,13 @@ export interface Translations {
     department: string;
     students: string;
     attendance: string;
+    period: string;
+    year: string;
+    retained: string;
+    dropped: string;
+    passed: string;
+    failed: string;
+    passRate: string;
   };
 
   // Calendar
@@ -389,6 +399,9 @@ export const translations: Record<Language, Translations> = {
       gradeTrends: 'Grade Trends Over Time',
       departmentDistribution: 'Student Distribution by Department',
       attendanceTrends: 'Attendance Trends',
+      enrollmentTrends: 'Enrollment Trends by Semester',
+      retentionRates: 'Student Retention Rates',
+      passFailRates: 'Pass/Fail Rates by Subject',
       subject: 'Subject',
       average: 'Average',
       month: 'Month',
@@ -396,6 +409,13 @@ export const translations: Record<Language, Translations> = {
       department: 'Department',
       students: 'Students',
       attendance: 'Attendance',
+      period: 'Period',
+      year: 'Year',
+      retained: 'Retained',
+      dropped: 'Dropped',
+      passed: 'Passed',
+      failed: 'Failed',
+      passRate: 'Pass Rate',
     },
     calendar: {
       title: 'Academic Calendar',
@@ -599,6 +619,9 @@ export const translations: Record<Language, Translations> = {
       gradeTrends: 'Tendencias de Calificaciones',
       departmentDistribution: 'Distribución de Estudiantes por Departamento',
       attendanceTrends: 'Tendencias de Asistencia',
+      enrollmentTrends: 'Tendencias de Inscripción por Cuatrimestre',
+      retentionRates: 'Tasas de Retención de Estudiantes',
+      passFailRates: 'Tasas de Aprobación/Desaprobación por Materia',
       subject: 'Materia',
       average: 'Promedio',
       month: 'Mes',
@@ -606,6 +629,13 @@ export const translations: Record<Language, Translations> = {
       department: 'Departamento',
       students: 'Estudiantes',
       attendance: 'Asistencia',
+      period: 'Período',
+      year: 'Año',
+      retained: 'Retenidos',
+      dropped: 'Abandonaron',
+      passed: 'Aprobados',
+      failed: 'Desaprobados',
+      passRate: 'Tasa de Aprobación',
     },
     calendar: {
       title: 'Calendario Académico',
@@ -809,6 +839,9 @@ export const translations: Record<Language, Translations> = {
       gradeTrends: '成績の推移',
       departmentDistribution: '学部別学生分布',
       attendanceTrends: '出席率の推移',
+      enrollmentTrends: '学期別入学者数の推移',
+      retentionRates: '学生定着率',
+      passFailRates: '科目別合格/不合格率',
       subject: '科目',
       average: '平均',
       month: '月',
@@ -816,6 +849,13 @@ export const translations: Record<Language, Translations> = {
       department: '学部',
       students: '学生',
       attendance: '出席',
+      period: '期間',
+      year: '年',
+      retained: '定着',
+      dropped: '離脱',
+      passed: '合格',
+      failed: '不合格',
+      passRate: '合格率',
     },
     calendar: {
       title: '学事暦',

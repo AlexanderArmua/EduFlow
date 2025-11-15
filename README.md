@@ -122,11 +122,11 @@ npm start
 ### 📊 Analytics & Metrics Dashboard
 - [x] Analytics dashboard page with key metrics
 - [x] Visual charts (Bar, Line, Pie) using Recharts
-- [ ] Enrollment trends by year/semester
-- [ ] Student retention rates
+- [x] Enrollment trends by year/semester
+- [x] Student retention rates
 - [x] Academic performance metrics by subject/professor
 - [x] Attendance statistics
-- [ ] Pass/fail rates visualization
+- [x] Pass/fail rates visualization
 
 ### 📅 Calendar & Scheduling
 - [x] Academic calendar with important dates

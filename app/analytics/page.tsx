@@ -7,6 +7,9 @@ import {
   gradeTrends,
   departmentDistribution,
   attendanceData,
+  enrollmentTrends,
+  retentionRates,
+  passFailRates,
 } from '@/lib/mockData';
 import {
   BarChart,
@@ -180,6 +183,72 @@ export default function AnalyticsPage() {
                   name={t.analytics.attendance}
                 />
               </LineChart>
+            </ResponsiveContainer>
+          </div>
+
+          {/* Enrollment Trends */}
+          <div className="sf-card">
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">
+              {t.analytics.enrollmentTrends}
+            </h2>
+            <ResponsiveContainer width="100%" height={300}>
+              <LineChart data={enrollmentTrends}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="period" angle={-20} textAnchor="end" height={80} fontSize={11} />
+                <YAxis domain={[200, 280]} />
+                <Tooltip />
+                <Legend />
+                <Line
+                  type="monotone"
+                  dataKey="students"
+                  stroke="#0176D3"
+                  strokeWidth={3}
+                  name={t.analytics.students}
+                  dot={{ fill: '#0176D3', r: 5 }}
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+
+          {/* Retention Rates */}
+          <div className="sf-card">
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">
+              {t.analytics.retentionRates}
+            </h2>
+            <ResponsiveContainer width="100%" height={300}>
+              <BarChart data={retentionRates}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="year" />
+                <YAxis domain={[0, 100]} />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="retained" fill="#10B981" name={t.analytics.retained} />
+                <Bar dataKey="dropped" fill="#EF4444" name={t.analytics.dropped} />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+
+          {/* Pass/Fail Rates */}
+          <div className="sf-card lg:col-span-2">
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">
+              {t.analytics.passFailRates}
+            </h2>
+            <ResponsiveContainer width="100%" height={300}>
+              <BarChart data={passFailRates}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis
+                  dataKey="subject"
+                  angle={-30}
+                  textAnchor="end"
+                  height={120}
+                  fontSize={12}
+                />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="passed" fill="#10B981" name={t.analytics.passed} />
+                <Bar dataKey="failed" fill="#EF4444" name={t.analytics.failed} />
+              </BarChart>
             </ResponsiveContainer>
           </div>
         </div>

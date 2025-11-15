@@ -4,9 +4,11 @@ import Navigation from '@/components/Navigation';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function NewProfessorPage() {
   const router = useRouter();
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -35,17 +37,17 @@ export default function NewProfessorPage() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-6">
           <Link href="/professors" className="text-salesforce-blue hover:text-salesforce-darkblue text-sm font-medium">
-            &larr; Back to Professors
+            &larr; {t.professors.backToProfessors}
           </Link>
         </div>
 
         <div className="sf-card p-8">
-          <h1 className="text-2xl font-bold text-gray-900 mb-6">Add New Professor</h1>
+          <h1 className="text-2xl font-bold text-gray-900 mb-6">{t.professors.addNewProfessor}</h1>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                Full Name *
+                {t.professors.fullName} *
               </label>
               <input
                 id="name"
@@ -61,7 +63,7 @@ export default function NewProfessorPage() {
 
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                Email Address *
+                {t.professors.emailAddress} *
               </label>
               <input
                 id="email"
@@ -77,7 +79,7 @@ export default function NewProfessorPage() {
 
             <div>
               <label htmlFor="department" className="block text-sm font-medium text-gray-700 mb-2">
-                Department *
+                {t.professors.department} *
               </label>
               <input
                 id="department"
@@ -93,7 +95,7 @@ export default function NewProfessorPage() {
 
             <div>
               <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                Phone Number *
+                {t.professors.phoneNumber} *
               </label>
               <input
                 id="phone"
@@ -109,7 +111,7 @@ export default function NewProfessorPage() {
 
             <div>
               <label htmlFor="status" className="block text-sm font-medium text-gray-700 mb-2">
-                Status *
+                {t.professors.status} *
               </label>
               <select
                 id="status"
@@ -119,18 +121,18 @@ export default function NewProfessorPage() {
                 className="sf-input"
                 required
               >
-                <option value="Active">Active</option>
-                <option value="Inactive">Inactive</option>
+                <option value="Active">{t.professors.active}</option>
+                <option value="Inactive">{t.professors.inactive}</option>
               </select>
             </div>
 
             <div className="flex gap-4 pt-4">
               <button type="submit" className="sf-button-primary flex-1">
-                Add Professor
+                {t.professors.addProfessor}
               </button>
               <Link href="/professors" className="flex-1">
                 <button type="button" className="w-full sf-button-secondary">
-                  Cancel
+                  {t.professors.cancel}
                 </button>
               </Link>
             </div>

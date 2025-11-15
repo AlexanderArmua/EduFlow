@@ -4,8 +4,10 @@ import Navigation from '@/components/Navigation';
 import Link from 'next/link';
 import { professors } from '@/lib/mockData';
 import { useState } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ProfessorsPage() {
+  const { t } = useLanguage();
   const [searchTerm, setSearchTerm] = useState('');
   const [filterStatus, setFilterStatus] = useState<'All' | 'Active' | 'Inactive'>('All');
 
@@ -24,12 +26,12 @@ export default function ProfessorsPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">Professors</h1>
-            <p className="text-gray-600 mt-2">Manage your faculty members</p>
+            <h1 className="text-3xl font-bold text-gray-900">{t.professors.title}</h1>
+            <p className="text-gray-600 mt-2">{t.professors.subtitle}</p>
           </div>
           <Link href="/professors/new">
             <button className="sf-button-primary">
-              + Add Professor
+              {t.professors.addProfessor}
             </button>
           </Link>
         </div>
@@ -39,11 +41,11 @@ export default function ProfessorsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Search
+                {t.professors.search}
               </label>
               <input
                 type="text"
-                placeholder="Search by name, email, or department..."
+                placeholder={t.professors.searchPlaceholder}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="sf-input"
@@ -51,16 +53,16 @@ export default function ProfessorsPage() {
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Status
+                {t.professors.status}
               </label>
               <select
                 value={filterStatus}
                 onChange={(e) => setFilterStatus(e.target.value as 'All' | 'Active' | 'Inactive')}
                 className="sf-input"
               >
-                <option value="All">All Statuses</option>
-                <option value="Active">Active</option>
-                <option value="Inactive">Inactive</option>
+                <option value="All">{t.professors.allStatuses}</option>
+                <option value="Active">{t.professors.active}</option>
+                <option value="Inactive">{t.professors.inactive}</option>
               </select>
             </div>
           </div>
@@ -71,13 +73,13 @@ export default function ProfessorsPage() {
           <table className="sf-table">
             <thead>
               <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Department</th>
-                <th>Phone</th>
-                <th>Subjects</th>
-                <th>Status</th>
-                <th>Actions</th>
+                <th>{t.professors.name}</th>
+                <th>{t.professors.email}</th>
+                <th>{t.professors.department}</th>
+                <th>{t.professors.phone}</th>
+                <th>{t.professors.subjects}</th>
+                <th>{t.professors.status}</th>
+                <th>{t.professors.actions}</th>
               </tr>
             </thead>
             <tbody>
@@ -113,12 +115,12 @@ export default function ProfessorsPage() {
                     <div className="flex gap-2">
                       <Link href={`/professors/${professor.id}`}>
                         <button className="text-salesforce-blue hover:text-salesforce-darkblue text-sm font-medium">
-                          View
+                          {t.professors.view}
                         </button>
                       </Link>
                       <Link href={`/professors/${professor.id}/edit`}>
                         <button className="text-green-600 hover:text-green-800 text-sm font-medium">
-                          Edit
+                          {t.professors.edit}
                         </button>
                       </Link>
                     </div>
@@ -130,7 +132,7 @@ export default function ProfessorsPage() {
 
           {filteredProfessors.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-gray-500">No professors found matching your criteria.</p>
+              <p className="text-gray-500">{t.professors.noResults}</p>
             </div>
           )}
         </div>

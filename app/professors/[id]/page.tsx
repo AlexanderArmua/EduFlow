@@ -4,9 +4,11 @@ import Navigation from '@/components/Navigation';
 import Link from 'next/link';
 import { professors, subjects } from '@/lib/mockData';
 import { use } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function ProfessorDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
+  const { t } = useLanguage();
   const professor = professors.find(p => p.id === id);
 
   if (!professor) {
@@ -15,9 +17,9 @@ export default function ProfessorDetailPage({ params }: { params: Promise<{ id: 
         <Navigation />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="sf-card p-6 text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Professor Not Found</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">{t.professors.professorNotFound}</h2>
             <Link href="/professors" className="text-salesforce-blue hover:underline">
-              Back to Professors
+              {t.professors.backToProfessors}
             </Link>
           </div>
         </div>
@@ -34,7 +36,7 @@ export default function ProfessorDetailPage({ params }: { params: Promise<{ id: 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-6">
           <Link href="/professors" className="text-salesforce-blue hover:text-salesforce-darkblue text-sm font-medium">
-            &larr; Back to Professors
+            &larr; {t.professors.backToProfessors}
           </Link>
         </div>
 
@@ -59,15 +61,15 @@ export default function ProfessorDetailPage({ params }: { params: Promise<{ id: 
 
               <div className="space-y-4 border-t pt-6">
                 <div>
-                  <p className="text-sm font-medium text-gray-500">Email</p>
+                  <p className="text-sm font-medium text-gray-500">{t.professors.email}</p>
                   <p className="text-sm text-gray-900 mt-1">{professor.email}</p>
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-gray-500">Phone</p>
+                  <p className="text-sm font-medium text-gray-500">{t.professors.phone}</p>
                   <p className="text-sm text-gray-900 mt-1">{professor.phone}</p>
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-gray-500">Department</p>
+                  <p className="text-sm font-medium text-gray-500">{t.professors.department}</p>
                   <p className="text-sm text-gray-900 mt-1">{professor.department}</p>
                 </div>
               </div>
@@ -75,7 +77,7 @@ export default function ProfessorDetailPage({ params }: { params: Promise<{ id: 
               <div className="mt-6 pt-6 border-t">
                 <Link href={`/professors/${id}/edit`}>
                   <button className="w-full sf-button-primary">
-                    Edit Professor
+                    {t.professors.editProfessor}
                   </button>
                 </Link>
               </div>
@@ -86,7 +88,7 @@ export default function ProfessorDetailPage({ params }: { params: Promise<{ id: 
           <div className="lg:col-span-2 space-y-6">
             {/* Subjects */}
             <div className="sf-card p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Teaching Subjects</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{t.professors.teachingSubjects}</h3>
               {professorSubjects.length > 0 ? (
                 <div className="space-y-4">
                   {professorSubjects.map((subject) => (
@@ -94,16 +96,16 @@ export default function ProfessorDetailPage({ params }: { params: Promise<{ id: 
                       <div className="flex items-start justify-between">
                         <div>
                           <h4 className="font-semibold text-gray-900">{subject.name}</h4>
-                          <p className="text-sm text-gray-600 mt-1">Code: {subject.code}</p>
+                          <p className="text-sm text-gray-600 mt-1">{t.professors.code}: {subject.code}</p>
                           <div className="flex gap-4 mt-2 text-sm text-gray-600">
-                            <span>Credits: {subject.credits}</span>
-                            <span>Students: {subject.students}</span>
-                            <span>Semester: {subject.semester}</span>
+                            <span>{t.dashboard.credits}: {subject.credits}</span>
+                            <span>{t.dashboard.students}: {subject.students}</span>
+                            <span>{t.professors.semester}: {subject.semester}</span>
                           </div>
                         </div>
                         <Link href={`/subjects/${subject.id}`}>
                           <button className="text-salesforce-blue hover:text-salesforce-darkblue text-sm font-medium">
-                            View Details
+                            {t.professors.viewDetails}
                           </button>
                         </Link>
                       </div>
@@ -111,22 +113,22 @@ export default function ProfessorDetailPage({ params }: { params: Promise<{ id: 
                   ))}
                 </div>
               ) : (
-                <p className="text-gray-500">No subjects assigned yet.</p>
+                <p className="text-gray-500">{t.professors.noSubjects}</p>
               )}
             </div>
 
             {/* Statistics */}
             <div className="sf-card p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Statistics</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{t.professors.statistics}</h3>
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-blue-50 p-4 rounded-lg">
-                  <p className="text-sm text-gray-600">Total Subjects</p>
+                  <p className="text-sm text-gray-600">{t.professors.totalSubjects}</p>
                   <p className="text-3xl font-bold text-salesforce-blue mt-2">
                     {professorSubjects.length}
                   </p>
                 </div>
                 <div className="bg-green-50 p-4 rounded-lg">
-                  <p className="text-sm text-gray-600">Total Students</p>
+                  <p className="text-sm text-gray-600">{t.professors.totalStudents}</p>
                   <p className="text-3xl font-bold text-green-600 mt-2">
                     {professorSubjects.reduce((sum, s) => sum + s.students, 0)}
                   </p>

@@ -2,16 +2,19 @@
 
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
+import { useLanguage } from '@/contexts/LanguageContext';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Navigation() {
   const pathname = usePathname();
   const router = useRouter();
+  const { t } = useLanguage();
 
   const navItems = [
-    { name: 'Dashboard', path: '/dashboard' },
-    { name: 'Professors', path: '/professors' },
-    { name: 'Subjects', path: '/subjects' },
-    { name: 'Parent Communications', path: '/communications' },
+    { name: t.nav.dashboard, path: '/dashboard' },
+    { name: t.nav.professors, path: '/professors' },
+    { name: t.nav.subjects, path: '/subjects' },
+    { name: t.nav.communications, path: '/communications' },
   ];
 
   const handleLogout = () => {
@@ -42,12 +45,13 @@ export default function Navigation() {
               ))}
             </div>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center gap-4">
+            <LanguageSwitcher />
             <button
               onClick={handleLogout}
               className="px-4 py-2 text-sm font-medium text-white hover:bg-salesforce-blue rounded-md transition-colors"
             >
-              Logout
+              {t.nav.logout}
             </button>
           </div>
         </div>

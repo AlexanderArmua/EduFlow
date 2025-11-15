@@ -2,9 +2,12 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useLanguage } from '@/contexts/LanguageContext';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export default function LoginPage() {
   const router = useRouter();
+  const { t } = useLanguage();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -18,19 +21,23 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-salesforce-blue to-salesforce-darkblue flex items-center justify-center px-4">
+      <div className="absolute top-4 right-4">
+        <LanguageSwitcher />
+      </div>
+
       <div className="max-w-md w-full">
         <div className="sf-card p-8">
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-salesforce-darkblue mb-2">
-              EduFlow CRM
+              {t.login.title}
             </h1>
-            <p className="text-gray-600">Powered by Salesforce Education</p>
+            <p className="text-gray-600">{t.login.subtitle}</p>
           </div>
 
           <form onSubmit={handleLogin} className="space-y-6">
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                Email Address
+                {t.login.email}
               </label>
               <input
                 id="email"
@@ -38,14 +45,14 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="sf-input"
-                placeholder="professor@eduflow.edu"
+                placeholder={t.login.emailPlaceholder}
                 required
               />
             </div>
 
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
-                Password
+                {t.login.password}
               </label>
               <input
                 id="password"
@@ -53,7 +60,7 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="sf-input"
-                placeholder="Enter your password"
+                placeholder={t.login.passwordPlaceholder}
                 required
               />
             </div>
@@ -66,13 +73,13 @@ export default function LoginPage() {
                   className="h-4 w-4 text-salesforce-blue focus:ring-salesforce-blue border-gray-300 rounded"
                 />
                 <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-700">
-                  Remember me
+                  {t.login.rememberMe}
                 </label>
               </div>
 
               <div className="text-sm">
                 <a href="#" className="text-salesforce-blue hover:text-salesforce-darkblue font-medium">
-                  Forgot password?
+                  {t.login.forgotPassword}
                 </a>
               </div>
             </div>
@@ -81,19 +88,19 @@ export default function LoginPage() {
               type="submit"
               className="w-full sf-button-primary py-3 text-base"
             >
-              Sign In
+              {t.login.signIn}
             </button>
           </form>
 
           <div className="mt-6 text-center">
             <p className="text-sm text-gray-600">
-              Demo credentials: Any email and password will work
+              {t.login.demoCredentials}
             </p>
           </div>
         </div>
 
         <div className="mt-6 text-center text-white text-sm">
-          <p>&copy; 2024 EduFlow. All rights reserved.</p>
+          <p>{t.login.copyright}</p>
         </div>
       </div>
     </div>

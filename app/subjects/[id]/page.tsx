@@ -4,9 +4,11 @@ import Navigation from '@/components/Navigation';
 import Link from 'next/link';
 import { subjects, notes, scores, professors } from '@/lib/mockData';
 import { useState, use } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function SubjectDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
+  const { t } = useLanguage();
   const subject = subjects.find(s => s.id === id);
   const [activeTab, setActiveTab] = useState<'overview' | 'notes' | 'scores'>('overview');
 
@@ -16,9 +18,9 @@ export default function SubjectDetailPage({ params }: { params: Promise<{ id: st
         <Navigation />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="sf-card p-6 text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Subject Not Found</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">{t.subjects.subjectNotFound}</h2>
             <Link href="/subjects" className="text-salesforce-blue hover:underline">
-              Back to Subjects
+              {t.subjects.backToSubjects}
             </Link>
           </div>
         </div>
@@ -37,7 +39,7 @@ export default function SubjectDetailPage({ params }: { params: Promise<{ id: st
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-6">
           <Link href="/subjects" className="text-salesforce-blue hover:text-salesforce-darkblue text-sm font-medium">
-            &larr; Back to Subjects
+            &larr; {t.subjects.backToSubjects}
           </Link>
         </div>
 
@@ -49,23 +51,23 @@ export default function SubjectDetailPage({ params }: { params: Promise<{ id: st
               <p className="text-lg text-salesforce-blue font-semibold mt-2">{subject.code}</p>
             </div>
             <span className="px-4 py-2 bg-blue-100 text-blue-800 text-sm font-semibold rounded-lg">
-              {subject.credits} Credits
+              {subject.credits} {t.subjects.credits}
             </span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6 pt-6 border-t">
             <div>
-              <p className="text-sm font-medium text-gray-500">Professor</p>
+              <p className="text-sm font-medium text-gray-500">{t.subjects.professor}</p>
               <Link href={`/professors/${subject.professorId}`} className="text-salesforce-blue hover:underline">
                 {subject.professorName}
               </Link>
             </div>
             <div>
-              <p className="text-sm font-medium text-gray-500">Students Enrolled</p>
+              <p className="text-sm font-medium text-gray-500">{t.subjects.students}</p>
               <p className="text-lg font-semibold text-gray-900 mt-1">{subject.students}</p>
             </div>
             <div>
-              <p className="text-sm font-medium text-gray-500">Semester</p>
+              <p className="text-sm font-medium text-gray-500">{t.subjects.semester}</p>
               <p className="text-lg font-semibold text-gray-900 mt-1">{subject.semester}</p>
             </div>
           </div>
@@ -83,7 +85,7 @@ export default function SubjectDetailPage({ params }: { params: Promise<{ id: st
                     : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                 }`}
               >
-                Overview
+                {t.subjects.overview}
               </button>
               <button
                 onClick={() => setActiveTab('notes')}
@@ -93,7 +95,7 @@ export default function SubjectDetailPage({ params }: { params: Promise<{ id: st
                     : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                 }`}
               >
-                Notes ({subjectNotes.length})
+                {t.subjects.notes} ({subjectNotes.length})
               </button>
               <button
                 onClick={() => setActiveTab('scores')}
@@ -103,7 +105,7 @@ export default function SubjectDetailPage({ params }: { params: Promise<{ id: st
                     : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                 }`}
               >
-                Scores ({subjectScores.length})
+                {t.subjects.scores} ({subjectScores.length})
               </button>
             </nav>
           </div>
@@ -113,7 +115,7 @@ export default function SubjectDetailPage({ params }: { params: Promise<{ id: st
             {activeTab === 'overview' && (
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Course Information</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{t.subjects.courseInformation}</h3>
                   <div className="bg-gray-50 p-4 rounded-lg space-y-2">
                     <p className="text-sm text-gray-700">
                       This is a comprehensive {subject.credits}-credit course covering fundamental concepts in {subject.name}.
@@ -126,11 +128,11 @@ export default function SubjectDetailPage({ params }: { params: Promise<{ id: st
 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-blue-50 p-4 rounded-lg">
-                    <p className="text-sm text-gray-600">Total Notes</p>
+                    <p className="text-sm text-gray-600">{t.subjects.totalNotes}</p>
                     <p className="text-3xl font-bold text-salesforce-blue mt-2">{subjectNotes.length}</p>
                   </div>
                   <div className="bg-green-50 p-4 rounded-lg">
-                    <p className="text-sm text-gray-600">Graded Assignments</p>
+                    <p className="text-sm text-gray-600">{t.subjects.gradedAssignments}</p>
                     <p className="text-3xl font-bold text-green-600 mt-2">{subjectScores.length}</p>
                   </div>
                 </div>
@@ -141,8 +143,8 @@ export default function SubjectDetailPage({ params }: { params: Promise<{ id: st
             {activeTab === 'notes' && (
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-semibold text-gray-900">Student Notes</h3>
-                  <button className="sf-button-primary text-sm">+ Add Note</button>
+                  <h3 className="text-lg font-semibold text-gray-900">{t.subjects.studentNotes}</h3>
+                  <button className="sf-button-primary text-sm">{t.subjects.addNote}</button>
                 </div>
 
                 {subjectNotes.length > 0 ? (
@@ -163,7 +165,11 @@ export default function SubjectDetailPage({ params }: { params: Promise<{ id: st
                               ? 'bg-yellow-100 text-yellow-800'
                               : 'bg-gray-100 text-gray-800'
                           }`}>
-                            {note.noteType}
+                            {note.noteType === 'Attendance' ? t.subjects.noteTypes.attendance :
+                             note.noteType === 'Behavioral' ? t.subjects.noteTypes.behavioral :
+                             note.noteType === 'Academic' ? t.subjects.noteTypes.academic :
+                             note.noteType === 'Achievement' ? t.subjects.noteTypes.achievement :
+                             note.noteType}
                           </span>
                         </div>
                         <p className="text-sm text-gray-700 mt-2">{note.content}</p>
@@ -171,7 +177,7 @@ export default function SubjectDetailPage({ params }: { params: Promise<{ id: st
                     ))}
                   </div>
                 ) : (
-                  <p className="text-gray-500 text-center py-8">No notes recorded yet.</p>
+                  <p className="text-gray-500 text-center py-8">{t.subjects.noNotes}</p>
                 )}
               </div>
             )}
@@ -180,8 +186,8 @@ export default function SubjectDetailPage({ params }: { params: Promise<{ id: st
             {activeTab === 'scores' && (
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-semibold text-gray-900">Student Scores</h3>
-                  <button className="sf-button-primary text-sm">+ Add Score</button>
+                  <h3 className="text-lg font-semibold text-gray-900">{t.subjects.studentScores}</h3>
+                  <button className="sf-button-primary text-sm">{t.subjects.addScore}</button>
                 </div>
 
                 {subjectScores.length > 0 ? (
@@ -189,11 +195,11 @@ export default function SubjectDetailPage({ params }: { params: Promise<{ id: st
                     <table className="sf-table">
                       <thead>
                         <tr>
-                          <th>Student Name</th>
-                          <th>Assignment</th>
-                          <th>Score</th>
-                          <th>Percentage</th>
-                          <th>Date</th>
+                          <th>{t.subjects.studentName}</th>
+                          <th>{t.subjects.assignment}</th>
+                          <th>{t.subjects.score}</th>
+                          <th>{t.subjects.percentage}</th>
+                          <th>{t.subjects.date}</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -228,7 +234,7 @@ export default function SubjectDetailPage({ params }: { params: Promise<{ id: st
                     </table>
                   </div>
                 ) : (
-                  <p className="text-gray-500 text-center py-8">No scores recorded yet.</p>
+                  <p className="text-gray-500 text-center py-8">{t.subjects.noScores}</p>
                 )}
               </div>
             )}

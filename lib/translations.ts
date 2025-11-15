@@ -8,6 +8,7 @@ export interface Translations {
     subjects: string;
     communications: string;
     analytics: string;
+    calendar: string;
     logout: string;
   };
 
@@ -181,6 +182,43 @@ export interface Translations {
     attendance: string;
   };
 
+  // Calendar
+  calendar: {
+    title: string;
+    subtitle: string;
+    upcomingEvents: string;
+    allEvents: string;
+    filterByType: string;
+    allTypes: string;
+    exams: string;
+    holidays: string;
+    meetings: string;
+    academic: string;
+    breaks: string;
+    eventDetails: string;
+    date: string;
+    endDate: string;
+    location: string;
+    description: string;
+    professor: string;
+    subject: string;
+    noEvents: string;
+    viewMode: string;
+    dayView: string;
+    weekView: string;
+    monthView: string;
+    today: string;
+    previous: string;
+    next: string;
+    typeLabels: {
+      exam: string;
+      holiday: string;
+      meeting: string;
+      academic: string;
+      break: string;
+    };
+  };
+
   // Common
   common: {
     loading: string;
@@ -198,6 +236,7 @@ export const translations: Record<Language, Translations> = {
       subjects: 'Subjects',
       communications: 'Parent Communications',
       analytics: 'Analytics',
+      calendar: 'Calendar',
       logout: 'Logout',
     },
     login: {
@@ -358,6 +397,41 @@ export const translations: Record<Language, Translations> = {
       students: 'Students',
       attendance: 'Attendance',
     },
+    calendar: {
+      title: 'Academic Calendar',
+      subtitle: 'View important dates, exams, and events',
+      upcomingEvents: 'Upcoming Events',
+      allEvents: 'All Events',
+      filterByType: 'Filter by Type',
+      allTypes: 'All Types',
+      exams: 'Exams',
+      holidays: 'Holidays',
+      meetings: 'Parent-Teacher Meetings',
+      academic: 'Academic Events',
+      breaks: 'Breaks',
+      eventDetails: 'Event Details',
+      date: 'Date',
+      endDate: 'End Date',
+      location: 'Location',
+      description: 'Description',
+      professor: 'Professor',
+      subject: 'Subject',
+      noEvents: 'No events found',
+      viewMode: 'View',
+      dayView: 'Day',
+      weekView: 'Week',
+      monthView: 'Month',
+      today: 'Today',
+      previous: 'Previous',
+      next: 'Next',
+      typeLabels: {
+        exam: 'Exam',
+        holiday: 'Holiday',
+        meeting: 'Meeting',
+        academic: 'Academic',
+        break: 'Break',
+      },
+    },
     common: {
       loading: 'Loading...',
       error: 'Error',
@@ -372,6 +446,7 @@ export const translations: Record<Language, Translations> = {
       subjects: 'Materias',
       communications: 'Comunicación con Padres',
       analytics: 'Analíticas',
+      calendar: 'Calendario',
       logout: 'Cerrar Sesión',
     },
     login: {
@@ -532,6 +607,41 @@ export const translations: Record<Language, Translations> = {
       students: 'Estudiantes',
       attendance: 'Asistencia',
     },
+    calendar: {
+      title: 'Calendario Académico',
+      subtitle: 'Consulte fechas importantes, exámenes y eventos',
+      upcomingEvents: 'Próximos Eventos',
+      allEvents: 'Todos los Eventos',
+      filterByType: 'Filtrar por Tipo',
+      allTypes: 'Todos los Tipos',
+      exams: 'Exámenes',
+      holidays: 'Feriados',
+      meetings: 'Reuniones de Padres',
+      academic: 'Eventos Académicos',
+      breaks: 'Recesos',
+      eventDetails: 'Detalles del Evento',
+      date: 'Fecha',
+      endDate: 'Fecha de Fin',
+      location: 'Ubicación',
+      description: 'Descripción',
+      professor: 'Profesor',
+      subject: 'Materia',
+      noEvents: 'No se encontraron eventos',
+      viewMode: 'Vista',
+      dayView: 'Día',
+      weekView: 'Semana',
+      monthView: 'Mes',
+      today: 'Hoy',
+      previous: 'Anterior',
+      next: 'Siguiente',
+      typeLabels: {
+        exam: 'Examen',
+        holiday: 'Feriado',
+        meeting: 'Reunión',
+        academic: 'Académico',
+        break: 'Receso',
+      },
+    },
     common: {
       loading: 'Cargando...',
       error: 'Error',
@@ -546,6 +656,7 @@ export const translations: Record<Language, Translations> = {
       subjects: '科目',
       communications: '保護者との連絡',
       analytics: '分析',
+      calendar: 'カレンダー',
       logout: 'ログアウト',
     },
     login: {
@@ -705,6 +816,41 @@ export const translations: Record<Language, Translations> = {
       department: '学部',
       students: '学生',
       attendance: '出席',
+    },
+    calendar: {
+      title: '学事暦',
+      subtitle: '重要な日付、試験、イベントを確認',
+      upcomingEvents: '今後のイベント',
+      allEvents: 'すべてのイベント',
+      filterByType: 'タイプで絞り込み',
+      allTypes: 'すべてのタイプ',
+      exams: '試験',
+      holidays: '祝日',
+      meetings: '保護者面談',
+      academic: '学事イベント',
+      breaks: '休暇',
+      eventDetails: 'イベント詳細',
+      date: '日付',
+      endDate: '終了日',
+      location: '場所',
+      description: '説明',
+      professor: '教授',
+      subject: '科目',
+      noEvents: 'イベントが見つかりません',
+      viewMode: '表示',
+      dayView: '日',
+      weekView: '週',
+      monthView: '月',
+      today: '今日',
+      previous: '前',
+      next: '次',
+      typeLabels: {
+        exam: '試験',
+        holiday: '祝日',
+        meeting: '面談',
+        academic: '学事',
+        break: '休暇',
+      },
     },
     common: {
       loading: '読み込み中...',

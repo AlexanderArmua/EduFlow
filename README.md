@@ -120,20 +120,20 @@ npm start
 ## Planned Features & Enhancements
 
 ### 📊 Analytics & Metrics Dashboard
-- [ ] Analytics dashboard page with key metrics
-- [ ] Visual charts (Bar, Line, Pie) using Recharts
+- [x] Analytics dashboard page with key metrics
+- [x] Visual charts (Bar, Line, Pie) using Recharts
 - [ ] Enrollment trends by year/semester
 - [ ] Student retention rates
-- [ ] Academic performance metrics by subject/professor
-- [ ] Attendance statistics
+- [x] Academic performance metrics by subject/professor
+- [x] Attendance statistics
 - [ ] Pass/fail rates visualization
 
 ### 📅 Calendar & Scheduling
-- [ ] Academic calendar with important dates
-- [ ] Exam schedule view
+- [x] Academic calendar with important dates
+- [x] Exam schedule view
 - [ ] Teacher availability calendar
-- [ ] Holidays and breaks
-- [ ] Parent-teacher meeting scheduler
+- [x] Holidays and breaks
+- [x] Parent-teacher meeting scheduler
 - [ ] Event reminders and notifications
 
 ### 💬 Enhanced Communication Tools

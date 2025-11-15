@@ -16,6 +16,7 @@ export default function Navigation() {
     { name: t.nav.subjects, path: '/subjects' },
     { name: t.nav.communications, path: '/communications' },
     { name: t.nav.analytics, path: '/analytics' },
+    { name: t.nav.calendar, path: '/calendar' },
   ];
 
   const handleLogout = () => {

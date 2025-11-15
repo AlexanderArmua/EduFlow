@@ -375,3 +375,214 @@ export const attendanceData: AttendanceData[] = [
   { month: 'Octubre', attendance: 96 },
   { month: 'Noviembre', attendance: 95 },
 ];
+
+// Calendar Data
+export interface CalendarEvent {
+  id: string;
+  title: string;
+  date: string;
+  endDate?: string;
+  type: 'exam' | 'holiday' | 'meeting' | 'academic' | 'break';
+  description: string;
+  location?: string;
+  subjectCode?: string;
+  professorName?: string;
+}
+
+export const calendarEvents: CalendarEvent[] = [
+  // Exams
+  {
+    id: '1',
+    title: 'Examen Parcial - Introducción a la Programación',
+    date: '2025-11-20',
+    type: 'exam',
+    description: 'Primer examen parcial del cuatrimestre',
+    location: 'Aula 101',
+    subjectCode: 'INF101',
+    professorName: 'Dr. Martín Fernández',
+  },
+  {
+    id: '2',
+    title: 'Examen Final - Análisis Matemático II',
+    date: '2025-12-05',
+    type: 'exam',
+    description: 'Examen final del cuatrimestre',
+    location: 'Aula Magna',
+    subjectCode: 'MAT201',
+    professorName: 'Prof. Ana María González',
+  },
+  {
+    id: '3',
+    title: 'Examen Parcial - Física General I',
+    date: '2025-11-25',
+    type: 'exam',
+    description: 'Segundo examen parcial',
+    location: 'Laboratorio 3',
+    subjectCode: 'FIS101',
+    professorName: 'Dr. Santiago Rodríguez',
+  },
+  {
+    id: '4',
+    title: 'Recuperatorio - Estructuras de Datos',
+    date: '2025-12-12',
+    type: 'exam',
+    description: 'Examen recuperatorio para alumnos ausentes',
+    location: 'Aula 205',
+    subjectCode: 'INF301',
+    professorName: 'Dr. Martín Fernández',
+  },
+  {
+    id: '16',
+    title: 'Examen Parcial - Álgebra Lineal',
+    date: '2025-11-18',
+    type: 'exam',
+    description: 'Primer examen parcial',
+    location: 'Aula 302',
+    subjectCode: 'MAT301',
+    professorName: 'Prof. Ana María González',
+  },
+  {
+    id: '17',
+    title: 'Examen Final - Electromagnetismo',
+    date: '2025-12-08',
+    type: 'exam',
+    description: 'Examen final del cuatrimestre',
+    location: 'Laboratorio 2',
+    subjectCode: 'FIS202',
+    professorName: 'Dr. Santiago Rodríguez',
+  },
+
+  // Holidays and Breaks
+  {
+    id: '5',
+    title: 'Día de la Soberanía Nacional',
+    date: '2025-11-20',
+    type: 'holiday',
+    description: 'Feriado nacional - No hay clases',
+  },
+  {
+    id: '6',
+    title: 'Receso de Verano',
+    date: '2025-12-20',
+    endDate: '2025-12-31',
+    type: 'break',
+    description: 'Receso de fin de año - Reanudación de clases en marzo',
+  },
+  {
+    id: '7',
+    title: 'Navidad',
+    date: '2025-12-25',
+    type: 'holiday',
+    description: 'Feriado nacional - No hay clases',
+  },
+  {
+    id: '8',
+    title: 'Día de la Inmaculada Concepción',
+    date: '2025-12-08',
+    type: 'holiday',
+    description: 'Feriado nacional - No hay clases',
+  },
+
+  // Parent-Teacher Meetings
+  {
+    id: '9',
+    title: 'Reunión de Padres - Informática',
+    date: '2025-11-22',
+    type: 'meeting',
+    description: 'Reunión informativa sobre el progreso de los estudiantes',
+    location: 'Salón de Actos',
+    professorName: 'Dr. Martín Fernández',
+  },
+  {
+    id: '10',
+    title: 'Reunión de Padres - Matemáticas',
+    date: '2025-11-28',
+    type: 'meeting',
+    description: 'Entrega de boletines y consultas individuales',
+    location: 'Aula 301',
+    professorName: 'Prof. Ana María González',
+  },
+  {
+    id: '11',
+    title: 'Reunión de Padres - Física',
+    date: '2025-12-03',
+    type: 'meeting',
+    description: 'Revisión del desempeño académico del cuatrimestre',
+    location: 'Laboratorio 1',
+    professorName: 'Dr. Santiago Rodríguez',
+  },
+  {
+    id: '18',
+    title: 'Reunión General de Padres',
+    date: '2025-11-15',
+    type: 'meeting',
+    description: 'Reunión general de inicio de cuatrimestre',
+    location: 'Aula Magna',
+  },
+  {
+    id: '19',
+    title: 'Consultas Individuales - Todas las materias',
+    date: '2025-12-13',
+    type: 'meeting',
+    description: 'Horario de consultas con todos los profesores',
+    location: 'Oficinas de Profesores',
+  },
+
+  // Academic Events
+  {
+    id: '12',
+    title: 'Inicio de Inscripciones',
+    date: '2025-11-18',
+    endDate: '2025-11-29',
+    type: 'academic',
+    description: 'Período de inscripción para el próximo cuatrimestre',
+    location: 'Oficina de Alumnos',
+  },
+  {
+    id: '13',
+    title: 'Cierre del Cuatrimestre',
+    date: '2025-12-15',
+    type: 'academic',
+    description: 'Último día de clases del 2do cuatrimestre 2025',
+  },
+  {
+    id: '14',
+    title: 'Coloquio de Fin de Año',
+    date: '2025-12-10',
+    type: 'academic',
+    description: 'Presentación de trabajos finales de todas las carreras',
+    location: 'Aula Magna',
+  },
+  {
+    id: '15',
+    title: 'Feria de Ciencias',
+    date: '2025-11-30',
+    type: 'academic',
+    description: 'Exhibición de proyectos científicos de los estudiantes',
+    location: 'Patio Central',
+  },
+  {
+    id: '20',
+    title: 'Jornada de Orientación Vocacional',
+    date: '2025-11-21',
+    type: 'academic',
+    description: 'Charlas informativas sobre carreras universitarias',
+    location: 'Salón de Actos',
+  },
+  {
+    id: '21',
+    title: 'Seminario de Tecnología',
+    date: '2025-11-27',
+    type: 'academic',
+    description: 'Seminario sobre tendencias en tecnología y programación',
+    location: 'Auditorio Principal',
+  },
+  {
+    id: '22',
+    title: 'Entrega de Diplomas',
+    date: '2025-12-18',
+    type: 'academic',
+    description: 'Ceremonia de entrega de diplomas y certificados',
+    location: 'Aula Magna',
+  },
+];

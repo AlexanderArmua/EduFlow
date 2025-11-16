@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
+import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { calendarEvents, CalendarEvent } from '@/lib/mockData';
 
@@ -311,10 +312,19 @@ export default function CalendarPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-salesforce-darkblue">
-            {t.calendar.title}
-          </h1>
-          <p className="mt-2 text-gray-600">{t.calendar.subtitle}</p>
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-3xl font-bold text-salesforce-darkblue">
+                {t.calendar.title}
+              </h1>
+              <p className="mt-2 text-gray-600">{t.calendar.subtitle}</p>
+            </div>
+            <Link href="/timetable">
+              <button className="sf-button-primary text-sm">
+                📅 View Weekly Timetable
+              </button>
+            </Link>
+          </div>
         </div>
 
         {/* Controls */}
@@ -479,9 +489,15 @@ export default function CalendarPage() {
               {selectedEvent.professorName && (
                 <div className="flex items-start gap-3">
                   <div className="text-2xl">👨‍🏫</div>
-                  <div>
+                  <div className="flex-1">
                     <div className="text-sm font-semibold text-gray-600">{t.calendar.professor}</div>
-                    <div className="text-gray-900">{selectedEvent.professorName}</div>
+                    {selectedEvent.professorId ? (
+                      <Link href={`/professors/${selectedEvent.professorId}`} className="text-salesforce-blue hover:text-salesforce-darkblue hover:underline">
+                        {selectedEvent.professorName}
+                      </Link>
+                    ) : (
+                      <div className="text-gray-900">{selectedEvent.professorName}</div>
+                    )}
                   </div>
                 </div>
               )}
@@ -490,16 +506,38 @@ export default function CalendarPage() {
               {selectedEvent.subjectCode && (
                 <div className="flex items-start gap-3">
                   <div className="text-2xl">📚</div>
-                  <div>
+                  <div className="flex-1">
                     <div className="text-sm font-semibold text-gray-600">{t.calendar.subject}</div>
-                    <div className="text-gray-900">{selectedEvent.subjectCode}</div>
+                    {selectedEvent.subjectId ? (
+                      <Link href={`/subjects/${selectedEvent.subjectId}`} className="text-salesforce-blue hover:text-salesforce-darkblue hover:underline">
+                        {selectedEvent.subjectCode}
+                      </Link>
+                    ) : (
+                      <div className="text-gray-900">{selectedEvent.subjectCode}</div>
+                    )}
                   </div>
                 </div>
               )}
             </div>
 
             {/* Modal Footer */}
-            <div className="p-6 border-t bg-gray-50 flex justify-end">
+            <div className="p-6 border-t bg-gray-50 flex justify-between items-center">
+              <div className="flex gap-2">
+                {selectedEvent.professorId && (
+                  <Link href={`/professors/${selectedEvent.professorId}`}>
+                    <button className="sf-button-secondary text-sm">
+                      👨‍🏫 View Professor
+                    </button>
+                  </Link>
+                )}
+                {selectedEvent.subjectId && (
+                  <Link href={`/subjects/${selectedEvent.subjectId}`}>
+                    <button className="sf-button-secondary text-sm">
+                      📚 View Subject
+                    </button>
+                  </Link>
+                )}
+              </div>
               <button
                 onClick={() => setSelectedEvent(null)}
                 className="sf-button-primary px-6 py-2"

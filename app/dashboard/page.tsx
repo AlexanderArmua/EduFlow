@@ -16,7 +16,7 @@ export default function DashboardPage() {
     { name: t.dashboard.activeProfessors, value: activeProfessors, color: 'bg-blue-500', link: '/professors' },
     { name: t.dashboard.totalSubjects, value: totalSubjects, color: 'bg-green-500', link: '/subjects' },
     { name: t.dashboard.unreadMessages, value: unreadMessages, color: 'bg-yellow-500', link: '/communications' },
-    { name: t.dashboard.totalStudents, value: totalStudents, color: 'bg-purple-500', link: '/subjects' },
+    { name: t.dashboard.totalStudents, value: totalStudents, color: 'bg-purple-500', link: '/students' },
   ];
 
   const recentMessages = parentMessages.slice(0, 3);

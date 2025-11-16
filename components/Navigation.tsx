@@ -12,7 +12,6 @@ export default function Navigation() {
   const { t } = useLanguage();
 
   const navItems = [
-    { name: t.nav.dashboard, path: '/dashboard' },
     { name: t.nav.professors, path: '/professors' },
     { name: t.nav.subjects, path: '/subjects' },
     { name: t.nav.students, path: '/students' },
@@ -31,22 +30,29 @@ export default function Navigation() {
         <div className="flex justify-between h-16">
           <div className="flex items-center space-x-8">
             <div className="flex-shrink-0 flex items-center">
-              <h1 className="text-2xl font-bold">EduFlow CRM</h1>
+              <Link href="/dashboard">
+                <h1 className="text-2xl font-bold cursor-pointer hover:text-gray-200 transition-colors">EduFlow CRM</h1>
+              </Link>
             </div>
             <div className="hidden md:flex space-x-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  href={item.path}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                    pathname.startsWith(item.path)
-                      ? 'bg-salesforce-blue text-white'
-                      : 'text-gray-300 hover:bg-salesforce-blue hover:text-white'
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navItems.map((item) => {
+                const isActive = pathname.startsWith(item.path) ||
+                  (pathname === '/timetable' && item.path === '/calendar');
+
+                return (
+                  <Link
+                    key={item.path}
+                    href={item.path}
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                      isActive
+                        ? 'bg-salesforce-blue text-white'
+                        : 'text-gray-300 hover:bg-salesforce-blue hover:text-white'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                );
+              })}
             </div>
           </div>
           <div className="flex items-center gap-4">

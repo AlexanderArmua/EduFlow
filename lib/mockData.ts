@@ -522,7 +522,9 @@ export interface CalendarEvent {
   description: string;
   location?: string;
   subjectCode?: string;
+  subjectId?: string;
   professorName?: string;
+  professorId?: string;
 }
 
 export const calendarEvents: CalendarEvent[] = [
@@ -535,7 +537,9 @@ export const calendarEvents: CalendarEvent[] = [
     description: 'Primer examen parcial del cuatrimestre',
     location: 'Aula 101',
     subjectCode: 'INF101',
+    subjectId: '1',
     professorName: 'Dr. Martín Fernández',
+    professorId: '1',
   },
   {
     id: '2',
@@ -545,7 +549,9 @@ export const calendarEvents: CalendarEvent[] = [
     description: 'Examen final del cuatrimestre',
     location: 'Aula Magna',
     subjectCode: 'MAT201',
+    subjectId: '3',
     professorName: 'Prof. Ana María González',
+    professorId: '2',
   },
   {
     id: '3',
@@ -555,7 +561,9 @@ export const calendarEvents: CalendarEvent[] = [
     description: 'Segundo examen parcial',
     location: 'Laboratorio 3',
     subjectCode: 'FIS101',
+    subjectId: '5',
     professorName: 'Dr. Santiago Rodríguez',
+    professorId: '3',
   },
   {
     id: '4',
@@ -565,7 +573,9 @@ export const calendarEvents: CalendarEvent[] = [
     description: 'Examen recuperatorio para alumnos ausentes',
     location: 'Aula 205',
     subjectCode: 'INF301',
+    subjectId: '2',
     professorName: 'Dr. Martín Fernández',
+    professorId: '1',
   },
   {
     id: '16',
@@ -575,7 +585,9 @@ export const calendarEvents: CalendarEvent[] = [
     description: 'Primer examen parcial',
     location: 'Aula 302',
     subjectCode: 'MAT301',
+    subjectId: '4',
     professorName: 'Prof. Ana María González',
+    professorId: '2',
   },
   {
     id: '17',
@@ -585,7 +597,9 @@ export const calendarEvents: CalendarEvent[] = [
     description: 'Examen final del cuatrimestre',
     location: 'Laboratorio 2',
     subjectCode: 'FIS202',
+    subjectId: '6',
     professorName: 'Dr. Santiago Rodríguez',
+    professorId: '3',
   },
 
   // Holidays and Breaks
@@ -628,6 +642,7 @@ export const calendarEvents: CalendarEvent[] = [
     description: 'Reunión informativa sobre el progreso de los estudiantes',
     location: 'Salón de Actos',
     professorName: 'Dr. Martín Fernández',
+    professorId: '1',
   },
   {
     id: '10',
@@ -637,6 +652,7 @@ export const calendarEvents: CalendarEvent[] = [
     description: 'Entrega de boletines y consultas individuales',
     location: 'Aula 301',
     professorName: 'Prof. Ana María González',
+    professorId: '2',
   },
   {
     id: '11',
@@ -646,6 +662,7 @@ export const calendarEvents: CalendarEvent[] = [
     description: 'Revisión del desempeño académico del cuatrimestre',
     location: 'Laboratorio 1',
     professorName: 'Dr. Santiago Rodríguez',
+    professorId: '3',
   },
   {
     id: '18',
@@ -1398,5 +1415,340 @@ export const professionalDevelopment: ProfessionalDevelopment[] = [
     date: '2024-09-08',
     status: 'completed',
     hours: 10
+  },
+];
+
+// Class Schedule (Weekly recurring classes)
+export interface ClassSchedule {
+  id: string;
+  subjectId: string; // Links to subjects table
+  subjectCode: string;
+  subjectName: string;
+  professorId: string;
+  professorName: string;
+  dayOfWeek: 0 | 1 | 2 | 3 | 4 | 5 | 6; // 0 = Sunday, 6 = Saturday
+  startTime: string; // HH:MM format
+  endTime: string;
+  location: string;
+  color: string;
+}
+
+export const classSchedules: ClassSchedule[] = [
+  // Monday
+  {
+    id: 'cs1',
+    subjectId: '1',
+    subjectCode: 'INF101',
+    subjectName: 'Introducción a la Programación',
+    professorId: '1',
+    professorName: 'Dr. Martín Fernández',
+    dayOfWeek: 1,
+    startTime: '08:00',
+    endTime: '10:00',
+    location: 'Aula 101',
+    color: '#3B82F6'
+  },
+  {
+    id: 'cs2',
+    subjectId: '3',
+    subjectCode: 'MAT201',
+    subjectName: 'Análisis Matemático II',
+    professorId: '2',
+    professorName: 'Prof. Ana María González',
+    dayOfWeek: 1,
+    startTime: '10:00',
+    endTime: '12:00',
+    location: 'Aula 203',
+    color: '#10B981'
+  },
+  {
+    id: 'cs3',
+    subjectId: '5',
+    subjectCode: 'FIS101',
+    subjectName: 'Física I',
+    professorId: '3',
+    professorName: 'Dr. Santiago Rodríguez',
+    dayOfWeek: 1,
+    startTime: '14:00',
+    endTime: '16:00',
+    location: 'Lab. Física A',
+    color: '#F59E0B'
+  },
+  // Tuesday
+  {
+    id: 'cs4',
+    subjectId: '1',
+    subjectCode: 'QUI101',
+    subjectName: 'Química General',
+    professorId: '4',
+    professorName: 'Prof. Carolina López',
+    dayOfWeek: 2,
+    startTime: '08:00',
+    endTime: '10:00',
+    location: 'Lab. Química 1',
+    color: '#8B5CF6'
+  },
+  {
+    id: 'cs5',
+    subjectId: '2',
+    subjectCode: 'INF301',
+    subjectName: 'Estructuras de Datos',
+    professorId: '1',
+    professorName: 'Dr. Martín Fernández',
+    dayOfWeek: 2,
+    startTime: '10:00',
+    endTime: '12:00',
+    location: 'Aula 105',
+    color: '#3B82F6'
+  },
+  {
+    id: 'cs6',
+    subjectId: '1',
+    subjectCode: 'HIS101',
+    subjectName: 'Historia Argentina',
+    professorId: '5',
+    professorName: 'Prof. Laura Martínez',
+    dayOfWeek: 2,
+    startTime: '14:00',
+    endTime: '16:00',
+    location: 'Aula 301',
+    color: '#EC4899'
+  },
+  // Wednesday
+  {
+    id: 'cs7',
+    subjectId: '4',
+    subjectCode: 'MAT301',
+    subjectName: 'Álgebra Lineal',
+    professorId: '2',
+    professorName: 'Prof. Ana María González',
+    dayOfWeek: 3,
+    startTime: '08:00',
+    endTime: '10:00',
+    location: 'Aula 204',
+    color: '#10B981'
+  },
+  {
+    id: 'cs8',
+    subjectId: '6',
+    subjectCode: 'FIS202',
+    subjectName: 'Electromagnetismo',
+    professorId: '3',
+    professorName: 'Dr. Santiago Rodríguez',
+    dayOfWeek: 3,
+    startTime: '10:00',
+    endTime: '12:00',
+    location: 'Lab. Física B',
+    color: '#F59E0B'
+  },
+  {
+    id: 'cs9',
+    subjectId: '1',
+    subjectCode: 'INF101',
+    subjectName: 'Introducción a la Programación',
+    professorId: '1',
+    professorName: 'Dr. Martín Fernández',
+    dayOfWeek: 3,
+    startTime: '14:00',
+    endTime: '16:00',
+    location: 'Lab. Computación',
+    color: '#3B82F6'
+  },
+  // Thursday
+  {
+    id: 'cs10',
+    subjectId: '1',
+    subjectCode: 'QUI201',
+    subjectName: 'Química Orgánica',
+    professorId: '4',
+    professorName: 'Prof. Carolina López',
+    dayOfWeek: 4,
+    startTime: '08:00',
+    endTime: '10:00',
+    location: 'Lab. Química 2',
+    color: '#8B5CF6'
+  },
+  {
+    id: 'cs11',
+    subjectId: '1',
+    subjectCode: 'HIS201',
+    subjectName: 'Historia Mundial',
+    professorId: '5',
+    professorName: 'Prof. Laura Martínez',
+    dayOfWeek: 4,
+    startTime: '10:00',
+    endTime: '12:00',
+    location: 'Aula 302',
+    color: '#EC4899'
+  },
+  {
+    id: 'cs12',
+    subjectId: '3',
+    subjectCode: 'MAT201',
+    subjectName: 'Análisis Matemático II',
+    professorId: '2',
+    professorName: 'Prof. Ana María González',
+    dayOfWeek: 4,
+    startTime: '14:00',
+    endTime: '16:00',
+    location: 'Aula 203',
+    color: '#10B981'
+  },
+  // Friday
+  {
+    id: 'cs13',
+    subjectId: '2',
+    subjectCode: 'INF301',
+    subjectName: 'Estructuras de Datos',
+    professorId: '1',
+    professorName: 'Dr. Martín Fernández',
+    dayOfWeek: 5,
+    startTime: '08:00',
+    endTime: '10:00',
+    location: 'Aula 106',
+    color: '#3B82F6'
+  },
+  {
+    id: 'cs14',
+    subjectId: '5',
+    subjectCode: 'FIS101',
+    subjectName: 'Física I',
+    professorId: '3',
+    professorName: 'Dr. Santiago Rodríguez',
+    dayOfWeek: 5,
+    startTime: '10:00',
+    endTime: '12:00',
+    location: 'Aula 401',
+    color: '#F59E0B'
+  },
+];
+
+// Professor Availability
+export interface ProfessorAvailability {
+  id: string;
+  professorId: string;
+  professorName: string;
+  dayOfWeek: 0 | 1 | 2 | 3 | 4 | 5 | 6;
+  startTime: string;
+  endTime: string;
+  type: 'office-hours' | 'available' | 'busy';
+  notes?: string;
+}
+
+export const professorAvailability: ProfessorAvailability[] = [
+  // Dr. Martín Fernández
+  {
+    id: 'pa1',
+    professorId: '1',
+    professorName: 'Dr. Martín Fernández',
+    dayOfWeek: 1,
+    startTime: '12:00',
+    endTime: '14:00',
+    type: 'office-hours',
+    notes: 'Horario de consultas - Oficina 201'
+  },
+  {
+    id: 'pa2',
+    professorId: '1',
+    professorName: 'Dr. Martín Fernández',
+    dayOfWeek: 3,
+    startTime: '16:00',
+    endTime: '18:00',
+    type: 'office-hours',
+    notes: 'Horario de consultas - Oficina 201'
+  },
+  {
+    id: 'pa3',
+    professorId: '1',
+    professorName: 'Dr. Martín Fernández',
+    dayOfWeek: 5,
+    startTime: '12:00',
+    endTime: '14:00',
+    type: 'available',
+    notes: 'Disponible para reuniones'
+  },
+  // Prof. Ana María González
+  {
+    id: 'pa4',
+    professorId: '2',
+    professorName: 'Prof. Ana María González',
+    dayOfWeek: 2,
+    startTime: '12:00',
+    endTime: '14:00',
+    type: 'office-hours',
+    notes: 'Consultas de Matemáticas - Oficina 305'
+  },
+  {
+    id: 'pa5',
+    professorId: '2',
+    professorName: 'Prof. Ana María González',
+    dayOfWeek: 4,
+    startTime: '16:00',
+    endTime: '18:00',
+    type: 'office-hours',
+    notes: 'Consultas de Matemáticas - Oficina 305'
+  },
+  // Dr. Santiago Rodríguez
+  {
+    id: 'pa6',
+    professorId: '3',
+    professorName: 'Dr. Santiago Rodríguez',
+    dayOfWeek: 2,
+    startTime: '16:00',
+    endTime: '18:00',
+    type: 'office-hours',
+    notes: 'Consultas de Física - Lab. Física'
+  },
+  {
+    id: 'pa7',
+    professorId: '3',
+    professorName: 'Dr. Santiago Rodríguez',
+    dayOfWeek: 5,
+    startTime: '14:00',
+    endTime: '16:00',
+    type: 'office-hours',
+    notes: 'Consultas de Física - Lab. Física'
+  },
+  // Prof. Carolina López
+  {
+    id: 'pa8',
+    professorId: '4',
+    professorName: 'Prof. Carolina López',
+    dayOfWeek: 1,
+    startTime: '16:00',
+    endTime: '18:00',
+    type: 'office-hours',
+    notes: 'Consultas de Química - Lab. Química'
+  },
+  {
+    id: 'pa9',
+    professorId: '4',
+    professorName: 'Prof. Carolina López',
+    dayOfWeek: 3,
+    startTime: '12:00',
+    endTime: '14:00',
+    type: 'available',
+    notes: 'Disponible para reuniones'
+  },
+  // Prof. Laura Martínez
+  {
+    id: 'pa10',
+    professorId: '5',
+    professorName: 'Prof. Laura Martínez',
+    dayOfWeek: 3,
+    startTime: '16:00',
+    endTime: '18:00',
+    type: 'office-hours',
+    notes: 'Consultas de Historia - Oficina 402'
+  },
+  {
+    id: 'pa11',
+    professorId: '5',
+    professorName: 'Prof. Laura Martínez',
+    dayOfWeek: 5,
+    startTime: '14:00',
+    endTime: '16:00',
+    type: 'office-hours',
+    notes: 'Consultas de Historia - Oficina 402'
   },
 ];

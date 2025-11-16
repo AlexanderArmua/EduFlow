@@ -130,9 +130,16 @@ export default function SubjectDetailPage({ params }: { params: Promise<{ id: st
               <h1 className="text-3xl font-bold text-gray-900">{subject.name}</h1>
               <p className="text-lg text-salesforce-blue font-semibold mt-2">{subject.code}</p>
             </div>
-            <span className="px-4 py-2 bg-blue-100 text-blue-800 text-sm font-semibold rounded-lg">
-              {subject.credits} {t.subjects.credits}
-            </span>
+            <div className="flex items-center gap-3">
+              <span className="px-4 py-2 bg-blue-100 text-blue-800 text-sm font-semibold rounded-lg">
+                {subject.credits} {t.subjects.credits}
+              </span>
+              <Link href={`/subjects/${id}/edit`}>
+                <button className="sf-button-primary text-sm">
+                  ✏️ Edit Subject
+                </button>
+              </Link>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6 pt-6 border-t">

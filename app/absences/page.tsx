@@ -176,7 +176,7 @@ export default function AbsencesPage() {
                   </td>
                   <td>
                     <span className={`inline-flex px-3 py-1 rounded-full text-xs font-semibold border ${getStatusColor(request.status)}`}>
-                      {t.absences[request.status as keyof typeof t.absences]}
+                      {request.status === 'pending' ? t.absences.pending : request.status === 'approved' ? t.absences.approved : t.absences.rejected}
                     </span>
                   </td>
                   <td>

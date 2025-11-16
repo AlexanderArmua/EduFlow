@@ -85,7 +85,7 @@ export default function AbsenceDetailPage({ params }: { params: { id: string } }
               <p className="text-sm text-gray-600 mt-1">{t.absences.requestedBy}: {request.requestedBy}</p>
             </div>
             <span className={`inline-flex px-4 py-2 rounded-full text-sm font-semibold border ${getStatusColor(request.status)}`}>
-              {t.absences[request.status as keyof typeof t.absences]}
+              {request.status === 'pending' ? t.absences.pending : request.status === 'approved' ? t.absences.approved : t.absences.rejected}
             </span>
           </div>
 

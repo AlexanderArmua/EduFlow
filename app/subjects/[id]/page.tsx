@@ -412,7 +412,7 @@ export default function SubjectDetailPage({ params }: { params: Promise<{ id: st
                               cx="50%"
                               cy="50%"
                               labelLine={false}
-                              label={(entry) => `${entry.grade}: ${entry.count}`}
+                              label={(entry: any) => `${entry.grade}: ${entry.count}`}
                               outerRadius={80}
                               fill="#8884d8"
                               dataKey="count"

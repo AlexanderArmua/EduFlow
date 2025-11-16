@@ -127,7 +127,7 @@ export default function NewSubjectPage() {
                     .filter(p => p.status === 'Active')
                     .map(prof => (
                       <option key={prof.id} value={prof.id}>
-                        {prof.firstName} {prof.lastName} - {prof.department}
+                        {prof.name} - {prof.department}
                       </option>
                     ))}
                 </select>

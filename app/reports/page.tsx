@@ -4,13 +4,15 @@ import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { savedReports, reportTemplates } from '@/lib/mockData';
+import { savedReports, reportTemplates, Report } from '@/lib/mockData';
+import ReportPreviewModal from '@/components/ReportPreviewModal';
 
 export default function ReportsPage() {
   const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState<'reports' | 'templates'>('reports');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedType, setSelectedType] = useState<string>('all');
+  const [previewReport, setPreviewReport] = useState<Report | null>(null);
 
   const filteredReports = selectedType === 'all'
     ? savedReports
@@ -173,7 +175,10 @@ export default function ReportsPage() {
                   </div>
 
                   <div className="flex gap-2">
-                    <button className="flex-1 px-3 py-2 bg-salesforce-blue text-white rounded-md hover:bg-salesforce-darkblue text-sm font-medium transition-colors">
+                    <button
+                      onClick={() => setPreviewReport(report)}
+                      className="flex-1 px-3 py-2 bg-salesforce-blue text-white rounded-md hover:bg-salesforce-darkblue text-sm font-medium transition-colors"
+                    >
                       {t.reporting.generate}
                     </button>
                     <button className="px-3 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 text-sm font-medium transition-colors">
@@ -325,6 +330,14 @@ export default function ReportsPage() {
           </>
         )}
       </div>
+
+      {/* Report Preview Modal */}
+      {previewReport && (
+        <ReportPreviewModal
+          report={previewReport}
+          onClose={() => setPreviewReport(null)}
+        />
+      )}
     </div>
   );
 }

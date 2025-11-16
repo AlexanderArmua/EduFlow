@@ -15,6 +15,7 @@ export default function Navigation() {
     { name: t.nav.dashboard, path: '/dashboard' },
     { name: t.nav.professors, path: '/professors' },
     { name: t.nav.subjects, path: '/subjects' },
+    { name: t.nav.students, path: '/students' },
     { name: t.nav.communications, path: '/communications' },
     { name: t.nav.analytics, path: '/analytics' },
     { name: t.nav.calendar, path: '/calendar' },

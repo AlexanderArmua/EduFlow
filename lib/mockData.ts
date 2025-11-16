@@ -70,6 +70,72 @@ export interface MessageTemplate {
   content: string;
 }
 
+export interface Student {
+  id: string;
+  name: string;
+  email: string;
+  parentName: string;
+  parentEmail: string;
+  parentPhone: string;
+  enrollmentDate: string;
+  currentYear: string;
+  status: 'Active' | 'Inactive' | 'Graduated';
+  gpa: number;
+  attendanceRate: number;
+  subjects: string[];
+}
+
+export interface AttendanceRecord {
+  id: string;
+  studentId: string;
+  date: string;
+  status: 'Present' | 'Absent' | 'Late' | 'Excused';
+  subjectCode: string;
+  notes?: string;
+}
+
+export interface BehavioralReport {
+  id: string;
+  studentId: string;
+  date: string;
+  type: 'positive' | 'negative' | 'neutral';
+  category: 'Academic' | 'Social' | 'Conduct' | 'Participation';
+  description: string;
+  reportedBy: string;
+}
+
+export interface AchievementBadge {
+  id: string;
+  name: string;
+  description: string;
+  icon: string;
+  category: 'academic' | 'attendance' | 'behavior' | 'participation';
+  earnedDate?: string;
+}
+
+export interface ProfessorRating {
+  id: string;
+  professorId: string;
+  studentId: string;
+  studentName: string;
+  rating: number; // 1-5 stars
+  feedback: string;
+  date: string;
+  subjectCode: string;
+}
+
+export interface ProfessionalDevelopment {
+  id: string;
+  professorId: string;
+  type: 'course' | 'certification' | 'conference' | 'publication' | 'workshop';
+  title: string;
+  description: string;
+  institution: string;
+  date: string;
+  status: 'completed' | 'in-progress' | 'planned';
+  hours?: number;
+}
+
 export const professors: Professor[] = [
   {
     id: '1',
@@ -798,5 +864,539 @@ export const messageTemplates: MessageTemplate[] = [
     category: 'general',
     subject: 'Re: Solicitud de carta de recomendación',
     content: 'Estimado/a padre/madre,\n\nSería un honor escribir una carta de recomendación para su hijo/a. Ha sido un placer tenerlo/a en mi clase y puedo dar fe de sus habilidades académicas y personales.\n\nPor favor, envíenme los siguientes detalles:\n1. Fecha límite de entrega\n2. Institución/programa al que aplica\n3. Cualquier información adicional relevante\n\nCordialmente,\nProfesor/a',
+  },
+];
+
+// Students Data
+export const students: Student[] = [
+  {
+    id: '1',
+    name: 'Juan Martínez',
+    email: 'juan.martinez@estudiantes.edu.ar',
+    parentName: 'María Martínez',
+    parentEmail: 'maria.martinez@gmail.com',
+    parentPhone: '+54 11 5555-1111',
+    enrollmentDate: '2023-03-01',
+    currentYear: '2do Año',
+    status: 'Active',
+    gpa: 8.5,
+    attendanceRate: 94,
+    subjects: ['INF101', 'MAT201', 'FIS101']
+  },
+  {
+    id: '2',
+    name: 'Sofía Álvarez',
+    email: 'sofia.alvarez@estudiantes.edu.ar',
+    parentName: 'Roberto Álvarez',
+    parentEmail: 'roberto.alvarez@gmail.com',
+    parentPhone: '+54 11 5555-2222',
+    enrollmentDate: '2022-03-01',
+    currentYear: '3er Año',
+    status: 'Active',
+    gpa: 9.2,
+    attendanceRate: 98,
+    subjects: ['INF301', 'MAT301', 'FIS202']
+  },
+  {
+    id: '3',
+    name: 'Tomás Ramírez',
+    email: 'tomas.ramirez@estudiantes.edu.ar',
+    parentName: 'Laura Ramírez',
+    parentEmail: 'laura.ramirez@gmail.com',
+    parentPhone: '+54 11 5555-3333',
+    enrollmentDate: '2023-03-01',
+    currentYear: '2do Año',
+    status: 'Active',
+    gpa: 7.8,
+    attendanceRate: 91,
+    subjects: ['INF101', 'INF301', 'MAT201']
+  },
+  {
+    id: '4',
+    name: 'Valentina Pérez',
+    email: 'valentina.perez@estudiantes.edu.ar',
+    parentName: 'Carlos Pérez',
+    parentEmail: 'carlos.perez@gmail.com',
+    parentPhone: '+54 11 5555-4444',
+    enrollmentDate: '2021-03-01',
+    currentYear: '4to Año',
+    status: 'Active',
+    gpa: 9.5,
+    attendanceRate: 99,
+    subjects: ['INF301', 'MAT301']
+  },
+  {
+    id: '5',
+    name: 'Mateo Sánchez',
+    email: 'mateo.sanchez@estudiantes.edu.ar',
+    parentName: 'Patricia Sánchez',
+    parentEmail: 'patricia.sanchez@gmail.com',
+    parentPhone: '+54 11 5555-5555',
+    enrollmentDate: '2022-03-01',
+    currentYear: '3er Año',
+    status: 'Active',
+    gpa: 8.3,
+    attendanceRate: 95,
+    subjects: ['FIS101', 'FIS202', 'MAT201']
+  },
+];
+
+// Attendance Records
+export const attendanceRecords: AttendanceRecord[] = [
+  { id: '1', studentId: '1', date: '2025-11-01', status: 'Present', subjectCode: 'INF101' },
+  { id: '2', studentId: '1', date: '2025-11-02', status: 'Present', subjectCode: 'MAT201' },
+  { id: '3', studentId: '1', date: '2025-11-03', status: 'Absent', subjectCode: 'FIS101', notes: 'Turno médico' },
+  { id: '4', studentId: '1', date: '2025-11-04', status: 'Present', subjectCode: 'INF101' },
+  { id: '5', studentId: '1', date: '2025-11-05', status: 'Late', subjectCode: 'MAT201', notes: 'Llegada tarde - tráfico' },
+  { id: '6', studentId: '2', date: '2025-11-01', status: 'Present', subjectCode: 'INF301' },
+  { id: '7', studentId: '2', date: '2025-11-02', status: 'Present', subjectCode: 'MAT301' },
+  { id: '8', studentId: '2', date: '2025-11-03', status: 'Present', subjectCode: 'FIS202' },
+  { id: '9', studentId: '3', date: '2025-11-01', status: 'Present', subjectCode: 'INF101' },
+  { id: '10', studentId: '3', date: '2025-11-02', status: 'Absent', subjectCode: 'INF301', notes: 'Enfermedad' },
+];
+
+// Behavioral Reports
+export const behavioralReports: BehavioralReport[] = [
+  {
+    id: '1',
+    studentId: '1',
+    date: '2025-11-10',
+    type: 'neutral',
+    category: 'Academic',
+    description: 'Necesita apoyo adicional con conceptos de recursión',
+    reportedBy: 'Dr. Martín Fernández'
+  },
+  {
+    id: '2',
+    studentId: '2',
+    date: '2025-11-12',
+    type: 'positive',
+    category: 'Participation',
+    description: 'Excelente participación en la discusión de clase',
+    reportedBy: 'Dr. Martín Fernández'
+  },
+  {
+    id: '3',
+    studentId: '2',
+    date: '2025-11-05',
+    type: 'positive',
+    category: 'Academic',
+    description: 'Entregó un proyecto excepcional con creatividad destacada',
+    reportedBy: 'Prof. Ana María González'
+  },
+  {
+    id: '4',
+    studentId: '3',
+    date: '2025-11-08',
+    type: 'negative',
+    category: 'Conduct',
+    description: 'Interrupción durante la clase',
+    reportedBy: 'Dr. Martín Fernández'
+  },
+  {
+    id: '5',
+    studentId: '4',
+    date: '2025-11-11',
+    type: 'positive',
+    category: 'Academic',
+    description: 'Mejor calificación en el examen parcial',
+    reportedBy: 'Prof. Ana María González'
+  },
+  {
+    id: '6',
+    studentId: '5',
+    date: '2025-11-09',
+    type: 'positive',
+    category: 'Social',
+    description: 'Ayudó a compañeros con dificultades en física',
+    reportedBy: 'Dr. Santiago Rodríguez'
+  },
+];
+
+// Achievement Badges
+export const achievementBadges: AchievementBadge[] = [
+  {
+    id: '1',
+    name: 'Asistencia Perfecta',
+    description: 'Sin ausencias durante todo el cuatrimestre',
+    icon: '🎯',
+    category: 'attendance'
+  },
+  {
+    id: '2',
+    name: 'Excelencia Académica',
+    description: 'Promedio superior a 9.0',
+    icon: '⭐',
+    category: 'academic'
+  },
+  {
+    id: '3',
+    name: 'Mejor Compañero',
+    description: 'Reconocido por ayudar a otros estudiantes',
+    icon: '🤝',
+    category: 'behavior'
+  },
+  {
+    id: '4',
+    name: 'Participación Activa',
+    description: 'Participación destacada en todas las clases',
+    icon: '💬',
+    category: 'participation'
+  },
+  {
+    id: '5',
+    name: 'Proyecto Sobresaliente',
+    description: 'Mejor proyecto del cuatrimestre',
+    icon: '🏆',
+    category: 'academic'
+  },
+  {
+    id: '6',
+    name: 'Puntualidad',
+    description: 'Sin llegadas tarde durante el mes',
+    icon: '⏰',
+    category: 'attendance'
+  },
+];
+
+// Professor Ratings
+export const professorRatings: ProfessorRating[] = [
+  {
+    id: '1',
+    professorId: '1',
+    studentId: '1',
+    studentName: 'Juan Martínez',
+    rating: 5,
+    feedback: 'Excelente profesor, explica muy claramente los conceptos de programación.',
+    date: '2024-10-15',
+    subjectCode: 'INF101'
+  },
+  {
+    id: '2',
+    professorId: '1',
+    studentId: '2',
+    studentName: 'Sofía Álvarez',
+    rating: 5,
+    feedback: 'Muy buen profesor, siempre dispuesto a ayudar con las dudas.',
+    date: '2024-10-20',
+    subjectCode: 'INF101'
+  },
+  {
+    id: '3',
+    professorId: '1',
+    studentId: '3',
+    studentName: 'Tomás Ramírez',
+    rating: 4,
+    feedback: 'Me gusta su metodología de enseñanza, aunque a veces va muy rápido.',
+    date: '2024-10-18',
+    subjectCode: 'INF301'
+  },
+  {
+    id: '4',
+    professorId: '1',
+    studentId: '4',
+    studentName: 'Valentina Pérez',
+    rating: 5,
+    feedback: 'El mejor profesor que he tenido. Hace que la programación sea fácil de entender.',
+    date: '2024-10-22',
+    subjectCode: 'INF301'
+  },
+  {
+    id: '5',
+    professorId: '1',
+    studentId: '5',
+    studentName: 'Mateo Sánchez',
+    rating: 4,
+    feedback: 'Buen profesor, sus clases son interesantes y prácticas.',
+    date: '2024-10-25',
+    subjectCode: 'INF101'
+  },
+  {
+    id: '6',
+    professorId: '2',
+    studentId: '1',
+    studentName: 'Juan Martínez',
+    rating: 5,
+    feedback: 'Profesora excelente, muy paciente y clara en sus explicaciones matemáticas.',
+    date: '2024-10-16',
+    subjectCode: 'MAT201'
+  },
+  {
+    id: '7',
+    professorId: '2',
+    studentId: '2',
+    studentName: 'Sofía Álvarez',
+    rating: 4,
+    feedback: 'Buena profesora, aunque a veces los ejercicios son muy difíciles.',
+    date: '2024-10-21',
+    subjectCode: 'MAT201'
+  },
+  {
+    id: '8',
+    professorId: '2',
+    studentId: '3',
+    studentName: 'Tomás Ramírez',
+    rating: 5,
+    feedback: 'Me encanta cómo enseña matemáticas, hace que todo tenga sentido.',
+    date: '2024-10-19',
+    subjectCode: 'MAT301'
+  },
+  {
+    id: '9',
+    professorId: '3',
+    studentId: '1',
+    studentName: 'Juan Martínez',
+    rating: 4,
+    feedback: 'Buen profesor de física, los experimentos en clase son muy útiles.',
+    date: '2024-10-17',
+    subjectCode: 'FIS101'
+  },
+  {
+    id: '10',
+    professorId: '3',
+    studentId: '4',
+    studentName: 'Valentina Pérez',
+    rating: 5,
+    feedback: 'Explica la física de manera muy interesante y fácil de comprender.',
+    date: '2024-10-23',
+    subjectCode: 'FIS101'
+  },
+  {
+    id: '11',
+    professorId: '3',
+    studentId: '5',
+    studentName: 'Mateo Sánchez',
+    rating: 4,
+    feedback: 'Me gusta su enfoque práctico para enseñar física.',
+    date: '2024-10-26',
+    subjectCode: 'FIS202'
+  },
+  {
+    id: '12',
+    professorId: '4',
+    studentId: '2',
+    studentName: 'Sofía Álvarez',
+    rating: 5,
+    feedback: 'Excelente profesora de química, sus clases de laboratorio son increíbles.',
+    date: '2024-10-24',
+    subjectCode: 'QUI101'
+  },
+  {
+    id: '13',
+    professorId: '4',
+    studentId: '3',
+    studentName: 'Tomás Ramírez',
+    rating: 5,
+    feedback: 'Profesora muy dedicada, siempre está disponible para consultas.',
+    date: '2024-10-20',
+    subjectCode: 'QUI201'
+  },
+  {
+    id: '14',
+    professorId: '5',
+    studentId: '1',
+    studentName: 'Juan Martínez',
+    rating: 4,
+    feedback: 'Buena profesora de historia, las clases son muy informativas.',
+    date: '2024-10-18',
+    subjectCode: 'HIS101'
+  },
+  {
+    id: '15',
+    professorId: '5',
+    studentId: '4',
+    studentName: 'Valentina Pérez',
+    rating: 3,
+    feedback: 'Las clases a veces son un poco monótonas, pero el contenido es bueno.',
+    date: '2024-10-21',
+    subjectCode: 'HIS201'
+  },
+];
+
+// Professional Development Records
+export const professionalDevelopment: ProfessionalDevelopment[] = [
+  {
+    id: '1',
+    professorId: '1',
+    type: 'certification',
+    title: 'Advanced Python Programming Certification',
+    description: 'Certificación avanzada en Python con enfoque en machine learning y análisis de datos',
+    institution: 'Universidad de Buenos Aires',
+    date: '2024-08-15',
+    status: 'completed',
+    hours: 40
+  },
+  {
+    id: '2',
+    professorId: '1',
+    type: 'conference',
+    title: 'Latin American Computer Science Conference 2024',
+    description: 'Conferencia anual sobre avances en ciencias de la computación',
+    institution: 'CLEI',
+    date: '2024-09-20',
+    status: 'completed',
+    hours: 24
+  },
+  {
+    id: '3',
+    professorId: '1',
+    type: 'publication',
+    title: 'Modern Approaches to Teaching Programming',
+    description: 'Artículo sobre metodologías innovadoras en la enseñanza de programación',
+    institution: 'Revista Argentina de Educación',
+    date: '2024-07-01',
+    status: 'completed'
+  },
+  {
+    id: '4',
+    professorId: '1',
+    type: 'workshop',
+    title: 'AI in Education Workshop',
+    description: 'Taller sobre integración de inteligencia artificial en procesos educativos',
+    institution: 'EdTech Argentina',
+    date: '2024-11-10',
+    status: 'in-progress',
+    hours: 16
+  },
+  {
+    id: '5',
+    professorId: '1',
+    type: 'course',
+    title: 'Cloud Computing Architecture',
+    description: 'Curso sobre arquitectura y diseño de sistemas en la nube',
+    institution: 'Coursera - Google Cloud',
+    date: '2025-01-15',
+    status: 'planned',
+    hours: 30
+  },
+  {
+    id: '6',
+    professorId: '2',
+    type: 'certification',
+    title: 'Advanced Mathematics Teaching Certification',
+    description: 'Certificación en metodologías avanzadas de enseñanza matemática',
+    institution: 'Universidad Nacional de La Plata',
+    date: '2024-06-20',
+    status: 'completed',
+    hours: 60
+  },
+  {
+    id: '7',
+    professorId: '2',
+    type: 'conference',
+    title: 'International Mathematics Education Conference',
+    description: 'Conferencia internacional sobre educación matemática',
+    institution: 'ICME',
+    date: '2024-08-05',
+    status: 'completed',
+    hours: 32
+  },
+  {
+    id: '8',
+    professorId: '2',
+    type: 'publication',
+    title: 'Engaging Students in Abstract Algebra',
+    description: 'Investigación sobre estrategias para hacer el álgebra abstracta más accesible',
+    institution: 'Journal of Mathematical Education',
+    date: '2024-09-15',
+    status: 'completed'
+  },
+  {
+    id: '9',
+    professorId: '2',
+    type: 'workshop',
+    title: 'Technology Integration in Mathematics',
+    description: 'Taller sobre uso de tecnología en la enseñanza de matemáticas',
+    institution: 'Math Teachers Association',
+    date: '2024-10-28',
+    status: 'in-progress',
+    hours: 12
+  },
+  {
+    id: '10',
+    professorId: '3',
+    type: 'certification',
+    title: 'Quantum Physics Education Certificate',
+    description: 'Certificado en métodos de enseñanza de física cuántica',
+    institution: 'MIT Online',
+    date: '2024-07-30',
+    status: 'completed',
+    hours: 50
+  },
+  {
+    id: '11',
+    professorId: '3',
+    type: 'conference',
+    title: 'South American Physics Symposium',
+    description: 'Simposio sobre avances en física y su enseñanza',
+    institution: 'SAPHYS',
+    date: '2024-09-12',
+    status: 'completed',
+    hours: 20
+  },
+  {
+    id: '12',
+    professorId: '3',
+    type: 'workshop',
+    title: 'Laboratory Safety and Innovation',
+    description: 'Taller sobre seguridad e innovación en laboratorios de física',
+    institution: 'Safety First Education',
+    date: '2024-11-05',
+    status: 'in-progress',
+    hours: 8
+  },
+  {
+    id: '13',
+    professorId: '4',
+    type: 'certification',
+    title: 'Green Chemistry Certification',
+    description: 'Certificación en química verde y procesos sostenibles',
+    institution: 'Universidad de Córdoba',
+    date: '2024-08-25',
+    status: 'completed',
+    hours: 45
+  },
+  {
+    id: '14',
+    professorId: '4',
+    type: 'publication',
+    title: 'Sustainable Practices in Chemistry Labs',
+    description: 'Artículo sobre prácticas sostenibles en laboratorios educativos',
+    institution: 'Green Chemistry Journal',
+    date: '2024-10-01',
+    status: 'completed'
+  },
+  {
+    id: '15',
+    professorId: '4',
+    type: 'conference',
+    title: 'International Chemistry Education Conference',
+    description: 'Conferencia sobre innovación en educación química',
+    institution: 'ICEC',
+    date: '2024-11-18',
+    status: 'planned',
+    hours: 24
+  },
+  {
+    id: '16',
+    professorId: '5',
+    type: 'course',
+    title: 'Digital History Teaching Methods',
+    description: 'Curso sobre métodos digitales para enseñanza de historia',
+    institution: 'Universidad de Rosario',
+    date: '2024-07-10',
+    status: 'completed',
+    hours: 35
+  },
+  {
+    id: '17',
+    professorId: '5',
+    type: 'workshop',
+    title: 'Interactive History Presentations',
+    description: 'Taller sobre presentaciones interactivas en clases de historia',
+    institution: 'History Teachers Network',
+    date: '2024-09-08',
+    status: 'completed',
+    hours: 10
   },
 ];

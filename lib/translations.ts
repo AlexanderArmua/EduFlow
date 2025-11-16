@@ -6,6 +6,7 @@ export interface Translations {
     dashboard: string;
     professors: string;
     subjects: string;
+    students: string;
     communications: string;
     analytics: string;
     calendar: string;
@@ -86,6 +87,33 @@ export interface Translations {
     cancel: string;
     code: string;
     semester: string;
+    studentSatisfaction: string;
+    averageRating: string;
+    totalRatings: string;
+    ratingDistribution: string;
+    stars: string;
+    recentFeedback: string;
+    noRatings: string;
+    studentFeedback: string;
+    ratingTrend: string;
+    professionalDevelopment: string;
+    totalPDHours: string;
+    activitiesCompleted: string;
+    inProgress: string;
+    planned: string;
+    noPDActivities: string;
+    pdTypes: {
+      course: string;
+      certification: string;
+      conference: string;
+      publication: string;
+      workshop: string;
+    };
+    pdStatus: {
+      completed: string;
+      'in-progress': string;
+      planned: string;
+    };
   };
 
   // Subjects
@@ -263,6 +291,47 @@ export interface Translations {
     };
   };
 
+  // Students
+  students: {
+    title: string;
+    subtitle: string;
+    search: string;
+    searchPlaceholder: string;
+    viewProfile: string;
+    studentNotFound: string;
+    backToStudents: string;
+    studentProfile: string;
+    academicInfo: string;
+    contactInfo: string;
+    parentInfo: string;
+    gpa: string;
+    attendanceRate: string;
+    enrollmentDate: string;
+    currentYear: string;
+    enrolledSubjects: string;
+    gradeProgression: string;
+    attendanceHistory: string;
+    behavioralReports: string;
+    achievements: string;
+    parentEngagement: string;
+    status: {
+      active: string;
+      inactive: string;
+      graduated: string;
+    };
+    attendanceStatus: {
+      present: string;
+      absent: string;
+      late: string;
+      excused: string;
+    };
+    reportTypes: {
+      positive: string;
+      negative: string;
+      neutral: string;
+    };
+  };
+
   // Common
   common: {
     loading: string;
@@ -278,6 +347,7 @@ export const translations: Record<Language, Translations> = {
       dashboard: 'Dashboard',
       professors: 'Professors',
       subjects: 'Subjects',
+      students: 'Students',
       communications: 'Parent Communications',
       analytics: 'Analytics',
       calendar: 'Calendar',
@@ -352,6 +422,33 @@ export const translations: Record<Language, Translations> = {
       cancel: 'Cancel',
       code: 'Code',
       semester: 'Semester',
+      studentSatisfaction: 'Student Satisfaction',
+      averageRating: 'Average Rating',
+      totalRatings: 'Total Ratings',
+      ratingDistribution: 'Rating Distribution',
+      stars: 'Stars',
+      recentFeedback: 'Recent Student Feedback',
+      noRatings: 'No ratings yet',
+      studentFeedback: 'Student Feedback',
+      ratingTrend: 'Rating Trend Over Time',
+      professionalDevelopment: 'Professional Development',
+      totalPDHours: 'Total PD Hours',
+      activitiesCompleted: 'Activities Completed',
+      inProgress: 'In Progress',
+      planned: 'Planned',
+      noPDActivities: 'No professional development activities recorded yet',
+      pdTypes: {
+        course: 'Course',
+        certification: 'Certification',
+        conference: 'Conference',
+        publication: 'Publication',
+        workshop: 'Workshop',
+      },
+      pdStatus: {
+        completed: 'Completed',
+        'in-progress': 'In Progress',
+        planned: 'Planned',
+      },
     },
     subjects: {
       title: 'Subjects',
@@ -516,6 +613,45 @@ export const translations: Record<Language, Translations> = {
         achievement: 'Achievement',
       },
     },
+    students: {
+      title: 'Students',
+      subtitle: 'Manage student profiles and academic progress',
+      search: 'Search',
+      searchPlaceholder: 'Search by name or email...',
+      viewProfile: 'View Profile',
+      studentNotFound: 'Student not found',
+      backToStudents: 'Back to Students',
+      studentProfile: 'Student Profile',
+      academicInfo: 'Academic Information',
+      contactInfo: 'Contact Information',
+      parentInfo: 'Parent Information',
+      gpa: 'GPA',
+      attendanceRate: 'Attendance Rate',
+      enrollmentDate: 'Enrollment Date',
+      currentYear: 'Current Year',
+      enrolledSubjects: 'Enrolled Subjects',
+      gradeProgression: 'Grade Progression',
+      attendanceHistory: 'Attendance History',
+      behavioralReports: 'Behavioral Reports',
+      achievements: 'Achievements',
+      parentEngagement: 'Parent Engagement Score',
+      status: {
+        active: 'Active',
+        inactive: 'Inactive',
+        graduated: 'Graduated',
+      },
+      attendanceStatus: {
+        present: 'Present',
+        absent: 'Absent',
+        late: 'Late',
+        excused: 'Excused',
+      },
+      reportTypes: {
+        positive: 'Positive',
+        negative: 'Needs Attention',
+        neutral: 'Neutral',
+      },
+    },
     common: {
       loading: 'Loading...',
       error: 'Error',
@@ -528,6 +664,7 @@ export const translations: Record<Language, Translations> = {
       dashboard: 'Panel Principal',
       professors: 'Profesores',
       subjects: 'Materias',
+      students: 'Estudiantes',
       communications: 'Comunicación con Padres',
       analytics: 'Analíticas',
       calendar: 'Calendario',
@@ -602,6 +739,33 @@ export const translations: Record<Language, Translations> = {
       cancel: 'Cancelar',
       code: 'Código',
       semester: 'Semestre',
+      studentSatisfaction: 'Satisfacción Estudiantil',
+      averageRating: 'Calificación Promedio',
+      totalRatings: 'Total de Calificaciones',
+      ratingDistribution: 'Distribución de Calificaciones',
+      stars: 'Estrellas',
+      recentFeedback: 'Comentarios Recientes de Estudiantes',
+      noRatings: 'Aún no hay calificaciones',
+      studentFeedback: 'Comentarios de Estudiantes',
+      ratingTrend: 'Tendencia de Calificación',
+      professionalDevelopment: 'Desarrollo Profesional',
+      totalPDHours: 'Total de Horas de DP',
+      activitiesCompleted: 'Actividades Completadas',
+      inProgress: 'En Progreso',
+      planned: 'Planificadas',
+      noPDActivities: 'No hay actividades de desarrollo profesional registradas aún',
+      pdTypes: {
+        course: 'Curso',
+        certification: 'Certificación',
+        conference: 'Conferencia',
+        publication: 'Publicación',
+        workshop: 'Taller',
+      },
+      pdStatus: {
+        completed: 'Completado',
+        'in-progress': 'En Progreso',
+        planned: 'Planificado',
+      },
     },
     subjects: {
       title: 'Materias',
@@ -766,6 +930,45 @@ export const translations: Record<Language, Translations> = {
         achievement: 'Logros',
       },
     },
+    students: {
+      title: 'Estudiantes',
+      subtitle: 'Gestión de perfiles estudiantiles y progreso académico',
+      search: 'Buscar',
+      searchPlaceholder: 'Buscar por nombre o correo...',
+      viewProfile: 'Ver Perfil',
+      studentNotFound: 'Estudiante no encontrado',
+      backToStudents: 'Volver a Estudiantes',
+      studentProfile: 'Perfil del Estudiante',
+      academicInfo: 'Información Académica',
+      contactInfo: 'Información de Contacto',
+      parentInfo: 'Información de los Padres',
+      gpa: 'Promedio',
+      attendanceRate: 'Tasa de Asistencia',
+      enrollmentDate: 'Fecha de Inscripción',
+      currentYear: 'Año Actual',
+      enrolledSubjects: 'Materias Inscritas',
+      gradeProgression: 'Progresión de Calificaciones',
+      attendanceHistory: 'Historial de Asistencia',
+      behavioralReports: 'Reportes de Conducta',
+      achievements: 'Logros',
+      parentEngagement: 'Compromiso de los Padres',
+      status: {
+        active: 'Activo',
+        inactive: 'Inactivo',
+        graduated: 'Graduado',
+      },
+      attendanceStatus: {
+        present: 'Presente',
+        absent: 'Ausente',
+        late: 'Tarde',
+        excused: 'Justificado',
+      },
+      reportTypes: {
+        positive: 'Positivo',
+        negative: 'Requiere Atención',
+        neutral: 'Neutral',
+      },
+    },
     common: {
       loading: 'Cargando...',
       error: 'Error',
@@ -778,6 +981,7 @@ export const translations: Record<Language, Translations> = {
       dashboard: 'ダッシュボード',
       professors: '教授',
       subjects: '科目',
+      students: '学生',
       communications: '保護者との連絡',
       analytics: '分析',
       calendar: 'カレンダー',
@@ -852,6 +1056,33 @@ export const translations: Record<Language, Translations> = {
       cancel: 'キャンセル',
       code: 'コード',
       semester: '学期',
+      studentSatisfaction: '学生満足度',
+      averageRating: '平均評価',
+      totalRatings: '評価総数',
+      ratingDistribution: '評価分布',
+      stars: '星',
+      recentFeedback: '最近の学生フィードバック',
+      noRatings: '評価はまだありません',
+      studentFeedback: '学生フィードバック',
+      ratingTrend: '評価トレンド',
+      professionalDevelopment: '専門能力開発',
+      totalPDHours: '総研修時間',
+      activitiesCompleted: '完了した活動',
+      inProgress: '進行中',
+      planned: '予定',
+      noPDActivities: '専門能力開発活動の記録はまだありません',
+      pdTypes: {
+        course: 'コース',
+        certification: '認定資格',
+        conference: '会議',
+        publication: '出版',
+        workshop: 'ワークショップ',
+      },
+      pdStatus: {
+        completed: '完了',
+        'in-progress': '進行中',
+        planned: '予定',
+      },
     },
     subjects: {
       title: '科目',
@@ -1014,6 +1245,45 @@ export const translations: Record<Language, Translations> = {
         behavior: '行動',
         absence: '欠席',
         achievement: '達成',
+      },
+    },
+    students: {
+      title: '学生',
+      subtitle: '学生プロフィールと学業進捗の管理',
+      search: '検索',
+      searchPlaceholder: '名前またはメールで検索...',
+      viewProfile: 'プロフィールを表示',
+      studentNotFound: '学生が見つかりません',
+      backToStudents: '学生一覧に戻る',
+      studentProfile: '学生プロフィール',
+      academicInfo: '学業情報',
+      contactInfo: '連絡先情報',
+      parentInfo: '保護者情報',
+      gpa: 'GPA',
+      attendanceRate: '出席率',
+      enrollmentDate: '入学日',
+      currentYear: '現在の学年',
+      enrolledSubjects: '履修科目',
+      gradeProgression: '成績推移',
+      attendanceHistory: '出席履歴',
+      behavioralReports: '行動報告',
+      achievements: '達成',
+      parentEngagement: '保護者エンゲージメント',
+      status: {
+        active: '在学中',
+        inactive: '休学中',
+        graduated: '卒業',
+      },
+      attendanceStatus: {
+        present: '出席',
+        absent: '欠席',
+        late: '遅刻',
+        excused: '届出済',
+      },
+      reportTypes: {
+        positive: '良好',
+        negative: '要注意',
+        neutral: '普通',
       },
     },
     common: {

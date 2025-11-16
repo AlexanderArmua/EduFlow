@@ -5,6 +5,7 @@ import Navigation from '@/components/Navigation';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { calendarEvents, CalendarEvent } from '@/lib/mockData';
+import EventReminders from '@/components/EventReminders';
 
 type ViewMode = 'day' | 'week' | 'month';
 
@@ -319,13 +320,23 @@ export default function CalendarPage() {
               </h1>
               <p className="mt-2 text-gray-600">{t.calendar.subtitle}</p>
             </div>
-            <Link href="/timetable">
-              <button className="sf-button-primary text-sm">
-                📅 View Weekly Timetable
-              </button>
-            </Link>
+            <div className="flex gap-3">
+              <Link href="/calendar/availability">
+                <button className="sf-button-secondary text-sm">
+                  {t.calendar.availability.viewAvailability}
+                </button>
+              </Link>
+              <Link href="/timetable">
+                <button className="sf-button-primary text-sm">
+                  📅 View Weekly Timetable
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
+
+        {/* Event Reminders */}
+        <EventReminders />
 
         {/* Controls */}
         <div className="mb-6 grid grid-cols-1 lg:grid-cols-2 gap-4">

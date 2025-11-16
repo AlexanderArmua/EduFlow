@@ -276,12 +276,44 @@ export interface Translations {
     today: string;
     previous: string;
     next: string;
+    backToCalendar: string;
     typeLabels: {
       exam: string;
       holiday: string;
       meeting: string;
       academic: string;
       break: string;
+    };
+    days: {
+      monday: string;
+      tuesday: string;
+      wednesday: string;
+      thursday: string;
+      friday: string;
+      saturday: string;
+      sunday: string;
+    };
+    availability: {
+      title: string;
+      subtitle: string;
+      filterByProfessor: string;
+      allProfessors: string;
+      filterByDay: string;
+      allDays: string;
+      officeHours: string;
+      available: string;
+      meeting: string;
+      noAvailability: string;
+      notAvailable: string;
+      viewAvailability: string;
+    };
+    reminders: {
+      title: string;
+      upcomingEvents: string;
+      today: string;
+      tomorrow: string;
+      daysLeft: string;
+      dismiss: string;
     };
   };
 
@@ -708,12 +740,44 @@ export const translations: Record<Language, Translations> = {
       today: 'Today',
       previous: 'Previous',
       next: 'Next',
+      backToCalendar: '← Back to Calendar',
       typeLabels: {
         exam: 'Exam',
         holiday: 'Holiday',
         meeting: 'Meeting',
         academic: 'Academic',
         break: 'Break',
+      },
+      days: {
+        monday: 'Monday',
+        tuesday: 'Tuesday',
+        wednesday: 'Wednesday',
+        thursday: 'Thursday',
+        friday: 'Friday',
+        saturday: 'Saturday',
+        sunday: 'Sunday',
+      },
+      availability: {
+        title: 'Teacher Availability',
+        subtitle: 'View professor office hours and availability',
+        filterByProfessor: 'Filter by Professor',
+        allProfessors: 'All Professors',
+        filterByDay: 'Filter by Day',
+        allDays: 'All Days',
+        officeHours: 'Office Hours',
+        available: 'Available',
+        meeting: 'Meeting',
+        noAvailability: 'No availability slots found',
+        notAvailable: 'Not available',
+        viewAvailability: '👤 View Teacher Availability',
+      },
+      reminders: {
+        title: 'Event Reminders',
+        upcomingEvents: 'upcoming events',
+        today: 'Today',
+        tomorrow: 'Tomorrow',
+        daysLeft: 'days',
+        dismiss: 'Dismiss',
       },
     },
     notifications: {
@@ -1126,12 +1190,44 @@ export const translations: Record<Language, Translations> = {
       today: 'Hoy',
       previous: 'Anterior',
       next: 'Siguiente',
+      backToCalendar: '← Volver al Calendario',
       typeLabels: {
         exam: 'Examen',
         holiday: 'Feriado',
         meeting: 'Reunión',
         academic: 'Académico',
         break: 'Receso',
+      },
+      days: {
+        monday: 'Lunes',
+        tuesday: 'Martes',
+        wednesday: 'Miércoles',
+        thursday: 'Jueves',
+        friday: 'Viernes',
+        saturday: 'Sábado',
+        sunday: 'Domingo',
+      },
+      availability: {
+        title: 'Disponibilidad de Profesores',
+        subtitle: 'Consulte horarios de oficina y disponibilidad de profesores',
+        filterByProfessor: 'Filtrar por Profesor',
+        allProfessors: 'Todos los Profesores',
+        filterByDay: 'Filtrar por Día',
+        allDays: 'Todos los Días',
+        officeHours: 'Horario de Consulta',
+        available: 'Disponible',
+        meeting: 'Reunión',
+        noAvailability: 'No se encontraron horarios disponibles',
+        notAvailable: 'No disponible',
+        viewAvailability: '👤 Ver Disponibilidad de Profesores',
+      },
+      reminders: {
+        title: 'Recordatorios de Eventos',
+        upcomingEvents: 'eventos próximos',
+        today: 'Hoy',
+        tomorrow: 'Mañana',
+        daysLeft: 'días',
+        dismiss: 'Descartar',
       },
     },
     notifications: {
@@ -1544,12 +1640,44 @@ export const translations: Record<Language, Translations> = {
       today: '今日',
       previous: '前',
       next: '次',
+      backToCalendar: '← カレンダーに戻る',
       typeLabels: {
         exam: '試験',
         holiday: '祝日',
         meeting: '面談',
         academic: '学事',
         break: '休暇',
+      },
+      days: {
+        monday: '月曜日',
+        tuesday: '火曜日',
+        wednesday: '水曜日',
+        thursday: '木曜日',
+        friday: '金曜日',
+        saturday: '土曜日',
+        sunday: '日曜日',
+      },
+      availability: {
+        title: '教員の空き時間',
+        subtitle: '教員のオフィスアワーと空き時間を確認',
+        filterByProfessor: '教員で絞り込み',
+        allProfessors: 'すべての教員',
+        filterByDay: '曜日で絞り込み',
+        allDays: 'すべての曜日',
+        officeHours: 'オフィスアワー',
+        available: '利用可能',
+        meeting: '会議',
+        noAvailability: '利用可能な時間が見つかりません',
+        notAvailable: '利用不可',
+        viewAvailability: '👤 教員の空き時間を表示',
+      },
+      reminders: {
+        title: 'イベントリマインダー',
+        upcomingEvents: '今後のイベント',
+        today: '今日',
+        tomorrow: '明日',
+        daysLeft: '日',
+        dismiss: '非表示',
       },
     },
     notifications: {

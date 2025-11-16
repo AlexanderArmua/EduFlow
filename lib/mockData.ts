@@ -525,6 +525,18 @@ export interface CalendarEvent {
   subjectId?: string;
   professorName?: string;
   professorId?: string;
+  reminderEnabled?: boolean;
+  reminderDays?: number; // Days before event to send reminder
+}
+
+export interface EventReminder {
+  id: string;
+  eventId: string;
+  eventTitle: string;
+  eventDate: string;
+  reminderDate: string;
+  dismissed: boolean;
+  type: 'exam' | 'holiday' | 'meeting' | 'academic' | 'break';
 }
 
 export const calendarEvents: CalendarEvent[] = [
@@ -643,6 +655,8 @@ export const calendarEvents: CalendarEvent[] = [
     location: 'Salón de Actos',
     professorName: 'Dr. Martín Fernández',
     professorId: '1',
+    reminderEnabled: true,
+    reminderDays: 2,
   },
   {
     id: '10',
@@ -737,6 +751,37 @@ export const calendarEvents: CalendarEvent[] = [
     type: 'academic',
     description: 'Ceremonia de entrega de diplomas y certificados',
     location: 'Aula Magna',
+  },
+];
+
+// Event Reminders
+export const eventReminders: EventReminder[] = [
+  {
+    id: 'r1',
+    eventId: '1',
+    eventTitle: 'Examen Final - Programación Avanzada',
+    eventDate: '2025-11-25',
+    reminderDate: '2025-11-23',
+    dismissed: false,
+    type: 'exam',
+  },
+  {
+    id: 'r2',
+    eventId: '9',
+    eventTitle: 'Reunión de Padres - Informática',
+    eventDate: '2025-11-22',
+    reminderDate: '2025-11-20',
+    dismissed: false,
+    type: 'meeting',
+  },
+  {
+    id: 'r3',
+    eventId: '2',
+    eventTitle: 'Examen Parcial - Álgebra Lineal',
+    eventDate: '2025-11-29',
+    reminderDate: '2025-11-27',
+    dismissed: true,
+    type: 'exam',
   },
 ];
 

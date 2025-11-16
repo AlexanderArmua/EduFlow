@@ -13,6 +13,8 @@ export interface Translations {
     documents: string;
     absences: string;
     financial: string;
+    achievements: string;
+    leaderboard: string;
     logout: string;
   };
 
@@ -664,6 +666,48 @@ export interface Translations {
     };
   };
 
+  // Gamification
+  gamification: {
+    achievements: {
+      title: string;
+      subtitle: string;
+      allAchievements: string;
+      myAchievements: string;
+      level: string;
+      points: string;
+      badges: string;
+      progress: string;
+      progressToNext: string;
+      earnedOn: string;
+      notEarned: string;
+      categories: {
+        all: string;
+        academic: string;
+        participation: string;
+        improvement: string;
+        special: string;
+      };
+      tiers: {
+        bronze: string;
+        silver: string;
+        gold: string;
+        platinum: string;
+      };
+    };
+    leaderboard: {
+      title: string;
+      subtitle: string;
+      rank: string;
+      student: string;
+      year: string;
+      points: string;
+      level: string;
+      badges: string;
+      change: string;
+      viewProfile: string;
+    };
+  };
+
   // Common
   common: {
     loading: string;
@@ -686,6 +730,8 @@ export const translations: Record<Language, Translations> = {
       documents: 'Documents',
       absences: 'Absences',
       financial: 'Financial',
+      achievements: 'Achievements',
+      leaderboard: 'Leaderboard',
       logout: 'Logout',
     },
     login: {
@@ -1306,6 +1352,46 @@ export const translations: Record<Language, Translations> = {
         budgetVsSpent: 'Budget vs Spent by Department',
       },
     },
+    gamification: {
+      achievements: {
+        title: 'Achievements',
+        subtitle: 'Track student accomplishments and milestones',
+        allAchievements: 'All Achievements',
+        myAchievements: 'My Achievements',
+        level: 'Level',
+        points: 'Points',
+        badges: 'Badges',
+        progress: 'Progress',
+        progressToNext: 'Progress to Next Level',
+        earnedOn: 'Earned on',
+        notEarned: 'Not earned yet',
+        categories: {
+          all: 'All Categories',
+          academic: 'Academic',
+          participation: 'Participation',
+          improvement: 'Improvement',
+          special: 'Special',
+        },
+        tiers: {
+          bronze: 'Bronze',
+          silver: 'Silver',
+          gold: 'Gold',
+          platinum: 'Platinum',
+        },
+      },
+      leaderboard: {
+        title: 'Leaderboard',
+        subtitle: 'Top performing students',
+        rank: 'Rank',
+        student: 'Student',
+        year: 'Year',
+        points: 'Points',
+        level: 'Level',
+        badges: 'Badges',
+        change: 'Change',
+        viewProfile: 'View Profile',
+      },
+    },
     common: {
       loading: 'Loading...',
       error: 'Error',
@@ -1325,6 +1411,8 @@ export const translations: Record<Language, Translations> = {
       documents: 'Documentos',
       absences: 'Ausencias',
       financial: 'Financiero',
+      achievements: 'Logros',
+      leaderboard: 'Tabla de Clasificación',
       logout: 'Cerrar Sesión',
     },
     login: {
@@ -1936,6 +2024,46 @@ export const translations: Record<Language, Translations> = {
         budgetVsSpent: 'Presupuesto vs Gastado por Departamento',
       },
     },
+    gamification: {
+      achievements: {
+        title: 'Logros',
+        subtitle: 'Seguimiento de logros y hitos estudiantiles',
+        allAchievements: 'Todos los Logros',
+        myAchievements: 'Mis Logros',
+        level: 'Nivel',
+        points: 'Puntos',
+        badges: 'Insignias',
+        progress: 'Progreso',
+        progressToNext: 'Progreso al Siguiente Nivel',
+        earnedOn: 'Obtenido el',
+        notEarned: 'Aún no obtenido',
+        categories: {
+          all: 'Todas las Categorías',
+          academic: 'Académico',
+          participation: 'Participación',
+          improvement: 'Mejora',
+          special: 'Especial',
+        },
+        tiers: {
+          bronze: 'Bronce',
+          silver: 'Plata',
+          gold: 'Oro',
+          platinum: 'Platino',
+        },
+      },
+      leaderboard: {
+        title: 'Tabla de Clasificación',
+        subtitle: 'Mejores estudiantes',
+        rank: 'Rango',
+        student: 'Estudiante',
+        year: 'Año',
+        points: 'Puntos',
+        level: 'Nivel',
+        badges: 'Insignias',
+        change: 'Cambio',
+        viewProfile: 'Ver Perfil',
+      },
+    },
     common: {
       loading: 'Cargando...',
       error: 'Error',
@@ -1955,6 +2083,8 @@ export const translations: Record<Language, Translations> = {
       documents: 'ドキュメント',
       absences: '欠席',
       financial: '財務',
+      achievements: '実績',
+      leaderboard: 'リーダーボード',
       logout: 'ログアウト',
     },
     login: {
@@ -2564,6 +2694,46 @@ export const translations: Record<Language, Translations> = {
         utilization: '利用率',
         budgetCategories: '予算カテゴリ',
         budgetVsSpent: '部門別予算と支出',
+      },
+    },
+    gamification: {
+      achievements: {
+        title: '実績',
+        subtitle: '学生の成果とマイルストーンの追跡',
+        allAchievements: 'すべての実績',
+        myAchievements: '私の実績',
+        level: 'レベル',
+        points: 'ポイント',
+        badges: 'バッジ',
+        progress: '進捗',
+        progressToNext: '次のレベルまでの進捗',
+        earnedOn: '獲得日',
+        notEarned: '未獲得',
+        categories: {
+          all: 'すべてのカテゴリ',
+          academic: '学業',
+          participation: '参加',
+          improvement: '向上',
+          special: '特別',
+        },
+        tiers: {
+          bronze: 'ブロンズ',
+          silver: 'シルバー',
+          gold: 'ゴールド',
+          platinum: 'プラチナ',
+        },
+      },
+      leaderboard: {
+        title: 'リーダーボード',
+        subtitle: 'トップパフォーマンス学生',
+        rank: 'ランク',
+        student: '学生',
+        year: '学年',
+        points: 'ポイント',
+        level: 'レベル',
+        badges: 'バッジ',
+        change: '変動',
+        viewProfile: 'プロフィールを表示',
       },
     },
     common: {

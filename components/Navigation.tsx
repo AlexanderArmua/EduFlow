@@ -21,6 +21,8 @@ export default function Navigation() {
     { name: t.nav.documents, path: '/documents' },
     { name: t.nav.absences, path: '/absences' },
     { name: t.nav.financial, path: '/financial' },
+    { name: t.nav.achievements, path: '/achievements' },
+    { name: t.nav.leaderboard, path: '/leaderboard' },
   ];
 
   const handleLogout = () => {
@@ -30,33 +32,11 @@ export default function Navigation() {
   return (
     <nav className="bg-salesforce-darkblue text-white shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex items-center space-x-8">
-            <div className="flex-shrink-0 flex items-center">
-              <Link href="/dashboard">
-                <h1 className="text-2xl font-bold cursor-pointer hover:text-gray-200 transition-colors">EduFlow CRM</h1>
-              </Link>
-            </div>
-            <div className="hidden md:flex space-x-4">
-              {navItems.map((item) => {
-                const isActive = pathname.startsWith(item.path) ||
-                  (pathname === '/timetable' && item.path === '/calendar');
-
-                return (
-                  <Link
-                    key={item.path}
-                    href={item.path}
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                      isActive
-                        ? 'bg-salesforce-blue text-white'
-                        : 'text-gray-300 hover:bg-salesforce-blue hover:text-white'
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                );
-              })}
-            </div>
+        <div className="flex justify-between items-center py-3">
+          <div className="flex-shrink-0">
+            <Link href="/dashboard">
+              <h1 className="text-2xl font-bold cursor-pointer hover:text-gray-200 transition-colors">EduFlow CRM</h1>
+            </Link>
           </div>
           <div className="flex items-center gap-4">
             <LanguageSwitcher />
@@ -68,6 +48,26 @@ export default function Navigation() {
               {t.nav.logout}
             </button>
           </div>
+        </div>
+        <div className="hidden md:grid grid-cols-6 gap-2 pb-3">
+          {navItems.map((item) => {
+            const isActive = pathname.startsWith(item.path) ||
+              (pathname === '/timetable' && item.path === '/calendar');
+
+            return (
+              <Link
+                key={item.path}
+                href={item.path}
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors text-center ${
+                  isActive
+                    ? 'bg-salesforce-blue text-white'
+                    : 'text-gray-300 hover:bg-salesforce-blue hover:text-white'
+                }`}
+              >
+                {item.name}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </nav>

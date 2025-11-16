@@ -10,6 +10,7 @@ import {
   behavioralReports,
   achievementBadges,
   parentMessages,
+  studentAchievements,
 } from '@/lib/mockData';
 import { use } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -75,6 +76,14 @@ export default function StudentProfilePage({ params }: { params: Promise<{ id: s
     student.attendanceRate >= 98 ? achievementBadges.find(b => b.id === '1') : null,
     studentBehavior.filter(b => b.type === 'positive').length >= 2 ? achievementBadges.find(b => b.id === '3') : null,
   ].filter(Boolean);
+
+  // Gamification data
+  const studentGamification = studentAchievements.find(sa => sa.studentId === id) || {
+    totalPoints: 0,
+    level: 1,
+    progressToNextLevel: 0,
+    achievements: [],
+  };
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -164,6 +173,63 @@ export default function StudentProfilePage({ params }: { params: Promise<{ id: s
                     <p className="text-xs text-gray-500 mt-1">{studentMessages.length} communications</p>
                   </div>
                 </div>
+              </div>
+
+              {/* Gamification Stats */}
+              <div className="space-y-4 border-t pt-6 mt-6">
+                <div className="flex items-center justify-between">
+                  <h3 className="font-semibold text-gray-900">{t.gamification.achievements.title}</h3>
+                  <Link href="/achievements" className="text-salesforce-blue hover:text-salesforce-darkblue text-xs">
+                    {t.gamification.achievements.allAchievements} →
+                  </Link>
+                </div>
+
+                <div className="grid grid-cols-3 gap-3 text-center">
+                  <div className="bg-purple-50 p-3 rounded-lg">
+                    <p className="text-2xl font-bold text-purple-600">{studentGamification.level}</p>
+                    <p className="text-xs text-gray-600">{t.gamification.achievements.level}</p>
+                  </div>
+                  <div className="bg-blue-50 p-3 rounded-lg">
+                    <p className="text-2xl font-bold text-salesforce-blue">{studentGamification.totalPoints}</p>
+                    <p className="text-xs text-gray-600">{t.gamification.achievements.points}</p>
+                  </div>
+                  <div className="bg-green-50 p-3 rounded-lg">
+                    <p className="text-2xl font-bold text-green-600">{studentGamification.achievements.length}</p>
+                    <p className="text-xs text-gray-600">{t.gamification.achievements.badges}</p>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex items-center justify-between mb-1">
+                    <p className="text-xs font-medium text-gray-500">{t.gamification.achievements.progressToNext}</p>
+                    <span className="text-xs font-semibold text-gray-900">{studentGamification.progressToNextLevel}%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div
+                      className="bg-gradient-to-r from-salesforce-blue to-purple-600 h-2 rounded-full transition-all"
+                      style={{ width: `${studentGamification.progressToNextLevel}%` }}
+                    ></div>
+                  </div>
+                </div>
+
+                {/* Recent Achievements */}
+                {studentGamification.achievements.length > 0 && (
+                  <div className="mt-4">
+                    <p className="text-xs font-medium text-gray-500 mb-2">Recent Achievements</p>
+                    <div className="flex flex-wrap gap-2">
+                      {studentGamification.achievements.slice(0, 3).map((achievement) => (
+                        <div
+                          key={achievement.id}
+                          className="flex items-center gap-1 bg-yellow-50 border border-yellow-200 rounded-full px-2 py-1"
+                          title={achievement.description}
+                        >
+                          <span className="text-lg">{achievement.icon}</span>
+                          <span className="text-xs font-medium text-gray-700">{achievement.name}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

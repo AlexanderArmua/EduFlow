@@ -198,7 +198,7 @@ npm start
 - [ ] Report sharing functionality
 
 ### 🪲 Bugs
-- [ ] When I click on `Total Students` it redirects me to `/subjects` instead of a page that shows students information
+- [x] When I click on `Total Students` it redirects me to `/subjects` instead of a page that shows students information
 
 ## Notes
 

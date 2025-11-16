@@ -189,6 +189,31 @@ export interface Translations {
     readReceipt: string;
     readBy: string;
     readOn: string;
+    analytics: string;
+    settings: string;
+    composeNewMessage: string;
+    notificationSettings: string;
+    composeModal: {
+      title: string;
+      recipients: string;
+      selected: string;
+      selectAll: string;
+      deselectAll: string;
+      parentOf: string;
+      priority: string;
+      subject: string;
+      subjectRequired: string;
+      message: string;
+      messageRequired: string;
+      messagePlaceholder: string;
+      sendMessage: string;
+      cancel: string;
+      selectRecipientAlert: string;
+      enterSubjectAlert: string;
+      enterMessageAlert: string;
+      successMessage: string;
+      successNote: string;
+    };
   };
 
   // Analytics
@@ -288,6 +313,86 @@ export interface Translations {
       behavior: string;
       absence: string;
       achievement: string;
+    };
+  };
+
+  // Communication Analytics
+  communicationAnalytics: {
+    title: string;
+    subtitle: string;
+    backToCommunications: string;
+    totalMessages: string;
+    responseRate: string;
+    avgResponseTime: string;
+    pendingReplies: string;
+    messageVolumeTrend: string;
+    priorityBreakdown: string;
+    mostActiveParents: string;
+    recentActivity: string;
+    exportData: string;
+    exportCSV: string;
+    exportPDF: string;
+    parentName: string;
+    student: string;
+    messages: string;
+    lastContact: string;
+    week: string;
+    replies: string;
+    highPriority: string;
+    mediumPriority: string;
+    lowPriority: string;
+    ofTotal: string;
+    receivedMessages: string;
+    sentReplies: string;
+    requiresAttention: string;
+    fromLastMonth: string;
+    timeRange: {
+      lastWeek: string;
+      lastMonth: string;
+      lastQuarter: string;
+      lastYear: string;
+    };
+  };
+
+  // Notification Settings
+  notificationSettings: {
+    title: string;
+    subtitle: string;
+    emailNotifications: string;
+    emailSubtitle: string;
+    smsNotifications: string;
+    smsSubtitle: string;
+    inAppNotifications: string;
+    inAppSubtitle: string;
+    notificationFrequency: string;
+    frequencySubtitle: string;
+    quietHours: string;
+    quietHoursSubtitle: string;
+    emailDigest: string;
+    emailDigestSubtitle: string;
+    savePreferences: string;
+    resetToDefaults: string;
+    enable: string;
+    startTime: string;
+    endTime: string;
+    deliveryTime: string;
+    deliveryTimeDesc: string;
+    frequencyOptions: {
+      immediate: string;
+      immediateDesc: string;
+      daily: string;
+      dailyDesc: string;
+      weekly: string;
+      weeklyDesc: string;
+    };
+    categories: {
+      newMessages: string;
+      gradeUpdates: string;
+      attendanceAlerts: string;
+      behaviorReports: string;
+      examReminders: string;
+      generalAnnouncements: string;
+      urgentMessages: string;
     };
   };
 
@@ -520,6 +625,31 @@ export const translations: Record<Language, Translations> = {
       readReceipt: 'Read Receipt',
       readBy: 'Read by',
       readOn: 'Read on',
+      analytics: 'Analytics',
+      settings: 'Settings',
+      composeNewMessage: 'Compose New Message',
+      notificationSettings: 'Notification Settings',
+      composeModal: {
+        title: 'Compose New Message',
+        recipients: 'Recipients',
+        selected: 'selected',
+        selectAll: 'Select All',
+        deselectAll: 'Deselect All',
+        parentOf: 'Parent of',
+        priority: 'Priority',
+        subject: 'Subject',
+        subjectRequired: 'Subject *',
+        message: 'Message',
+        messageRequired: 'Message *',
+        messagePlaceholder: 'Type your message here...',
+        sendMessage: 'Send Message',
+        cancel: 'Cancel',
+        selectRecipientAlert: 'Please select at least one recipient',
+        enterSubjectAlert: 'Please enter a subject',
+        enterMessageAlert: 'Please enter a message',
+        successMessage: 'Message sent successfully to',
+        successNote: 'Note: This is a demo. In production, this would send actual emails/notifications.',
+      },
     },
     analytics: {
       title: 'Analytics Dashboard',
@@ -611,6 +741,82 @@ export const translations: Record<Language, Translations> = {
         behavior: 'Behavior',
         absence: 'Absence',
         achievement: 'Achievement',
+      },
+    },
+    communicationAnalytics: {
+      title: 'Communication Analytics',
+      subtitle: 'Track and analyze your communication patterns',
+      backToCommunications: 'Back to Communications',
+      totalMessages: 'Total Messages',
+      responseRate: 'Response Rate',
+      avgResponseTime: 'Avg Response Time',
+      pendingReplies: 'Pending Replies',
+      messageVolumeTrend: 'Message Volume Trend',
+      priorityBreakdown: 'Priority Breakdown',
+      mostActiveParents: 'Most Active Parents',
+      recentActivity: 'Recent Activity',
+      exportData: 'Export Communication Data',
+      exportCSV: 'Export as CSV',
+      exportPDF: 'Export as PDF',
+      parentName: 'Parent Name',
+      student: 'Student',
+      messages: 'Messages',
+      lastContact: 'Last Contact',
+      week: 'Week',
+      replies: 'Replies',
+      highPriority: 'High Priority',
+      mediumPriority: 'Medium Priority',
+      lowPriority: 'Low Priority',
+      ofTotal: 'of total',
+      receivedMessages: 'Received Messages',
+      sentReplies: 'Sent Replies',
+      requiresAttention: 'Requires attention',
+      fromLastMonth: 'from last month',
+      timeRange: {
+        lastWeek: 'Last Week',
+        lastMonth: 'Last Month',
+        lastQuarter: 'Last Quarter',
+        lastYear: 'Last Year',
+      },
+    },
+    notificationSettings: {
+      title: 'Notification Preferences',
+      subtitle: 'Customize how and when you receive notifications',
+      emailNotifications: 'Email Notifications',
+      emailSubtitle: 'Receive updates via email',
+      smsNotifications: 'SMS Notifications',
+      smsSubtitle: 'Receive urgent alerts via text message',
+      inAppNotifications: 'In-App Notifications',
+      inAppSubtitle: 'Receive notifications within the application',
+      notificationFrequency: 'Notification Frequency',
+      frequencySubtitle: 'Control how often you receive non-urgent notifications',
+      quietHours: 'Quiet Hours',
+      quietHoursSubtitle: 'Silence non-urgent notifications during specific hours',
+      emailDigest: 'Email Digest',
+      emailDigestSubtitle: 'Receive a daily summary email',
+      savePreferences: 'Save Preferences',
+      resetToDefaults: 'Reset to Defaults',
+      enable: 'Enable',
+      startTime: 'Start Time',
+      endTime: 'End Time',
+      deliveryTime: 'Delivery Time',
+      deliveryTimeDesc: "You'll receive a daily summary of all activity at this time",
+      frequencyOptions: {
+        immediate: 'Immediate',
+        immediateDesc: 'Receive notifications as they happen',
+        daily: 'Daily Digest',
+        dailyDesc: 'Receive a summary once per day',
+        weekly: 'Weekly Digest',
+        weeklyDesc: 'Receive a summary once per week',
+      },
+      categories: {
+        newMessages: 'New Messages',
+        gradeUpdates: 'Grade Updates',
+        attendanceAlerts: 'Attendance Alerts',
+        behaviorReports: 'Behavior Reports',
+        examReminders: 'Exam Reminders',
+        generalAnnouncements: 'General Announcements',
+        urgentMessages: 'Urgent Messages',
       },
     },
     students: {
@@ -837,6 +1043,31 @@ export const translations: Record<Language, Translations> = {
       readReceipt: 'Confirmación de Lectura',
       readBy: 'Leído por',
       readOn: 'Leído el',
+      analytics: 'Analíticas',
+      settings: 'Configuración',
+      composeNewMessage: 'Redactar Nuevo Mensaje',
+      notificationSettings: 'Configuración de Notificaciones',
+      composeModal: {
+        title: 'Redactar Nuevo Mensaje',
+        recipients: 'Destinatarios',
+        selected: 'seleccionados',
+        selectAll: 'Seleccionar Todos',
+        deselectAll: 'Deseleccionar Todos',
+        parentOf: 'Padre de',
+        priority: 'Prioridad',
+        subject: 'Asunto',
+        subjectRequired: 'Asunto *',
+        message: 'Mensaje',
+        messageRequired: 'Mensaje *',
+        messagePlaceholder: 'Escriba su mensaje aquí...',
+        sendMessage: 'Enviar Mensaje',
+        cancel: 'Cancelar',
+        selectRecipientAlert: 'Por favor seleccione al menos un destinatario',
+        enterSubjectAlert: 'Por favor ingrese un asunto',
+        enterMessageAlert: 'Por favor ingrese un mensaje',
+        successMessage: 'Mensaje enviado exitosamente a',
+        successNote: 'Nota: Esta es una demostración. En producción, esto enviaría correos electrónicos/notificaciones reales.',
+      },
     },
     analytics: {
       title: 'Panel de Analíticas',
@@ -928,6 +1159,82 @@ export const translations: Record<Language, Translations> = {
         behavior: 'Comportamiento',
         absence: 'Ausencia',
         achievement: 'Logros',
+      },
+    },
+    communicationAnalytics: {
+      title: 'Analíticas de Comunicación',
+      subtitle: 'Seguimiento y análisis de sus patrones de comunicación',
+      backToCommunications: 'Volver a Comunicación',
+      totalMessages: 'Total de Mensajes',
+      responseRate: 'Tasa de Respuesta',
+      avgResponseTime: 'Tiempo Promedio de Respuesta',
+      pendingReplies: 'Respuestas Pendientes',
+      messageVolumeTrend: 'Tendencia de Volumen de Mensajes',
+      priorityBreakdown: 'Desglose por Prioridad',
+      mostActiveParents: 'Padres Más Activos',
+      recentActivity: 'Actividad Reciente',
+      exportData: 'Exportar Datos de Comunicación',
+      exportCSV: 'Exportar como CSV',
+      exportPDF: 'Exportar como PDF',
+      parentName: 'Nombre del Padre',
+      student: 'Estudiante',
+      messages: 'Mensajes',
+      lastContact: 'Último Contacto',
+      week: 'Semana',
+      replies: 'Respuestas',
+      highPriority: 'Prioridad Alta',
+      mediumPriority: 'Prioridad Media',
+      lowPriority: 'Prioridad Baja',
+      ofTotal: 'del total',
+      receivedMessages: 'Mensajes Recibidos',
+      sentReplies: 'Respuestas Enviadas',
+      requiresAttention: 'Requiere atención',
+      fromLastMonth: 'del último mes',
+      timeRange: {
+        lastWeek: 'Última Semana',
+        lastMonth: 'Último Mes',
+        lastQuarter: 'Último Trimestre',
+        lastYear: 'Último Año',
+      },
+    },
+    notificationSettings: {
+      title: 'Preferencias de Notificaciones',
+      subtitle: 'Personalice cómo y cuándo recibe notificaciones',
+      emailNotifications: 'Notificaciones por Correo',
+      emailSubtitle: 'Reciba actualizaciones por correo electrónico',
+      smsNotifications: 'Notificaciones por SMS',
+      smsSubtitle: 'Reciba alertas urgentes por mensaje de texto',
+      inAppNotifications: 'Notificaciones en la Aplicación',
+      inAppSubtitle: 'Reciba notificaciones dentro de la aplicación',
+      notificationFrequency: 'Frecuencia de Notificaciones',
+      frequencySubtitle: 'Controle la frecuencia de notificaciones no urgentes',
+      quietHours: 'Horario de Silencio',
+      quietHoursSubtitle: 'Silenciar notificaciones no urgentes en horarios específicos',
+      emailDigest: 'Resumen por Correo',
+      emailDigestSubtitle: 'Reciba un resumen diario por correo',
+      savePreferences: 'Guardar Preferencias',
+      resetToDefaults: 'Restaurar Valores Predeterminados',
+      enable: 'Activar',
+      startTime: 'Hora de Inicio',
+      endTime: 'Hora de Fin',
+      deliveryTime: 'Hora de Entrega',
+      deliveryTimeDesc: 'Recibirá un resumen diario de toda la actividad a esta hora',
+      frequencyOptions: {
+        immediate: 'Inmediato',
+        immediateDesc: 'Recibir notificaciones cuando ocurran',
+        daily: 'Resumen Diario',
+        dailyDesc: 'Recibir un resumen una vez al día',
+        weekly: 'Resumen Semanal',
+        weeklyDesc: 'Recibir un resumen una vez a la semana',
+      },
+      categories: {
+        newMessages: 'Nuevos Mensajes',
+        gradeUpdates: 'Actualizaciones de Calificaciones',
+        attendanceAlerts: 'Alertas de Asistencia',
+        behaviorReports: 'Reportes de Conducta',
+        examReminders: 'Recordatorios de Exámenes',
+        generalAnnouncements: 'Anuncios Generales',
+        urgentMessages: 'Mensajes Urgentes',
       },
     },
     students: {
@@ -1154,6 +1461,31 @@ export const translations: Record<Language, Translations> = {
       readReceipt: '開封確認',
       readBy: '既読者',
       readOn: '既読日時',
+      analytics: '分析',
+      settings: '設定',
+      composeNewMessage: '新しいメッセージを作成',
+      notificationSettings: '通知設定',
+      composeModal: {
+        title: '新しいメッセージを作成',
+        recipients: '宛先',
+        selected: '選択済み',
+        selectAll: 'すべて選択',
+        deselectAll: 'すべて解除',
+        parentOf: '保護者：',
+        priority: '優先度',
+        subject: '件名',
+        subjectRequired: '件名 *',
+        message: 'メッセージ',
+        messageRequired: 'メッセージ *',
+        messagePlaceholder: 'ここにメッセージを入力...',
+        sendMessage: 'メッセージを送信',
+        cancel: 'キャンセル',
+        selectRecipientAlert: '少なくとも1人の宛先を選択してください',
+        enterSubjectAlert: '件名を入力してください',
+        enterMessageAlert: 'メッセージを入力してください',
+        successMessage: 'メッセージの送信に成功しました：',
+        successNote: '注: これはデモです。本番環境では実際のメール/通知が送信されます。',
+      },
     },
     analytics: {
       title: '分析ダッシュボード',
@@ -1245,6 +1577,82 @@ export const translations: Record<Language, Translations> = {
         behavior: '行動',
         absence: '欠席',
         achievement: '達成',
+      },
+    },
+    communicationAnalytics: {
+      title: 'コミュニケーション分析',
+      subtitle: 'コミュニケーションパターンの追跡と分析',
+      backToCommunications: '連絡に戻る',
+      totalMessages: '総メッセージ数',
+      responseRate: '返信率',
+      avgResponseTime: '平均返信時間',
+      pendingReplies: '保留中の返信',
+      messageVolumeTrend: 'メッセージ量の推移',
+      priorityBreakdown: '優先度別内訳',
+      mostActiveParents: '最もアクティブな保護者',
+      recentActivity: '最近の活動',
+      exportData: 'コミュニケーションデータをエクスポート',
+      exportCSV: 'CSVとしてエクスポート',
+      exportPDF: 'PDFとしてエクスポート',
+      parentName: '保護者名',
+      student: '学生',
+      messages: 'メッセージ',
+      lastContact: '最終連絡',
+      week: '週',
+      replies: '返信',
+      highPriority: '優先度：高',
+      mediumPriority: '優先度：中',
+      lowPriority: '優先度：低',
+      ofTotal: '全体の',
+      receivedMessages: '受信メッセージ',
+      sentReplies: '送信返信',
+      requiresAttention: '要対応',
+      fromLastMonth: '先月から',
+      timeRange: {
+        lastWeek: '先週',
+        lastMonth: '先月',
+        lastQuarter: '前四半期',
+        lastYear: '昨年',
+      },
+    },
+    notificationSettings: {
+      title: '通知設定',
+      subtitle: '通知の受信方法とタイミングをカスタマイズ',
+      emailNotifications: 'メール通知',
+      emailSubtitle: 'メールで更新を受信',
+      smsNotifications: 'SMS通知',
+      smsSubtitle: '緊急アラートをテキストメッセージで受信',
+      inAppNotifications: 'アプリ内通知',
+      inAppSubtitle: 'アプリケーション内で通知を受信',
+      notificationFrequency: '通知頻度',
+      frequencySubtitle: '緊急でない通知の受信頻度を制御',
+      quietHours: 'サイレント時間',
+      quietHoursSubtitle: '特定の時間帯に緊急でない通知を無音に',
+      emailDigest: 'メール要約',
+      emailDigestSubtitle: '毎日の要約メールを受信',
+      savePreferences: '設定を保存',
+      resetToDefaults: 'デフォルトに戻す',
+      enable: '有効化',
+      startTime: '開始時刻',
+      endTime: '終了時刻',
+      deliveryTime: '配信時刻',
+      deliveryTimeDesc: 'この時刻に全活動の日次要約を受信します',
+      frequencyOptions: {
+        immediate: '即時',
+        immediateDesc: '発生時に通知を受信',
+        daily: '日次要約',
+        dailyDesc: '1日1回要約を受信',
+        weekly: '週次要約',
+        weeklyDesc: '週1回要約を受信',
+      },
+      categories: {
+        newMessages: '新しいメッセージ',
+        gradeUpdates: '成績更新',
+        attendanceAlerts: '出席アラート',
+        behaviorReports: '行動報告',
+        examReminders: '試験リマインダー',
+        generalAnnouncements: '一般お知らせ',
+        urgentMessages: '緊急メッセージ',
       },
     },
     students: {

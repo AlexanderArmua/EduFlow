@@ -12,6 +12,7 @@ export interface Translations {
     calendar: string;
     documents: string;
     absences: string;
+    financial: string;
     logout: string;
   };
 
@@ -583,6 +584,86 @@ export interface Translations {
     };
   };
 
+  // Financial
+  financial: {
+    title: string;
+    subtitle: string;
+    tuitionPayments: {
+      title: string;
+      subtitle: string;
+      totalCollected: string;
+      totalOutstanding: string;
+      totalOverdue: string;
+      collectionRate: string;
+      studentName: string;
+      semester: string;
+      totalTuition: string;
+      amountPaid: string;
+      amountDue: string;
+      dueDate: string;
+      status: string;
+      actions: string;
+      viewDetails: string;
+      paid: string;
+      partial: string;
+      overdue: string;
+      pending: string;
+      searchPlaceholder: string;
+      allStatuses: string;
+      paymentHistory: string;
+      date: string;
+      amount: string;
+      method: string;
+      noPayments: string;
+    };
+    courseRevenue: {
+      title: string;
+      subtitle: string;
+      totalRevenue: string;
+      averageRevenue: string;
+      topCourse: string;
+      subjectCode: string;
+      subjectName: string;
+      department: string;
+      enrolledStudents: string;
+      tuitionPerStudent: string;
+      revenue: string;
+      professor: string;
+      revenueByDepartment: string;
+    };
+    costPerStudent: {
+      title: string;
+      subtitle: string;
+      year: string;
+      totalStudents: string;
+      totalCosts: string;
+      costPerStudent: string;
+      costBreakdown: string;
+      costBreakdownDetailed: string;
+      category: string;
+      percentage: string;
+      comparison: string;
+    };
+    budgetAllocation: {
+      title: string;
+      subtitle: string;
+      totalBudget: string;
+      totalSpent: string;
+      totalRemaining: string;
+      utilizationRate: string;
+      department: string;
+      budget: string;
+      spent: string;
+      remaining: string;
+      headOfDepartment: string;
+      viewDetails: string;
+      budgetCategories: string;
+      budgeted: string;
+      utilization: string;
+      budgetVsSpent: string;
+    };
+  };
+
   // Common
   common: {
     loading: string;
@@ -604,6 +685,7 @@ export const translations: Record<Language, Translations> = {
       calendar: 'Calendar',
       documents: 'Documents',
       absences: 'Absences',
+      financial: 'Financial',
       logout: 'Logout',
     },
     login: {
@@ -1146,6 +1228,84 @@ export const translations: Record<Language, Translations> = {
         other: 'Other',
       },
     },
+    financial: {
+      title: 'Financial Insights',
+      subtitle: 'Track revenue, costs, and budget allocation',
+      tuitionPayments: {
+        title: 'Tuition Payment Status',
+        subtitle: 'Monitor student tuition payments and outstanding balances',
+        totalCollected: 'Total Collected',
+        totalOutstanding: 'Total Outstanding',
+        totalOverdue: 'Total Overdue',
+        collectionRate: 'Collection Rate',
+        studentName: 'Student Name',
+        semester: 'Semester',
+        totalTuition: 'Total Tuition',
+        amountPaid: 'Amount Paid',
+        amountDue: 'Amount Due',
+        dueDate: 'Due Date',
+        status: 'Status',
+        actions: 'Actions',
+        viewDetails: 'View Details',
+        paid: 'Paid',
+        partial: 'Partial',
+        overdue: 'Overdue',
+        pending: 'Pending',
+        searchPlaceholder: 'Search by student name...',
+        allStatuses: 'All Statuses',
+        paymentHistory: 'Payment History',
+        date: 'Date',
+        amount: 'Amount',
+        method: 'Method',
+        noPayments: 'No payment history',
+      },
+      courseRevenue: {
+        title: 'Revenue per Course',
+        subtitle: 'Analyze revenue generation by course and department',
+        totalRevenue: 'Total Revenue',
+        averageRevenue: 'Average Revenue',
+        topCourse: 'Top Course',
+        subjectCode: 'Subject Code',
+        subjectName: 'Subject Name',
+        department: 'Department',
+        enrolledStudents: 'Enrolled Students',
+        tuitionPerStudent: 'Tuition/Student',
+        revenue: 'Revenue',
+        professor: 'Professor',
+        revenueByDepartment: 'Revenue by Department',
+      },
+      costPerStudent: {
+        title: 'Cost per Student Analysis',
+        subtitle: 'Breakdown of institutional costs per student',
+        year: 'Year',
+        totalStudents: 'Total Students',
+        totalCosts: 'Total Costs',
+        costPerStudent: 'Cost per Student',
+        costBreakdown: 'Cost Breakdown',
+        costBreakdownDetailed: 'Cost Breakdown - Detailed',
+        category: 'Category',
+        percentage: 'Percentage',
+        comparison: 'Year-over-Year Comparison',
+      },
+      budgetAllocation: {
+        title: 'Budget Allocation by Department',
+        subtitle: 'Track department budgets and expenditures',
+        totalBudget: 'Total Budget',
+        totalSpent: 'Total Spent',
+        totalRemaining: 'Total Remaining',
+        utilizationRate: 'Utilization Rate',
+        department: 'Department',
+        budget: 'Budget',
+        spent: 'Spent',
+        remaining: 'Remaining',
+        headOfDepartment: 'Head of Department',
+        viewDetails: 'View Details',
+        budgetCategories: 'Budget Categories',
+        budgeted: 'Budgeted',
+        utilization: 'Utilization',
+        budgetVsSpent: 'Budget vs Spent by Department',
+      },
+    },
     common: {
       loading: 'Loading...',
       error: 'Error',
@@ -1164,6 +1324,7 @@ export const translations: Record<Language, Translations> = {
       calendar: 'Calendario',
       documents: 'Documentos',
       absences: 'Ausencias',
+      financial: 'Financiero',
       logout: 'Cerrar Sesión',
     },
     login: {
@@ -1706,6 +1867,75 @@ export const translations: Record<Language, Translations> = {
         other: 'Otra',
       },
     },
+    financial: {
+      title: 'Información Financiera',
+      subtitle: 'Seguimiento de ingresos, gastos y presupuesto institucional',
+      tuitionPayments: {
+        title: 'Pagos de Matrícula',
+        subtitle: 'Seguimiento del estado de pago de matrículas',
+        totalCollected: 'Total Recaudado',
+        totalOutstanding: 'Total Pendiente',
+        totalOverdue: 'Total Vencido',
+        collectionRate: 'Tasa de Recaudación',
+        studentName: 'Nombre del Estudiante',
+        semester: 'Semestre',
+        totalTuition: 'Matrícula Total',
+        amountPaid: 'Monto Pagado',
+        amountDue: 'Monto Pendiente',
+        dueDate: 'Fecha de Vencimiento',
+        status: 'Estado',
+        paid: 'Pagado',
+        partial: 'Pago Parcial',
+        overdue: 'Vencido',
+        pending: 'Pendiente',
+        searchPlaceholder: 'Buscar por nombre de estudiante...',
+        allStatuses: 'Todos los Estados',
+      },
+      courseRevenue: {
+        title: 'Ingresos por Curso',
+        subtitle: 'Análisis de ingresos por programa',
+        totalRevenue: 'Ingreso Total',
+        averageRevenue: 'Ingreso Promedio',
+        topCourse: 'Curso Principal',
+        revenueByDepartment: 'Ingresos por Departamento',
+        subjectCode: 'Código de Materia',
+        subjectName: 'Nombre de Materia',
+        department: 'Departamento',
+        enrolledStudents: 'Estudiantes Inscritos',
+        tuitionPerStudent: 'Matrícula por Estudiante',
+        revenue: 'Ingreso',
+        professor: 'Profesor',
+      },
+      costPerStudent: {
+        title: 'Costo por Estudiante',
+        subtitle: 'Análisis de costos operativos por estudiante',
+        costPerStudent: 'Costo por Estudiante',
+        totalCosts: 'Costos Totales',
+        totalStudents: 'Total de Estudiantes',
+        costBreakdown: 'Desglose de Costos',
+        costBreakdownDetailed: 'Desglose de Costos - Detallado',
+        comparison: 'Comparación Anual',
+        category: 'Categoría',
+        percentage: 'Porcentaje',
+      },
+      budgetAllocation: {
+        title: 'Asignación Presupuestaria',
+        subtitle: 'Gestión y seguimiento del presupuesto departamental',
+        totalBudget: 'Presupuesto Total',
+        totalSpent: 'Total Gastado',
+        totalRemaining: 'Total Restante',
+        utilizationRate: 'Tasa de Utilización',
+        department: 'Departamento',
+        headOfDepartment: 'Jefe de Departamento',
+        budget: 'Presupuesto',
+        budgeted: 'Presupuestado',
+        spent: 'Gastado',
+        remaining: 'Restante',
+        utilization: 'Utilización',
+        budgetCategories: 'Categorías Presupuestarias',
+        budgetVsSpent: 'Presupuesto vs Gastado por Departamento',
+      },
+    },
     common: {
       loading: 'Cargando...',
       error: 'Error',
@@ -1724,6 +1954,7 @@ export const translations: Record<Language, Translations> = {
       calendar: 'カレンダー',
       documents: 'ドキュメント',
       absences: '欠席',
+      financial: '財務',
       logout: 'ログアウト',
     },
     login: {
@@ -2264,6 +2495,75 @@ export const translations: Record<Language, Translations> = {
         academic: '学業',
         personal: '個人',
         other: 'その他',
+      },
+    },
+    financial: {
+      title: '財務情報',
+      subtitle: '機関の収益、支出、予算の追跡',
+      tuitionPayments: {
+        title: '授業料支払い',
+        subtitle: '授業料の支払い状況の追跡',
+        totalCollected: '総回収額',
+        totalOutstanding: '総未払額',
+        totalOverdue: '総延滞額',
+        collectionRate: '回収率',
+        studentName: '学生名',
+        semester: '学期',
+        totalTuition: '授業料総額',
+        amountPaid: '支払済額',
+        amountDue: '未払額',
+        dueDate: '支払期限',
+        status: 'ステータス',
+        paid: '支払済み',
+        partial: '一部支払済み',
+        overdue: '延滞',
+        pending: '保留中',
+        searchPlaceholder: '学生名で検索...',
+        allStatuses: 'すべてのステータス',
+      },
+      courseRevenue: {
+        title: 'コース別収益',
+        subtitle: 'プログラム別の収益分析',
+        totalRevenue: '総収益',
+        averageRevenue: '平均収益',
+        topCourse: 'トップコース',
+        revenueByDepartment: '部門別収益',
+        subjectCode: '科目コード',
+        subjectName: '科目名',
+        department: '部門',
+        enrolledStudents: '在籍学生数',
+        tuitionPerStudent: '学生1人当たりの授業料',
+        revenue: '収益',
+        professor: '教授',
+      },
+      costPerStudent: {
+        title: '学生1人当たりのコスト',
+        subtitle: '学生1人当たりの運営コスト分析',
+        costPerStudent: '学生1人当たりのコスト',
+        totalCosts: '総コスト',
+        totalStudents: '総学生数',
+        costBreakdown: 'コスト内訳',
+        costBreakdownDetailed: 'コスト内訳 - 詳細',
+        comparison: '年次比較',
+        category: 'カテゴリ',
+        percentage: '割合',
+      },
+      budgetAllocation: {
+        title: '予算配分',
+        subtitle: '部門別予算の管理と追跡',
+        totalBudget: '総予算',
+        totalSpent: '総支出',
+        totalRemaining: '総残高',
+        utilizationRate: '利用率',
+        department: '部門',
+        headOfDepartment: '部門長',
+        budget: '予算',
+        budgeted: '予算額',
+        spent: '支出額',
+        remaining: '残高',
+        utilization: '利用率',
+        budgetCategories: '予算カテゴリ',
+        budgetVsSpent: '部門別予算と支出',
       },
     },
     common: {

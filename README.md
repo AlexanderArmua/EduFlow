@@ -164,10 +164,10 @@ npm start
 - [x] Absence approval workflow
 
 ### 💰 Financial Insights
-- [ ] Tuition payment status dashboard
-- [ ] Revenue per course metrics
-- [ ] Cost per student analysis
-- [ ] Budget allocation by department
+- [x] Tuition payment status dashboard
+- [x] Revenue per course metrics
+- [x] Cost per student analysis
+- [x] Budget allocation by department
 
 ### 🔔 Notifications & Alerts
 - [x] Real-time notification center

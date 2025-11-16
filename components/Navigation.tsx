@@ -20,6 +20,7 @@ export default function Navigation() {
     { name: t.nav.calendar, path: '/calendar' },
     { name: t.nav.documents, path: '/documents' },
     { name: t.nav.absences, path: '/absences' },
+    { name: t.nav.financial, path: '/financial' },
   ];
 
   const handleLogout = () => {

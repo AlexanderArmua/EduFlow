@@ -15,6 +15,7 @@ export interface Translations {
     financial: string;
     achievements: string;
     leaderboard: string;
+    reports: string;
     logout: string;
   };
 
@@ -708,6 +709,91 @@ export interface Translations {
     };
   };
 
+  // Reporting Center
+  reporting: {
+    title: string;
+    subtitle: string;
+    myReports: string;
+    templates: string;
+    createReport: string;
+    customReportBuilder: string;
+    reportName: string;
+    reportType: string;
+    description: string;
+    frequency: string;
+    format: string;
+    status: string;
+    lastGenerated: string;
+    nextScheduled: string;
+    createdBy: string;
+    recipients: string;
+    actions: string;
+    generate: string;
+    edit: string;
+    delete: string;
+    pause: string;
+    resume: string;
+    share: string;
+    download: string;
+    viewReport: string;
+    noReports: string;
+    createFirstReport: string;
+    templateLibrary: string;
+    useTemplate: string;
+    dataFields: string;
+    filters: string;
+    category: string;
+    allCategories: string;
+    builder: {
+      title: string;
+      subtitle: string;
+      step1: string;
+      step2: string;
+      step3: string;
+      step4: string;
+      selectTemplate: string;
+      configureData: string;
+      setSchedule: string;
+      reviewAndSave: string;
+      templateName: string;
+      reportTitle: string;
+      reportDescription: string;
+      selectFields: string;
+      selectFilters: string;
+      frequencyLabel: string;
+      formatLabel: string;
+      recipientsLabel: string;
+      addRecipient: string;
+      saveReport: string;
+      cancel: string;
+      preview: string;
+    };
+    types: {
+      academic: string;
+      financial: string;
+      attendance: string;
+      behavioral: string;
+      custom: string;
+      administrative: string;
+    };
+    frequencies: {
+      daily: string;
+      weekly: string;
+      monthly: string;
+      'on-demand': string;
+    };
+    formats: {
+      pdf: string;
+      excel: string;
+      csv: string;
+    };
+    statuses: {
+      active: string;
+      paused: string;
+      draft: string;
+    };
+  };
+
   // Common
   common: {
     loading: string;
@@ -732,6 +818,7 @@ export const translations: Record<Language, Translations> = {
       financial: 'Financial',
       achievements: 'Achievements',
       leaderboard: 'Leaderboard',
+      reports: 'Reports',
       logout: 'Logout',
     },
     login: {
@@ -1392,6 +1479,89 @@ export const translations: Record<Language, Translations> = {
         viewProfile: 'View Profile',
       },
     },
+    reporting: {
+      title: 'Reporting Center',
+      subtitle: 'Generate, schedule, and manage reports',
+      myReports: 'My Reports',
+      templates: 'Report Templates',
+      createReport: 'Create New Report',
+      customReportBuilder: 'Custom Report Builder',
+      reportName: 'Report Name',
+      reportType: 'Type',
+      description: 'Description',
+      frequency: 'Frequency',
+      format: 'Format',
+      status: 'Status',
+      lastGenerated: 'Last Generated',
+      nextScheduled: 'Next Scheduled',
+      createdBy: 'Created By',
+      recipients: 'Recipients',
+      actions: 'Actions',
+      generate: 'Generate',
+      edit: 'Edit',
+      delete: 'Delete',
+      pause: 'Pause',
+      resume: 'Resume',
+      share: 'Share',
+      download: 'Download',
+      viewReport: 'View Report',
+      noReports: 'No reports found',
+      createFirstReport: 'Create your first report to get started',
+      templateLibrary: 'Template Library',
+      useTemplate: 'Use Template',
+      dataFields: 'Data Fields',
+      filters: 'Filters',
+      category: 'Category',
+      allCategories: 'All Categories',
+      builder: {
+        title: 'Report Builder',
+        subtitle: 'Create custom reports with ease',
+        step1: 'Step 1',
+        step2: 'Step 2',
+        step3: 'Step 3',
+        step4: 'Step 4',
+        selectTemplate: 'Select Template',
+        configureData: 'Configure Data',
+        setSchedule: 'Set Schedule',
+        reviewAndSave: 'Review & Save',
+        templateName: 'Template Name',
+        reportTitle: 'Report Title',
+        reportDescription: 'Report Description',
+        selectFields: 'Select Data Fields',
+        selectFilters: 'Select Filters',
+        frequencyLabel: 'Report Frequency',
+        formatLabel: 'Export Format',
+        recipientsLabel: 'Email Recipients',
+        addRecipient: 'Add Recipient',
+        saveReport: 'Save Report',
+        cancel: 'Cancel',
+        preview: 'Preview',
+      },
+      types: {
+        academic: 'Academic',
+        financial: 'Financial',
+        attendance: 'Attendance',
+        behavioral: 'Behavioral',
+        custom: 'Custom',
+        administrative: 'Administrative',
+      },
+      frequencies: {
+        daily: 'Daily',
+        weekly: 'Weekly',
+        monthly: 'Monthly',
+        'on-demand': 'On-Demand',
+      },
+      formats: {
+        pdf: 'PDF',
+        excel: 'Excel',
+        csv: 'CSV',
+      },
+      statuses: {
+        active: 'Active',
+        paused: 'Paused',
+        draft: 'Draft',
+      },
+    },
     common: {
       loading: 'Loading...',
       error: 'Error',
@@ -1413,6 +1583,7 @@ export const translations: Record<Language, Translations> = {
       financial: 'Financiero',
       achievements: 'Logros',
       leaderboard: 'Tabla de Clasificación',
+      reports: 'Reportes',
       logout: 'Cerrar Sesión',
     },
     login: {
@@ -2064,6 +2235,89 @@ export const translations: Record<Language, Translations> = {
         viewProfile: 'Ver Perfil',
       },
     },
+    reporting: {
+      title: 'Centro de Reportes',
+      subtitle: 'Generar, programar y gestionar reportes',
+      myReports: 'Mis Reportes',
+      templates: 'Plantillas de Reportes',
+      createReport: 'Crear Nuevo Reporte',
+      customReportBuilder: 'Constructor de Reportes Personalizados',
+      reportName: 'Nombre del Reporte',
+      reportType: 'Tipo',
+      description: 'Descripción',
+      frequency: 'Frecuencia',
+      format: 'Formato',
+      status: 'Estado',
+      lastGenerated: 'Última Generación',
+      nextScheduled: 'Próxima Programada',
+      createdBy: 'Creado Por',
+      recipients: 'Destinatarios',
+      actions: 'Acciones',
+      generate: 'Generar',
+      edit: 'Editar',
+      delete: 'Eliminar',
+      pause: 'Pausar',
+      resume: 'Reanudar',
+      share: 'Compartir',
+      download: 'Descargar',
+      viewReport: 'Ver Reporte',
+      noReports: 'No se encontraron reportes',
+      createFirstReport: 'Crea tu primer reporte para comenzar',
+      templateLibrary: 'Biblioteca de Plantillas',
+      useTemplate: 'Usar Plantilla',
+      dataFields: 'Campos de Datos',
+      filters: 'Filtros',
+      category: 'Categoría',
+      allCategories: 'Todas las Categorías',
+      builder: {
+        title: 'Constructor de Reportes',
+        subtitle: 'Crea reportes personalizados con facilidad',
+        step1: 'Paso 1',
+        step2: 'Paso 2',
+        step3: 'Paso 3',
+        step4: 'Paso 4',
+        selectTemplate: 'Seleccionar Plantilla',
+        configureData: 'Configurar Datos',
+        setSchedule: 'Establecer Programación',
+        reviewAndSave: 'Revisar y Guardar',
+        templateName: 'Nombre de Plantilla',
+        reportTitle: 'Título del Reporte',
+        reportDescription: 'Descripción del Reporte',
+        selectFields: 'Seleccionar Campos de Datos',
+        selectFilters: 'Seleccionar Filtros',
+        frequencyLabel: 'Frecuencia del Reporte',
+        formatLabel: 'Formato de Exportación',
+        recipientsLabel: 'Destinatarios de Email',
+        addRecipient: 'Agregar Destinatario',
+        saveReport: 'Guardar Reporte',
+        cancel: 'Cancelar',
+        preview: 'Vista Previa',
+      },
+      types: {
+        academic: 'Académico',
+        financial: 'Financiero',
+        attendance: 'Asistencia',
+        behavioral: 'Conductual',
+        custom: 'Personalizado',
+        administrative: 'Administrativo',
+      },
+      frequencies: {
+        daily: 'Diario',
+        weekly: 'Semanal',
+        monthly: 'Mensual',
+        'on-demand': 'Bajo Demanda',
+      },
+      formats: {
+        pdf: 'PDF',
+        excel: 'Excel',
+        csv: 'CSV',
+      },
+      statuses: {
+        active: 'Activo',
+        paused: 'Pausado',
+        draft: 'Borrador',
+      },
+    },
     common: {
       loading: 'Cargando...',
       error: 'Error',
@@ -2085,6 +2339,7 @@ export const translations: Record<Language, Translations> = {
       financial: '財務',
       achievements: '実績',
       leaderboard: 'リーダーボード',
+      reports: 'レポート',
       logout: 'ログアウト',
     },
     login: {
@@ -2734,6 +2989,89 @@ export const translations: Record<Language, Translations> = {
         badges: 'バッジ',
         change: '変動',
         viewProfile: 'プロフィールを表示',
+      },
+    },
+    reporting: {
+      title: 'レポートセンター',
+      subtitle: 'レポートの生成、スケジュール、管理',
+      myReports: 'マイレポート',
+      templates: 'レポートテンプレート',
+      createReport: '新規レポート作成',
+      customReportBuilder: 'カスタムレポートビルダー',
+      reportName: 'レポート名',
+      reportType: 'タイプ',
+      description: '説明',
+      frequency: '頻度',
+      format: '形式',
+      status: 'ステータス',
+      lastGenerated: '最終生成日',
+      nextScheduled: '次回予定日',
+      createdBy: '作成者',
+      recipients: '受信者',
+      actions: 'アクション',
+      generate: '生成',
+      edit: '編集',
+      delete: '削除',
+      pause: '一時停止',
+      resume: '再開',
+      share: '共有',
+      download: 'ダウンロード',
+      viewReport: 'レポートを表示',
+      noReports: 'レポートが見つかりません',
+      createFirstReport: '最初のレポートを作成して始めましょう',
+      templateLibrary: 'テンプレートライブラリ',
+      useTemplate: 'テンプレートを使用',
+      dataFields: 'データフィールド',
+      filters: 'フィルター',
+      category: 'カテゴリ',
+      allCategories: 'すべてのカテゴリ',
+      builder: {
+        title: 'レポートビルダー',
+        subtitle: '簡単にカスタムレポートを作成',
+        step1: 'ステップ 1',
+        step2: 'ステップ 2',
+        step3: 'ステップ 3',
+        step4: 'ステップ 4',
+        selectTemplate: 'テンプレート選択',
+        configureData: 'データ設定',
+        setSchedule: 'スケジュール設定',
+        reviewAndSave: '確認と保存',
+        templateName: 'テンプレート名',
+        reportTitle: 'レポートタイトル',
+        reportDescription: 'レポート説明',
+        selectFields: 'データフィールドを選択',
+        selectFilters: 'フィルターを選択',
+        frequencyLabel: 'レポート頻度',
+        formatLabel: 'エクスポート形式',
+        recipientsLabel: 'メール受信者',
+        addRecipient: '受信者を追加',
+        saveReport: 'レポートを保存',
+        cancel: 'キャンセル',
+        preview: 'プレビュー',
+      },
+      types: {
+        academic: '学業',
+        financial: '財務',
+        attendance: '出席',
+        behavioral: '行動',
+        custom: 'カスタム',
+        administrative: '管理',
+      },
+      frequencies: {
+        daily: '日次',
+        weekly: '週次',
+        monthly: '月次',
+        'on-demand': 'オンデマンド',
+      },
+      formats: {
+        pdf: 'PDF',
+        excel: 'Excel',
+        csv: 'CSV',
+      },
+      statuses: {
+        active: 'アクティブ',
+        paused: '一時停止',
+        draft: '下書き',
       },
     },
     common: {

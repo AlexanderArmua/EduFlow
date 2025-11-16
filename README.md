@@ -192,10 +192,10 @@ npm start
 - [x] Visual progress bars
 
 ### 📊 Reporting Center
-- [ ] Custom report builder
-- [ ] Automated weekly/monthly reports
-- [ ] Print-friendly formats
-- [ ] Report sharing functionality
+- [x] Custom report builder
+- [x] Automated weekly/monthly reports
+- [x] Print-friendly formats
+- [x] Report sharing functionality
 
 ### 🪲 Bugs
 - [x] When I click on `Total Students` it redirects me to `/subjects` instead of a page that shows students information

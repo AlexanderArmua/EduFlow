@@ -23,6 +23,7 @@ export default function Navigation() {
     { name: t.nav.financial, path: '/financial' },
     { name: t.nav.achievements, path: '/achievements' },
     { name: t.nav.leaderboard, path: '/leaderboard' },
+    { name: t.nav.reports, path: '/reports' },
   ];
 
   const handleLogout = () => {

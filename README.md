@@ -159,9 +159,9 @@ npm start
 
 ### 📋 Administrative Tools
 - [x] Pending tasks/to-dos list
-- [ ] Document management system
+- [x] Document management system
 - [x] Enhanced grade entry interface
-- [ ] Absence approval workflow
+- [x] Absence approval workflow
 
 ### 💰 Financial Insights
 - [ ] Tuition payment status dashboard

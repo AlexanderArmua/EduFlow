@@ -2057,3 +2057,243 @@ export const professorPerformance: ProfessorPerformance[] = [
     ],
   },
 ];
+
+// Document Management
+export interface Document {
+  id: string;
+  title: string;
+  category: 'policy' | 'form' | 'report' | 'curriculum' | 'guide' | 'contract';
+  uploadedBy: string;
+  uploadDate: string;
+  fileSize: string;
+  fileType: string;
+  description: string;
+  tags: string[];
+  department: string;
+  accessLevel: 'public' | 'staff' | 'admin';
+  downloads: number;
+}
+
+export const documents: Document[] = [
+  {
+    id: 'doc1',
+    title: 'Student Enrollment Policy 2024',
+    category: 'policy',
+    uploadedBy: 'Dr. Sarah Mitchell',
+    uploadDate: '2024-01-15',
+    fileSize: '2.4 MB',
+    fileType: 'PDF',
+    description: 'Complete enrollment policy and procedures for the 2024 academic year',
+    tags: ['enrollment', 'policy', '2024', 'admissions'],
+    department: 'Administration',
+    accessLevel: 'staff',
+    downloads: 156,
+  },
+  {
+    id: 'doc2',
+    title: 'Grade Entry Form Template',
+    category: 'form',
+    uploadedBy: 'Prof. Michael Chen',
+    uploadDate: '2024-02-01',
+    fileSize: '524 KB',
+    fileType: 'DOCX',
+    description: 'Template for entering student grades and assessments',
+    tags: ['grades', 'form', 'template', 'assessment'],
+    department: 'Academic Affairs',
+    accessLevel: 'staff',
+    downloads: 342,
+  },
+  {
+    id: 'doc3',
+    title: 'Q1 Performance Report',
+    category: 'report',
+    uploadedBy: 'Dr. Emily Rodriguez',
+    uploadDate: '2024-03-20',
+    fileSize: '5.8 MB',
+    fileType: 'PDF',
+    description: 'Quarterly performance analysis and statistics for Q1 2024',
+    tags: ['report', 'Q1', 'performance', 'analytics'],
+    department: 'Administration',
+    accessLevel: 'admin',
+    downloads: 89,
+  },
+  {
+    id: 'doc4',
+    title: 'Computer Science Curriculum 2024-2025',
+    category: 'curriculum',
+    uploadedBy: 'Prof. Michael Chen',
+    uploadDate: '2024-01-10',
+    fileSize: '3.2 MB',
+    fileType: 'PDF',
+    description: 'Complete curriculum outline for Computer Science program',
+    tags: ['curriculum', 'computer science', 'syllabus'],
+    department: 'Computer Science',
+    accessLevel: 'public',
+    downloads: 278,
+  },
+  {
+    id: 'doc5',
+    title: 'Teacher Onboarding Guide',
+    category: 'guide',
+    uploadedBy: 'Dr. Sarah Mitchell',
+    uploadDate: '2024-02-15',
+    fileSize: '1.8 MB',
+    fileType: 'PDF',
+    description: 'Comprehensive guide for new faculty members',
+    tags: ['onboarding', 'guide', 'teachers', 'HR'],
+    department: 'Human Resources',
+    accessLevel: 'staff',
+    downloads: 67,
+  },
+  {
+    id: 'doc6',
+    title: 'Mathematics Department Contract Template',
+    category: 'contract',
+    uploadedBy: 'Dr. James Wilson',
+    uploadDate: '2024-03-01',
+    fileSize: '456 KB',
+    fileType: 'DOCX',
+    description: 'Standard contract template for Mathematics department staff',
+    tags: ['contract', 'template', 'mathematics', 'HR'],
+    department: 'Mathematics',
+    accessLevel: 'admin',
+    downloads: 23,
+  },
+  {
+    id: 'doc7',
+    title: 'Student Code of Conduct',
+    category: 'policy',
+    uploadedBy: 'Dr. Emily Rodriguez',
+    uploadDate: '2024-01-05',
+    fileSize: '1.2 MB',
+    fileType: 'PDF',
+    description: 'Official code of conduct and disciplinary procedures',
+    tags: ['policy', 'conduct', 'discipline', 'students'],
+    department: 'Student Affairs',
+    accessLevel: 'public',
+    downloads: 512,
+  },
+  {
+    id: 'doc8',
+    title: 'Absence Request Form',
+    category: 'form',
+    uploadedBy: 'Dr. Sarah Mitchell',
+    uploadDate: '2024-02-10',
+    fileSize: '328 KB',
+    fileType: 'DOCX',
+    description: 'Form for requesting student absence approval',
+    tags: ['absence', 'form', 'attendance'],
+    department: 'Administration',
+    accessLevel: 'staff',
+    downloads: 189,
+  },
+];
+
+// Absence Approval Workflow
+export interface AbsenceRequest {
+  id: string;
+  studentId: string;
+  studentName: string;
+  requestedBy: string;
+  requestDate: string;
+  absenceDate: string;
+  absenceEndDate?: string;
+  reason: string;
+  category: 'medical' | 'family' | 'academic' | 'personal' | 'other';
+  status: 'pending' | 'approved' | 'rejected';
+  reviewedBy?: string;
+  reviewDate?: string;
+  reviewNotes?: string;
+  attachments?: string[];
+  affectedSubjects: string[];
+}
+
+export const absenceRequests: AbsenceRequest[] = [
+  {
+    id: 'abs1',
+    studentId: 'stu1',
+    studentName: 'Emma Thompson',
+    requestedBy: 'Parent - Jennifer Thompson',
+    requestDate: '2024-03-15',
+    absenceDate: '2024-03-18',
+    absenceEndDate: '2024-03-20',
+    reason: 'Medical appointment and recovery - scheduled surgery',
+    category: 'medical',
+    status: 'approved',
+    reviewedBy: 'Dr. Sarah Mitchell',
+    reviewDate: '2024-03-15',
+    reviewNotes: 'Valid medical documentation provided. Approved.',
+    attachments: ['medical_note.pdf'],
+    affectedSubjects: ['CS101', 'MATH201', 'ENG102'],
+  },
+  {
+    id: 'abs2',
+    studentId: 'stu2',
+    studentName: 'James Rodriguez',
+    requestedBy: 'Parent - Maria Rodriguez',
+    requestDate: '2024-03-20',
+    absenceDate: '2024-03-25',
+    reason: 'Family emergency - grandmother hospitalized',
+    category: 'family',
+    status: 'pending',
+    affectedSubjects: ['MATH201', 'PHYS101'],
+  },
+  {
+    id: 'abs3',
+    studentId: 'stu3',
+    studentName: 'Sophia Chen',
+    requestedBy: 'Parent - David Chen',
+    requestDate: '2024-03-18',
+    absenceDate: '2024-03-22',
+    absenceEndDate: '2024-03-23',
+    reason: 'Participating in National Science Competition',
+    category: 'academic',
+    status: 'approved',
+    reviewedBy: 'Prof. Michael Chen',
+    reviewDate: '2024-03-18',
+    reviewNotes: 'Approved for academic competition participation. Assignments to be submitted upon return.',
+    affectedSubjects: ['CS101', 'CHEM101'],
+  },
+  {
+    id: 'abs4',
+    studentId: 'stu4',
+    studentName: 'Oliver Martinez',
+    requestedBy: 'Self',
+    requestDate: '2024-03-21',
+    absenceDate: '2024-03-24',
+    reason: 'College campus visit',
+    category: 'academic',
+    status: 'pending',
+    affectedSubjects: ['HIST201', 'ENG102'],
+  },
+  {
+    id: 'abs5',
+    studentId: 'stu5',
+    studentName: 'Ava Johnson',
+    requestedBy: 'Parent - Michael Johnson',
+    requestDate: '2024-03-19',
+    absenceDate: '2024-03-21',
+    reason: 'Feeling unwell - flu symptoms',
+    category: 'medical',
+    status: 'approved',
+    reviewedBy: 'Dr. Emily Rodriguez',
+    reviewDate: '2024-03-19',
+    reviewNotes: 'Approved. Please provide medical note if absence extends beyond 2 days.',
+    affectedSubjects: ['MATH201', 'ART101'],
+  },
+  {
+    id: 'abs6',
+    studentId: 'stu2',
+    studentName: 'James Rodriguez',
+    requestedBy: 'Parent - Maria Rodriguez',
+    requestDate: '2024-03-17',
+    absenceDate: '2024-03-19',
+    reason: 'Religious observance',
+    category: 'personal',
+    status: 'rejected',
+    reviewedBy: 'Dr. Sarah Mitchell',
+    reviewDate: '2024-03-17',
+    reviewNotes: 'Insufficient notice provided. Please submit requests at least 48 hours in advance.',
+    affectedSubjects: ['MATH201', 'PHYS101'],
+  },
+];

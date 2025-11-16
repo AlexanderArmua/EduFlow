@@ -10,6 +10,8 @@ export interface Translations {
     communications: string;
     analytics: string;
     calendar: string;
+    documents: string;
+    absences: string;
     logout: string;
   };
 
@@ -493,6 +495,94 @@ export interface Translations {
     };
   };
 
+  // Documents
+  documents: {
+    title: string;
+    subtitle: string;
+    search: string;
+    searchPlaceholder: string;
+    uploadDocument: string;
+    filterByCategory: string;
+    allCategories: string;
+    filterByDepartment: string;
+    allDepartments: string;
+    category: string;
+    uploadedBy: string;
+    uploadDate: string;
+    fileSize: string;
+    downloads: string;
+    description: string;
+    tags: string;
+    department: string;
+    accessLevel: string;
+    download: string;
+    view: string;
+    delete: string;
+    noDocuments: string;
+    categories: {
+      policy: string;
+      form: string;
+      report: string;
+      curriculum: string;
+      guide: string;
+      contract: string;
+    };
+    accessLevels: {
+      public: string;
+      staff: string;
+      admin: string;
+    };
+  };
+
+  // Absences
+  absences: {
+    title: string;
+    subtitle: string;
+    search: string;
+    searchPlaceholder: string;
+    filterByStatus: string;
+    allStatuses: string;
+    filterByCategory: string;
+    allCategories: string;
+    studentName: string;
+    requestedBy: string;
+    requestDate: string;
+    absenceDate: string;
+    reason: string;
+    category: string;
+    status: string;
+    actions: string;
+    view: string;
+    approve: string;
+    reject: string;
+    pending: string;
+    approved: string;
+    rejected: string;
+    noRequests: string;
+    requestDetails: string;
+    absenceDates: string;
+    to: string;
+    affectedSubjects: string;
+    reviewedBy: string;
+    reviewDate: string;
+    reviewNotes: string;
+    attachments: string;
+    approveRequest: string;
+    rejectRequest: string;
+    addNotes: string;
+    notesPlaceholder: string;
+    confirmApproval: string;
+    confirmRejection: string;
+    backToRequests: string;
+    categories: {
+      medical: string;
+      family: string;
+      academic: string;
+      personal: string;
+      other: string;
+    };
+  };
+
   // Common
   common: {
     loading: string;
@@ -512,6 +602,8 @@ export const translations: Record<Language, Translations> = {
       communications: 'Parent Communications',
       analytics: 'Analytics',
       calendar: 'Calendar',
+      documents: 'Documents',
+      absences: 'Absences',
       logout: 'Logout',
     },
     login: {
@@ -970,6 +1062,90 @@ export const translations: Record<Language, Translations> = {
         neutral: 'Neutral',
       },
     },
+    documents: {
+      title: 'Documents',
+      subtitle: 'Manage institutional documents and resources',
+      search: 'Search',
+      searchPlaceholder: 'Search documents by title, tags, or description...',
+      uploadDocument: '+ Upload Document',
+      filterByCategory: 'Filter by Category',
+      allCategories: 'All Categories',
+      filterByDepartment: 'Filter by Department',
+      allDepartments: 'All Departments',
+      category: 'Category',
+      uploadedBy: 'Uploaded By',
+      uploadDate: 'Upload Date',
+      fileSize: 'Size',
+      downloads: 'Downloads',
+      description: 'Description',
+      tags: 'Tags',
+      department: 'Department',
+      accessLevel: 'Access Level',
+      download: 'Download',
+      view: 'View',
+      delete: 'Delete',
+      noDocuments: 'No documents found matching your criteria.',
+      categories: {
+        policy: 'Policy',
+        form: 'Form',
+        report: 'Report',
+        curriculum: 'Curriculum',
+        guide: 'Guide',
+        contract: 'Contract',
+      },
+      accessLevels: {
+        public: 'Public',
+        staff: 'Staff Only',
+        admin: 'Admin Only',
+      },
+    },
+    absences: {
+      title: 'Absence Requests',
+      subtitle: 'Manage student absence requests and approvals',
+      search: 'Search',
+      searchPlaceholder: 'Search by student name or requested by...',
+      filterByStatus: 'Filter by Status',
+      allStatuses: 'All Statuses',
+      filterByCategory: 'Filter by Category',
+      allCategories: 'All Categories',
+      studentName: 'Student Name',
+      requestedBy: 'Requested By',
+      requestDate: 'Request Date',
+      absenceDate: 'Absence Date',
+      reason: 'Reason',
+      category: 'Category',
+      status: 'Status',
+      actions: 'Actions',
+      view: 'View',
+      approve: 'Approve',
+      reject: 'Reject',
+      pending: 'Pending',
+      approved: 'Approved',
+      rejected: 'Rejected',
+      noRequests: 'No absence requests found.',
+      requestDetails: 'Request Details',
+      absenceDates: 'Absence Dates',
+      to: 'to',
+      affectedSubjects: 'Affected Subjects',
+      reviewedBy: 'Reviewed By',
+      reviewDate: 'Review Date',
+      reviewNotes: 'Review Notes',
+      attachments: 'Attachments',
+      approveRequest: 'Approve Request',
+      rejectRequest: 'Reject Request',
+      addNotes: 'Add Notes',
+      notesPlaceholder: 'Enter review notes...',
+      confirmApproval: 'Confirm Approval',
+      confirmRejection: 'Confirm Rejection',
+      backToRequests: 'Back to Requests',
+      categories: {
+        medical: 'Medical',
+        family: 'Family',
+        academic: 'Academic',
+        personal: 'Personal',
+        other: 'Other',
+      },
+    },
     common: {
       loading: 'Loading...',
       error: 'Error',
@@ -986,6 +1162,8 @@ export const translations: Record<Language, Translations> = {
       communications: 'Comunicación con Padres',
       analytics: 'Analíticas',
       calendar: 'Calendario',
+      documents: 'Documentos',
+      absences: 'Ausencias',
       logout: 'Cerrar Sesión',
     },
     login: {
@@ -1444,6 +1622,90 @@ export const translations: Record<Language, Translations> = {
         neutral: 'Neutral',
       },
     },
+    documents: {
+      title: 'Documentos',
+      subtitle: 'Gestionar documentos y recursos institucionales',
+      search: 'Buscar',
+      searchPlaceholder: 'Buscar documentos por título, etiquetas o descripción...',
+      uploadDocument: '+ Subir Documento',
+      filterByCategory: 'Filtrar por Categoría',
+      allCategories: 'Todas las Categorías',
+      filterByDepartment: 'Filtrar por Departamento',
+      allDepartments: 'Todos los Departamentos',
+      category: 'Categoría',
+      uploadedBy: 'Subido Por',
+      uploadDate: 'Fecha de Subida',
+      fileSize: 'Tamaño',
+      downloads: 'Descargas',
+      description: 'Descripción',
+      tags: 'Etiquetas',
+      department: 'Departamento',
+      accessLevel: 'Nivel de Acceso',
+      download: 'Descargar',
+      view: 'Ver',
+      delete: 'Eliminar',
+      noDocuments: 'No se encontraron documentos que coincidan con sus criterios.',
+      categories: {
+        policy: 'Política',
+        form: 'Formulario',
+        report: 'Informe',
+        curriculum: 'Currículo',
+        guide: 'Guía',
+        contract: 'Contrato',
+      },
+      accessLevels: {
+        public: 'Público',
+        staff: 'Solo Personal',
+        admin: 'Solo Administradores',
+      },
+    },
+    absences: {
+      title: 'Solicitudes de Ausencia',
+      subtitle: 'Gestionar solicitudes y aprobaciones de ausencia de estudiantes',
+      search: 'Buscar',
+      searchPlaceholder: 'Buscar por nombre de estudiante o solicitante...',
+      filterByStatus: 'Filtrar por Estado',
+      allStatuses: 'Todos los Estados',
+      filterByCategory: 'Filtrar por Categoría',
+      allCategories: 'Todas las Categorías',
+      studentName: 'Nombre del Estudiante',
+      requestedBy: 'Solicitado Por',
+      requestDate: 'Fecha de Solicitud',
+      absenceDate: 'Fecha de Ausencia',
+      reason: 'Motivo',
+      category: 'Categoría',
+      status: 'Estado',
+      actions: 'Acciones',
+      view: 'Ver',
+      approve: 'Aprobar',
+      reject: 'Rechazar',
+      pending: 'Pendiente',
+      approved: 'Aprobado',
+      rejected: 'Rechazado',
+      noRequests: 'No se encontraron solicitudes de ausencia.',
+      requestDetails: 'Detalles de la Solicitud',
+      absenceDates: 'Fechas de Ausencia',
+      to: 'a',
+      affectedSubjects: 'Materias Afectadas',
+      reviewedBy: 'Revisado Por',
+      reviewDate: 'Fecha de Revisión',
+      reviewNotes: 'Notas de Revisión',
+      attachments: 'Adjuntos',
+      approveRequest: 'Aprobar Solicitud',
+      rejectRequest: 'Rechazar Solicitud',
+      addNotes: 'Agregar Notas',
+      notesPlaceholder: 'Ingrese notas de revisión...',
+      confirmApproval: 'Confirmar Aprobación',
+      confirmRejection: 'Confirmar Rechazo',
+      backToRequests: 'Volver a Solicitudes',
+      categories: {
+        medical: 'Médica',
+        family: 'Familiar',
+        academic: 'Académica',
+        personal: 'Personal',
+        other: 'Otra',
+      },
+    },
     common: {
       loading: 'Cargando...',
       error: 'Error',
@@ -1460,6 +1722,8 @@ export const translations: Record<Language, Translations> = {
       communications: '保護者との連絡',
       analytics: '分析',
       calendar: 'カレンダー',
+      documents: 'ドキュメント',
+      absences: '欠席',
       logout: 'ログアウト',
     },
     login: {
@@ -1916,6 +2180,90 @@ export const translations: Record<Language, Translations> = {
         positive: '良好',
         negative: '要注意',
         neutral: '普通',
+      },
+    },
+    documents: {
+      title: 'ドキュメント',
+      subtitle: '機関のドキュメントとリソースを管理',
+      search: '検索',
+      searchPlaceholder: 'タイトル、タグ、または説明でドキュメントを検索...',
+      uploadDocument: '+ ドキュメントをアップロード',
+      filterByCategory: 'カテゴリで絞り込み',
+      allCategories: 'すべてのカテゴリ',
+      filterByDepartment: '部署で絞り込み',
+      allDepartments: 'すべての部署',
+      category: 'カテゴリ',
+      uploadedBy: 'アップロード者',
+      uploadDate: 'アップロード日',
+      fileSize: 'サイズ',
+      downloads: 'ダウンロード数',
+      description: '説明',
+      tags: 'タグ',
+      department: '部署',
+      accessLevel: 'アクセスレベル',
+      download: 'ダウンロード',
+      view: '表示',
+      delete: '削除',
+      noDocuments: '条件に一致するドキュメントが見つかりません。',
+      categories: {
+        policy: 'ポリシー',
+        form: 'フォーム',
+        report: 'レポート',
+        curriculum: 'カリキュラム',
+        guide: 'ガイド',
+        contract: '契約書',
+      },
+      accessLevels: {
+        public: '公開',
+        staff: 'スタッフのみ',
+        admin: '管理者のみ',
+      },
+    },
+    absences: {
+      title: '欠席申請',
+      subtitle: '学生の欠席申請と承認を管理',
+      search: '検索',
+      searchPlaceholder: '学生名または申請者で検索...',
+      filterByStatus: 'ステータスで絞り込み',
+      allStatuses: 'すべてのステータス',
+      filterByCategory: 'カテゴリで絞り込み',
+      allCategories: 'すべてのカテゴリ',
+      studentName: '学生名',
+      requestedBy: '申請者',
+      requestDate: '申請日',
+      absenceDate: '欠席日',
+      reason: '理由',
+      category: 'カテゴリ',
+      status: 'ステータス',
+      actions: 'アクション',
+      view: '表示',
+      approve: '承認',
+      reject: '却下',
+      pending: '保留中',
+      approved: '承認済み',
+      rejected: '却下済み',
+      noRequests: '欠席申請が見つかりません。',
+      requestDetails: '申請詳細',
+      absenceDates: '欠席日',
+      to: 'から',
+      affectedSubjects: '影響を受ける科目',
+      reviewedBy: '審査者',
+      reviewDate: '審査日',
+      reviewNotes: '審査メモ',
+      attachments: '添付ファイル',
+      approveRequest: '申請を承認',
+      rejectRequest: '申請を却下',
+      addNotes: 'メモを追加',
+      notesPlaceholder: '審査メモを入力...',
+      confirmApproval: '承認を確認',
+      confirmRejection: '却下を確認',
+      backToRequests: '申請一覧に戻る',
+      categories: {
+        medical: '医療',
+        family: '家族',
+        academic: '学業',
+        personal: '個人',
+        other: 'その他',
       },
     },
     common: {

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 
@@ -28,6 +29,15 @@ export default function LoginPage() {
       <div className="max-w-md w-full">
         <div className="sf-card p-8">
           <div className="text-center mb-8">
+            <div className="flex justify-center mb-4">
+              <Image
+                src="/logo.png"
+                alt="EduFlow CRM Logo"
+                width={80}
+                height={80}
+                className="object-contain"
+              />
+            </div>
             <h1 className="text-3xl font-bold text-salesforce-darkblue mb-2">
               {t.login.title}
             </h1>

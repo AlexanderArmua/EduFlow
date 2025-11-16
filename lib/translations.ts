@@ -16,6 +16,7 @@ export interface Translations {
     achievements: string;
     leaderboard: string;
     reports: string;
+    apiDocs: string;
     logout: string;
   };
 
@@ -794,6 +795,26 @@ export interface Translations {
     };
   };
 
+  // API Documentation
+  api: {
+    title: string;
+    subtitle: string;
+    overview: string;
+    authentication: string;
+    endpoints: string;
+    endpoint: string;
+    method: string;
+    description: string;
+    parameters: string;
+    response: string;
+    example: string;
+    request: string;
+    tryIt: string;
+    baseUrl: string;
+    version: string;
+    resources: string;
+  };
+
   // Common
   common: {
     loading: string;
@@ -819,6 +840,7 @@ export const translations: Record<Language, Translations> = {
       achievements: 'Achievements',
       leaderboard: 'Leaderboard',
       reports: 'Reports',
+      apiDocs: 'API Docs',
       logout: 'Logout',
     },
     login: {
@@ -1562,6 +1584,24 @@ export const translations: Record<Language, Translations> = {
         draft: 'Draft',
       },
     },
+    api: {
+      title: 'API Documentation',
+      subtitle: 'RESTful API for EduFlow CRM Integration',
+      overview: 'Overview',
+      authentication: 'Authentication',
+      endpoints: 'Endpoints',
+      endpoint: 'Endpoint',
+      method: 'Method',
+      description: 'Description',
+      parameters: 'Parameters',
+      response: 'Response',
+      example: 'Example',
+      request: 'Request',
+      tryIt: 'Try It',
+      baseUrl: 'Base URL',
+      version: 'Version',
+      resources: 'Resources',
+    },
     common: {
       loading: 'Loading...',
       error: 'Error',
@@ -1584,6 +1624,7 @@ export const translations: Record<Language, Translations> = {
       achievements: 'Logros',
       leaderboard: 'Tabla de Clasificación',
       reports: 'Reportes',
+      apiDocs: 'Docs API',
       logout: 'Cerrar Sesión',
     },
     login: {
@@ -2318,6 +2359,24 @@ export const translations: Record<Language, Translations> = {
         draft: 'Borrador',
       },
     },
+    api: {
+      title: 'Documentación de API',
+      subtitle: 'API RESTful para Integración de EduFlow CRM',
+      overview: 'Descripción General',
+      authentication: 'Autenticación',
+      endpoints: 'Endpoints',
+      endpoint: 'Endpoint',
+      method: 'Método',
+      description: 'Descripción',
+      parameters: 'Parámetros',
+      response: 'Respuesta',
+      example: 'Ejemplo',
+      request: 'Solicitud',
+      tryIt: 'Probar',
+      baseUrl: 'URL Base',
+      version: 'Versión',
+      resources: 'Recursos',
+    },
     common: {
       loading: 'Cargando...',
       error: 'Error',
@@ -2340,6 +2399,7 @@ export const translations: Record<Language, Translations> = {
       achievements: '実績',
       leaderboard: 'リーダーボード',
       reports: 'レポート',
+      apiDocs: 'APIドキュメント',
       logout: 'ログアウト',
     },
     login: {
@@ -3073,6 +3133,24 @@ export const translations: Record<Language, Translations> = {
         paused: '一時停止',
         draft: '下書き',
       },
+    },
+    api: {
+      title: 'APIドキュメント',
+      subtitle: 'EduFlow CRM統合用RESTful API',
+      overview: '概要',
+      authentication: '認証',
+      endpoints: 'エンドポイント',
+      endpoint: 'エンドポイント',
+      method: 'メソッド',
+      description: '説明',
+      parameters: 'パラメータ',
+      response: 'レスポンス',
+      example: '例',
+      request: 'リクエスト',
+      tryIt: '試す',
+      baseUrl: 'ベースURL',
+      version: 'バージョン',
+      resources: 'リソース',
     },
     common: {
       loading: '読み込み中...',

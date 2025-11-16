@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -24,6 +25,7 @@ export default function Navigation() {
     { name: t.nav.achievements, path: '/achievements' },
     { name: t.nav.leaderboard, path: '/leaderboard' },
     { name: t.nav.reports, path: '/reports' },
+    { name: t.nav.apiDocs, path: '/api-docs' },
   ];
 
   const handleLogout = () => {
@@ -35,8 +37,15 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-3">
           <div className="flex-shrink-0">
-            <Link href="/dashboard">
-              <h1 className="text-2xl font-bold cursor-pointer hover:text-gray-200 transition-colors">EduFlow CRM</h1>
+            <Link href="/dashboard" className="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity">
+              <Image
+                src="/logo.png"
+                alt="EduFlow CRM Logo"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
+              <h1 className="text-2xl font-bold text-white">EduFlow CRM</h1>
             </Link>
           </div>
           <div className="flex items-center gap-4">

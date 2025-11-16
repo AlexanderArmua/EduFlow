@@ -35,7 +35,7 @@ export default function Navigation() {
   return (
     <nav className="bg-salesforce-darkblue text-white shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-3">
+        <div className="flex justify-between items-center py-4">
           <div className="flex-shrink-0">
             <Link href="/dashboard" className="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity">
               <Image
@@ -59,7 +59,7 @@ export default function Navigation() {
             </button>
           </div>
         </div>
-        <div className="hidden md:grid grid-cols-6 gap-2 pb-3">
+        <div className="hidden md:grid grid-cols-7 gap-2 pb-4 pt-1">
           {navItems.map((item) => {
             const isActive = pathname.startsWith(item.path) ||
               (pathname === '/timetable' && item.path === '/calendar');

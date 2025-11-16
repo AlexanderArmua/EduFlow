@@ -114,6 +114,30 @@ export interface Translations {
       'in-progress': string;
       planned: string;
     };
+    performance: {
+      title: string;
+      subtitle: string;
+      filterByProfessor: string;
+      allProfessors: string;
+      workloadComparison: string;
+      teachingHours: string;
+      rating: string;
+      totalStudents: string;
+      totalSubjects: string;
+      weeklyHours: string;
+      reviews: string;
+      classPerformance: string;
+      subject: string;
+      students: string;
+      avgGrade: string;
+      passRate: string;
+      professionalDevelopment: string;
+      pdStatus: {
+        completed: string;
+        'in-progress': string;
+        planned: string;
+      };
+    };
   };
 
   // Subjects
@@ -586,6 +610,30 @@ export const translations: Record<Language, Translations> = {
         'in-progress': 'In Progress',
         planned: 'Planned',
       },
+      performance: {
+        title: 'Professor Performance',
+        subtitle: 'Analyze teaching metrics and professional development',
+        filterByProfessor: 'Filter by Professor',
+        allProfessors: 'All Professors',
+        workloadComparison: 'Teaching Load Comparison',
+        teachingHours: 'Teaching Hours',
+        rating: 'Rating (x20)',
+        totalStudents: 'Total Students',
+        totalSubjects: 'Subjects',
+        weeklyHours: 'Hours/Week',
+        reviews: 'reviews',
+        classPerformance: 'Class Performance',
+        subject: 'Subject',
+        students: 'Students',
+        avgGrade: 'Avg Grade',
+        passRate: 'Pass Rate',
+        professionalDevelopment: 'Professional Development',
+        pdStatus: {
+          completed: 'Completed',
+          'in-progress': 'In Progress',
+          planned: 'Planned',
+        },
+      },
     },
     subjects: {
       title: 'Subjects',
@@ -1036,6 +1084,30 @@ export const translations: Record<Language, Translations> = {
         'in-progress': 'En Progreso',
         planned: 'Planificado',
       },
+      performance: {
+        title: 'Desempeño del Profesor',
+        subtitle: 'Analizar métricas de enseñanza y desarrollo profesional',
+        filterByProfessor: 'Filtrar por Profesor',
+        allProfessors: 'Todos los Profesores',
+        workloadComparison: 'Comparación de Carga de Enseñanza',
+        teachingHours: 'Horas de Enseñanza',
+        rating: 'Calificación (x20)',
+        totalStudents: 'Total de Estudiantes',
+        totalSubjects: 'Materias',
+        weeklyHours: 'Horas/Semana',
+        reviews: 'reseñas',
+        classPerformance: 'Desempeño de Clase',
+        subject: 'Materia',
+        students: 'Estudiantes',
+        avgGrade: 'Nota Promedio',
+        passRate: 'Tasa de Aprobación',
+        professionalDevelopment: 'Desarrollo Profesional',
+        pdStatus: {
+          completed: 'Completado',
+          'in-progress': 'En Progreso',
+          planned: 'Planificado',
+        },
+      },
     },
     subjects: {
       title: 'Materias',
@@ -1485,6 +1557,30 @@ export const translations: Record<Language, Translations> = {
         completed: '完了',
         'in-progress': '進行中',
         planned: '予定',
+      },
+      performance: {
+        title: '教授のパフォーマンス',
+        subtitle: '教育指標と専門能力開発を分析',
+        filterByProfessor: '教授で絞り込み',
+        allProfessors: 'すべての教授',
+        workloadComparison: '教育負荷の比較',
+        teachingHours: '授業時間',
+        rating: '評価（x20）',
+        totalStudents: '学生総数',
+        totalSubjects: '科目',
+        weeklyHours: '時間/週',
+        reviews: 'レビュー',
+        classPerformance: 'クラスのパフォーマンス',
+        subject: '科目',
+        students: '学生',
+        avgGrade: '平均成績',
+        passRate: '合格率',
+        professionalDevelopment: '専門能力開発',
+        pdStatus: {
+          completed: '完了',
+          'in-progress': '進行中',
+          planned: '予定',
+        },
       },
     },
     subjects: {

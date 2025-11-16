@@ -1797,3 +1797,263 @@ export const professorAvailability: ProfessorAvailability[] = [
     notes: 'Consultas de Historia - Oficina 402'
   },
 ];
+
+// Professor Performance Data
+export interface ProfessorPerformance {
+  professorId: string;
+  professorName: string;
+  department: string;
+  totalStudents: number;
+  totalSubjects: number;
+  teachingHoursPerWeek: number;
+  averageRating: number;
+  totalRatings: number;
+  classPerformance: {
+    subjectCode: string;
+    subjectName: string;
+    averageGrade: number;
+    passRate: number;
+    students: number;
+  }[];
+  professionalDevelopment: {
+    id: string;
+    title: string;
+    type: 'course' | 'seminar' | 'conference' | 'workshop';
+    date: string;
+    status: 'completed' | 'in-progress' | 'planned';
+  }[];
+}
+
+export const professorPerformance: ProfessorPerformance[] = [
+  {
+    professorId: '1',
+    professorName: 'Dr. Martín Fernández',
+    department: 'Informática',
+    totalStudents: 75,
+    totalSubjects: 2,
+    teachingHoursPerWeek: 12,
+    averageRating: 4.6,
+    totalRatings: 45,
+    classPerformance: [
+      {
+        subjectCode: 'INF301',
+        subjectName: 'Programación Avanzada',
+        averageGrade: 85,
+        passRate: 92,
+        students: 40,
+      },
+      {
+        subjectCode: 'INF101',
+        subjectName: 'Introducción a la Programación',
+        averageGrade: 82,
+        passRate: 88,
+        students: 35,
+      },
+    ],
+    professionalDevelopment: [
+      {
+        id: 'pd1',
+        title: 'Modern JavaScript Frameworks',
+        type: 'course',
+        date: '2024-09-15',
+        status: 'completed',
+      },
+      {
+        id: 'pd2',
+        title: 'AI in Education Conference',
+        type: 'conference',
+        date: '2024-11-20',
+        status: 'planned',
+      },
+      {
+        id: 'pd3',
+        title: 'Teaching Best Practices Workshop',
+        type: 'workshop',
+        date: '2024-10-10',
+        status: 'completed',
+      },
+    ],
+  },
+  {
+    professorId: '2',
+    professorName: 'Prof. Ana María González',
+    department: 'Matemáticas',
+    totalStudents: 90,
+    totalSubjects: 3,
+    teachingHoursPerWeek: 15,
+    averageRating: 4.8,
+    totalRatings: 52,
+    classPerformance: [
+      {
+        subjectCode: 'MAT201',
+        subjectName: 'Álgebra Lineal',
+        averageGrade: 88,
+        passRate: 94,
+        students: 35,
+      },
+      {
+        subjectCode: 'MAT301',
+        subjectName: 'Cálculo Diferencial',
+        averageGrade: 86,
+        passRate: 91,
+        students: 30,
+      },
+      {
+        subjectCode: 'MAT101',
+        subjectName: 'Matemática Básica',
+        averageGrade: 84,
+        passRate: 89,
+        students: 25,
+      },
+    ],
+    professionalDevelopment: [
+      {
+        id: 'pd4',
+        title: 'Advanced Mathematics Pedagogy',
+        type: 'seminar',
+        date: '2024-08-22',
+        status: 'completed',
+      },
+      {
+        id: 'pd5',
+        title: 'Online Teaching Methods',
+        type: 'course',
+        date: '2024-10-15',
+        status: 'in-progress',
+      },
+    ],
+  },
+  {
+    professorId: '3',
+    professorName: 'Dr. Santiago Rodríguez',
+    department: 'Física',
+    totalStudents: 65,
+    totalSubjects: 2,
+    teachingHoursPerWeek: 10,
+    averageRating: 4.5,
+    totalRatings: 38,
+    classPerformance: [
+      {
+        subjectCode: 'FIS201',
+        subjectName: 'Mecánica Clásica',
+        averageGrade: 83,
+        passRate: 87,
+        students: 35,
+      },
+      {
+        subjectCode: 'FIS301',
+        subjectName: 'Electromagnetismo',
+        averageGrade: 81,
+        passRate: 89,
+        students: 30,
+      },
+    ],
+    professionalDevelopment: [
+      {
+        id: 'pd6',
+        title: 'Physics Education Research',
+        type: 'conference',
+        date: '2024-07-10',
+        status: 'completed',
+      },
+      {
+        id: 'pd7',
+        title: 'Lab Safety and Management',
+        type: 'workshop',
+        date: '2024-09-05',
+        status: 'completed',
+      },
+      {
+        id: 'pd8',
+        title: 'Quantum Mechanics Teaching',
+        type: 'seminar',
+        date: '2024-12-01',
+        status: 'planned',
+      },
+    ],
+  },
+  {
+    professorId: '4',
+    professorName: 'Prof. Carolina López',
+    department: 'Química',
+    totalStudents: 70,
+    totalSubjects: 2,
+    teachingHoursPerWeek: 11,
+    averageRating: 4.9,
+    totalRatings: 48,
+    classPerformance: [
+      {
+        subjectCode: 'QUI101',
+        subjectName: 'Química General',
+        averageGrade: 87,
+        passRate: 93,
+        students: 35,
+      },
+      {
+        subjectCode: 'QUI201',
+        subjectName: 'Química Orgánica',
+        averageGrade: 85,
+        passRate: 90,
+        students: 35,
+      },
+    ],
+    professionalDevelopment: [
+      {
+        id: 'pd9',
+        title: 'Green Chemistry Workshop',
+        type: 'workshop',
+        date: '2024-08-15',
+        status: 'completed',
+      },
+      {
+        id: 'pd10',
+        title: 'Chemistry Lab Innovations',
+        type: 'conference',
+        date: '2024-11-10',
+        status: 'in-progress',
+      },
+    ],
+  },
+  {
+    professorId: '5',
+    professorName: 'Prof. Laura Martínez',
+    department: 'Historia',
+    totalStudents: 55,
+    totalSubjects: 2,
+    teachingHoursPerWeek: 9,
+    averageRating: 4.7,
+    totalRatings: 35,
+    classPerformance: [
+      {
+        subjectCode: 'HIS101',
+        subjectName: 'Historia Universal',
+        averageGrade: 86,
+        passRate: 95,
+        students: 30,
+      },
+      {
+        subjectCode: 'HIS201',
+        subjectName: 'Historia Argentina',
+        averageGrade: 88,
+        passRate: 96,
+        students: 25,
+      },
+    ],
+    professionalDevelopment: [
+      {
+        id: 'pd11',
+        title: 'Digital History Tools',
+        type: 'course',
+        date: '2024-09-20',
+        status: 'completed',
+      },
+      {
+        id: 'pd12',
+        title: 'Historical Research Methods',
+        type: 'seminar',
+        date: '2024-10-25',
+        status: 'in-progress',
+      },
+    ],
+  },
+];

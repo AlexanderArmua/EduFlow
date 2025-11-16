@@ -29,11 +29,18 @@ export default function ProfessorsPage() {
             <h1 className="text-3xl font-bold text-gray-900">{t.professors.title}</h1>
             <p className="text-gray-600 mt-2">{t.professors.subtitle}</p>
           </div>
-          <Link href="/professors/new">
-            <button className="sf-button-primary">
-              {t.professors.addProfessor}
-            </button>
-          </Link>
+          <div className="flex gap-3">
+            <Link href="/professors/performance">
+              <button className="sf-button-secondary">
+                📊 {t.professors.performance?.title || 'Performance'}
+              </button>
+            </Link>
+            <Link href="/professors/new">
+              <button className="sf-button-primary">
+                {t.professors.addProfessor}
+              </button>
+            </Link>
+          </div>
         </div>
 
         {/* Filters */}

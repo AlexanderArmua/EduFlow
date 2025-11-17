@@ -3,11 +3,11 @@
    ======================================== */
 
 :root {
-  /* Salesforce Colors */
-  --color-primary: #0176D3;
-  --color-primary-dark: #032D60;
-  --color-primary-light: #1A9BE6;
-  --color-accent: #F26522;
+  /* Green Color Palette */
+  --color-primary: #10B981;
+  --color-primary-dark: #047857;
+  --color-primary-light: #34D399;
+  --color-accent: #059669;
 
   /* Neutral Colors */
   --color-white: #FFFFFF;

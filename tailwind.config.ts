@@ -10,9 +10,9 @@ const config: Config = {
     extend: {
       colors: {
         salesforce: {
-          blue: '#0176D3',
-          darkblue: '#032D60',
-          cloud: '#E3F3FF',
+          blue: '#10B981',
+          darkblue: '#047857',
+          cloud: '#D1FAE5',
           border: '#DDDBDA',
           gray: '#706E6B',
         }

@@ -6,9 +6,9 @@ export const metadata: Metadata = {
   title: "EduFlow CRM - Salesforce Education",
   description: "Education CRM powered by Salesforce - Manage professors, students, subjects, communications, and more",
   icons: {
-    icon: '/logo.png',
-    shortcut: '/logo.png',
-    apple: '/logo.png',
+    icon: '/logo.webp',
+    shortcut: '/logo.webp',
+    apple: '/logo.webp',
   },
 };
 

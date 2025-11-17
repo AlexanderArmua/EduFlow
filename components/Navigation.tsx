@@ -39,7 +39,7 @@ export default function Navigation() {
           <div className="flex-shrink-0">
             <Link href="/dashboard" className="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity">
               <Image
-                src="/logo.png"
+                src="/logo.webp"
                 alt="EduFlow CRM Logo"
                 width={40}
                 height={40}

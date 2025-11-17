@@ -31,7 +31,7 @@ export default function LoginPage() {
           <div className="text-center mb-8">
             <div className="flex justify-center mb-4">
               <Image
-                src="/logo.png"
+                src="/logo.webp"
                 alt="EduFlow CRM Logo"
                 width={80}
                 height={80}

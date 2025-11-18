@@ -1,14 +1,15 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, use } from 'react';
 import Navigation from '@/components/Navigation';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { absenceRequests } from '@/lib/mockData';
 
-export default function AbsenceDetailPage({ params }: { params: { id: string } }) {
+export default function AbsenceDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { t } = useLanguage();
-  const request = absenceRequests.find(r => r.id === params.id);
+  const { id } = use(params);
+  const request = absenceRequests.find(r => r.id === id);
   const [reviewNotes, setReviewNotes] = useState('');
   const [showApprovalConfirm, setShowApprovalConfirm] = useState(false);
   const [showRejectionConfirm, setShowRejectionConfirm] = useState(false);

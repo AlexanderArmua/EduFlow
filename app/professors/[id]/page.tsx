@@ -391,7 +391,7 @@ export default function ProfessorDetailPage({ params }: { params: Promise<{ id: 
                               <span className="text-yellow-500">★</span>
                             </div>
                           </div>
-                          <p className="text-sm text-gray-700 italic">"{rating.feedback}"</p>
+                          <p className="text-sm text-gray-700 italic">&ldquo;{rating.feedback}&rdquo;</p>
                           <p className="text-xs text-gray-500 mt-2">{new Date(rating.date).toLocaleDateString()}</p>
                         </div>
                       ))}

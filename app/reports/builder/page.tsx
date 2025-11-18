@@ -1,38 +1,28 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import Navigation from '@/components/Navigation';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useSearchParams } from 'next/navigation';
 import { reportTemplates } from '@/lib/mockData';
 
-export default function ReportBuilderPage() {
+function ReportBuilderContent() {
   const { t } = useLanguage();
   const searchParams = useSearchParams();
   const templateId = searchParams.get('template');
+  const currentTemplate = reportTemplates.find(t => t.id === templateId);
 
   const [step, setStep] = useState(1);
   const [selectedTemplate, setSelectedTemplate] = useState(templateId || '');
-  const [reportTitle, setReportTitle] = useState('');
-  const [reportDescription, setReportDescription] = useState('');
-  const [selectedFields, setSelectedFields] = useState<string[]>([]);
-  const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
+  const [reportTitle, setReportTitle] = useState(() => currentTemplate?.name || '');
+  const [reportDescription, setReportDescription] = useState(() => currentTemplate?.description || '');
+  const [selectedFields, setSelectedFields] = useState<string[]>(() => currentTemplate?.dataFields || []);
+  const [selectedFilters, setSelectedFilters] = useState<string[]>(() => currentTemplate?.filters || []);
   const [frequency, setFrequency] = useState('on-demand');
   const [format, setFormat] = useState('pdf');
   const [recipients, setRecipients] = useState<string[]>([]);
   const [newRecipient, setNewRecipient] = useState('');
-
-  const currentTemplate = reportTemplates.find(t => t.id === selectedTemplate);
-
-  useEffect(() => {
-    if (templateId && currentTemplate) {
-      setReportTitle(currentTemplate.name);
-      setReportDescription(currentTemplate.description);
-      setSelectedFields(currentTemplate.dataFields);
-      setSelectedFilters(currentTemplate.filters);
-    }
-  }, [templateId, currentTemplate]);
 
   const toggleField = (field: string) => {
     setSelectedFields(prev =>
@@ -409,5 +399,22 @@ export default function ReportBuilderPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function ReportBuilderPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gray-100">
+        <Navigation />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="sf-card p-6 text-center">
+            <p className="text-gray-500">Loading...</p>
+          </div>
+        </div>
+      </div>
+    }>
+      <ReportBuilderContent />
+    </Suspense>
   );
 }

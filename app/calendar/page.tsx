@@ -112,8 +112,8 @@ export default function CalendarPage() {
     }
   };
 
-  // Month view component
-  const MonthView = () => {
+  // Month view render function
+  const renderMonthView = () => {
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
     const firstDay = new Date(year, month, 1);
@@ -186,8 +186,8 @@ export default function CalendarPage() {
     );
   };
 
-  // Week view component
-  const WeekView = () => {
+  // Week view render function
+  const renderWeekView = () => {
     const weekStart = new Date(currentDate);
     weekStart.setDate(currentDate.getDate() - currentDate.getDay());
 
@@ -242,8 +242,8 @@ export default function CalendarPage() {
     );
   };
 
-  // Day view component
-  const DayView = () => {
+  // Day view render function
+  const renderDayView = () => {
     const dayEvents = getEventsForDate(currentDate);
 
     return (
@@ -422,9 +422,9 @@ export default function CalendarPage() {
         </div>
 
         {/* Calendar View */}
-        {viewMode === 'month' && <MonthView />}
-        {viewMode === 'week' && <WeekView />}
-        {viewMode === 'day' && <DayView />}
+        {viewMode === 'month' && renderMonthView()}
+        {viewMode === 'week' && renderWeekView()}
+        {viewMode === 'day' && renderDayView()}
       </div>
 
       {/* Event Detail Modal */}

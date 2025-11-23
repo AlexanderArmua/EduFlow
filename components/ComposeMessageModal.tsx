@@ -1,7 +1,10 @@
 'use client';
 
-import { useState } from 'react';
-import { students, messageTemplates } from '@/lib/mockData';
+import { messageTemplates } from '@/lib/data/communications';
+import { students } from '@/lib/data/students';
+
+import {  useState , useMemo } from 'react';
+
 import { useLanguage } from '@/contexts/LanguageContext';
 
 interface ComposeMessageModalProps {
@@ -16,6 +19,8 @@ export default function ComposeMessageModal({ isOpen, onClose }: ComposeMessageM
   const [message, setMessage] = useState('');
   const [selectedTemplate, setSelectedTemplate] = useState('');
   const [priority, setPriority] = useState<'High' | 'Medium' | 'Low'>('Medium');
+
+  const activeStudents = useMemo(() => students.filter(s => s.status === 'Active'), []);
 
   if (!isOpen) return null;
 
@@ -83,8 +88,6 @@ export default function ComposeMessageModal({ isOpen, onClose }: ComposeMessageM
     setPriority('Medium');
     onClose();
   };
-
-  const activeStudents = students.filter(s => s.status === 'Active');
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto" onClick={onClose}>

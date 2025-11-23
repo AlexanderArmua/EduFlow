@@ -1,11 +1,12 @@
 'use client';
 
+import { professors } from '@/lib/mockData';
+
 import Navigation from '@/components/Navigation';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { professors } from '@/lib/mockData';
 
 export default function NewSubjectPage() {
   const { t } = useLanguage();

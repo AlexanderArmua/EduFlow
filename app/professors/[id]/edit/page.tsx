@@ -1,8 +1,10 @@
 'use client';
 
+import { professors } from '@/lib/mockData';
+
 import Navigation from '@/components/Navigation';
 import Link from 'next/link';
-import { professors } from '@/lib/mockData';
+
 import { useState, use } from 'react';
 import { useRouter } from 'next/navigation';
 import { useLanguage } from '@/contexts/LanguageContext';

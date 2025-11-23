@@ -1,16 +1,33 @@
 'use client';
 
+import { parentMessages } from '@/lib/data/communications';
+import { professors } from '@/lib/mockData';
+import { subjects } from '@/lib/data/subjects';
+
 import Navigation from '@/components/Navigation';
 import Link from 'next/link';
-import { professors, subjects, parentMessages } from '@/lib/mockData';
+
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useMemo } from 'react';
 
 export default function DashboardPage() {
   const { t } = useLanguage();
-  const activeProfessors = professors.filter(p => p.status === 'Active').length;
-  const totalSubjects = subjects.length;
-  const unreadMessages = parentMessages.filter(m => m.status === 'Unread').length;
-  const totalStudents = subjects.reduce((sum, subject) => sum + subject.students, 0);
+
+  const activeProfessors = useMemo(() =>
+    professors.filter(p => p.status === 'Active').length,
+    []);
+
+  const totalSubjects = useMemo(() =>
+    subjects.length,
+    []);
+
+  const unreadMessages = useMemo(() =>
+    parentMessages.filter(m => m.status === 'Unread').length,
+    []);
+
+  const totalStudents = useMemo(() =>
+    subjects.reduce((sum, subject) => sum + subject.students, 0),
+    []);
 
   const stats = [
     { name: t.dashboard.activeProfessors, value: activeProfessors, color: 'bg-blue-500', link: '/professors' },

@@ -1,10 +1,11 @@
 'use client';
 
+import { professorAvailability, professors } from '@/lib/mockData';
+
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { professorAvailability, professors } from '@/lib/mockData';
 
 export default function TeacherAvailabilityPage() {
   const { t } = useLanguage();

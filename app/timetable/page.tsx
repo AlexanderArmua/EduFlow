@@ -1,11 +1,16 @@
 'use client';
 
+import { classSchedules, ClassSchedule } from '@/lib/data/calendar';
+import { professorAvailability, ProfessorAvailability } from '@/lib/mockData';
+
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { classSchedules, professorAvailability, ClassSchedule, ProfessorAvailability } from '@/lib/mockData';
-import ScheduleModal from '@/components/ScheduleModal';
+
+import dynamic from 'next/dynamic';
+
+const ScheduleModal = dynamic(() => import('@/components/ScheduleModal'), { ssr: false });
 
 type ViewMode = 'classes' | 'availability';
 

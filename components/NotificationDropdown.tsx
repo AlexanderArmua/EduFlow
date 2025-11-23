@@ -1,18 +1,19 @@
 'use client';
 
+import { Notification, notifications as mockNotifications } from '@/lib/data/communications';
+
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { notifications as mockNotifications, Notification } from '@/lib/mockData';
 
 export default function NotificationDropdown() {
   const { t } = useLanguage();
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
-  const [notifications, setNotifications] = useState<Notification[]>(mockNotifications);
+  const [notificationsState, setNotifications] = useState<Notification[]>(mockNotifications);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const unreadCount = notifications.filter((n) => !n.read).length;
+  const unreadCount = notificationsState.filter((n) => !n.read).length;
 
   // Click outside to close
   useEffect(() => {
@@ -139,13 +140,13 @@ export default function NotificationDropdown() {
 
           {/* Notifications List */}
           <div className="overflow-y-auto flex-1">
-            {notifications.length === 0 ? (
+            {notificationsState.length === 0 ? (
               <div className="p-8 text-center text-gray-500">
                 {t.notifications.noNotifications}
               </div>
             ) : (
               <div className="divide-y divide-gray-100">
-                {notifications.map((notification) => (
+                {notificationsState.map((notification) => (
                   <div
                     key={notification.id}
                     onClick={() => handleNotificationClick(notification)}

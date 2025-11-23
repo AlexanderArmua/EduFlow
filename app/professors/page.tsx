@@ -1,8 +1,10 @@
 'use client';
 
+import { professors } from '@/lib/mockData';
+
 import Navigation from '@/components/Navigation';
 import Link from 'next/link';
-import { professors } from '@/lib/mockData';
+
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -24,12 +26,12 @@ export default function ProfessorsPage() {
       <Navigation />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
           <div>
             <h1 className="text-3xl font-bold text-gray-900">{t.professors.title}</h1>
             <p className="text-gray-600 mt-2">{t.professors.subtitle}</p>
           </div>
-          <div className="flex gap-3">
+          <div className="flex gap-3 flex-wrap">
             <Link href="/professors/performance">
               <button className="sf-button-secondary">
                 📊 {t.professors.performance?.title || 'Performance'}

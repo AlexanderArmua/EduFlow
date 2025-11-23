@@ -1,11 +1,13 @@
 'use client';
 
+import { professors } from '@/lib/mockData';
+import { subjects } from '@/lib/data/subjects';
+
 import Navigation from '@/components/Navigation';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState, use } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { professors, subjects } from '@/lib/mockData';
 
 export default function EditSubjectPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);

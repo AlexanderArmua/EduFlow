@@ -563,6 +563,198 @@ document.querySelectorAll('.founder-social a, .footer-social a').forEach(link =>
 });
 
 // ========================================
+// Carousel Functionality
+// ========================================
+
+const carousel = {
+  currentSlide: 0,
+  totalSlides: 0,
+  autoPlayInterval: null,
+  autoPlayDelay: 4000, // 4 seconds
+  slides: [],
+  dots: [],
+  slidesContainer: null,
+  isHovered: false,
+
+  init() {
+    this.slidesContainer = document.querySelector('.carousel-slides');
+    this.slides = document.querySelectorAll('.carousel-slide');
+    this.dots = document.querySelectorAll('.carousel-dot');
+    this.totalSlides = this.slides.length;
+
+    if (!this.slidesContainer || this.totalSlides === 0) return;
+
+    // Setup event listeners
+    this.setupArrows();
+    this.setupDots();
+    this.setupHoverPause();
+    this.setupKeyboardNav();
+
+    // Setup lazy loading for images
+    this.setupLazyLoading();
+
+    // Start autoplay
+    this.startAutoPlay();
+  },
+
+  goToSlide(index) {
+    // Remove active class from current slide and dot
+    this.slides[this.currentSlide].classList.remove('active');
+    this.dots[this.currentSlide].classList.remove('active');
+
+    // Update current slide
+    this.currentSlide = index;
+    if (this.currentSlide >= this.totalSlides) this.currentSlide = 0;
+    if (this.currentSlide < 0) this.currentSlide = this.totalSlides - 1;
+
+    // Add active class to new slide and dot
+    this.slides[this.currentSlide].classList.add('active');
+    this.dots[this.currentSlide].classList.add('active');
+
+    // Update screen reader announcement
+    const slideNumberElement = document.getElementById('current-slide-number');
+    if (slideNumberElement) {
+      slideNumberElement.textContent = this.currentSlide + 1;
+    }
+
+    // Load image if not loaded yet
+    this.loadImage(this.currentSlide);
+
+    // Preload next image
+    const nextIndex = (this.currentSlide + 1) % this.totalSlides;
+    this.loadImage(nextIndex);
+  },
+
+  nextSlide() {
+    this.goToSlide(this.currentSlide + 1);
+  },
+
+  prevSlide() {
+    this.goToSlide(this.currentSlide - 1);
+  },
+
+  setupArrows() {
+    const prevArrow = document.querySelector('.carousel-arrow-prev');
+    const nextArrow = document.querySelector('.carousel-arrow-next');
+
+    if (prevArrow) {
+      prevArrow.addEventListener('click', () => {
+        this.prevSlide();
+        this.resetAutoPlay();
+      });
+    }
+
+    if (nextArrow) {
+      nextArrow.addEventListener('click', () => {
+        this.nextSlide();
+        this.resetAutoPlay();
+      });
+    }
+  },
+
+  setupDots() {
+    this.dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        this.goToSlide(index);
+        this.resetAutoPlay();
+      });
+    });
+  },
+
+  setupHoverPause() {
+    const container = document.querySelector('.carousel-container');
+
+    if (container) {
+      container.addEventListener('mouseenter', () => {
+        this.isHovered = true;
+        this.stopAutoPlay();
+      });
+
+      container.addEventListener('mouseleave', () => {
+        this.isHovered = false;
+        this.startAutoPlay();
+      });
+    }
+  },
+
+  setupKeyboardNav() {
+    document.addEventListener('keydown', (e) => {
+      if (this.isHovered) {
+        if (e.key === 'ArrowLeft') {
+          this.prevSlide();
+          this.resetAutoPlay();
+        } else if (e.key === 'ArrowRight') {
+          this.nextSlide();
+          this.resetAutoPlay();
+        }
+      }
+    });
+  },
+
+  setupLazyLoading() {
+    // Load first image immediately (already has src)
+    // For others, use Intersection Observer for lazy loading
+    const imageObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          const slideIndex = Array.from(this.slides).indexOf(img.closest('.carousel-slide'));
+          this.loadImage(slideIndex);
+        }
+      });
+    }, {
+      rootMargin: '50px' // Start loading slightly before slide becomes visible
+    });
+
+    // Observe all slides
+    this.slides.forEach(slide => {
+      imageObserver.observe(slide);
+    });
+  },
+
+  loadImage(index) {
+    if (index < 0 || index >= this.totalSlides) return;
+
+    const slide = this.slides[index];
+    const img = slide.querySelector('img');
+
+    if (img && img.dataset.src && !img.src) {
+      img.src = img.dataset.src;
+      img.removeAttribute('data-src');
+    }
+  },
+
+  startAutoPlay() {
+    if (this.autoPlayInterval) return; // Already running
+
+    this.autoPlayInterval = setInterval(() => {
+      if (!this.isHovered) {
+        this.nextSlide();
+      }
+    }, this.autoPlayDelay);
+  },
+
+  stopAutoPlay() {
+    if (this.autoPlayInterval) {
+      clearInterval(this.autoPlayInterval);
+      this.autoPlayInterval = null;
+    }
+  },
+
+  resetAutoPlay() {
+    this.stopAutoPlay();
+    this.startAutoPlay();
+  }
+};
+
+// Initialize carousel when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => carousel.init());
+} else {
+  carousel.init();
+}
+
+// ========================================
 // Initialize Everything
 // ========================================
 

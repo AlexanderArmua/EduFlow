@@ -15,6 +15,14 @@
   border-radius: 0 0 4px 0;
 }
 
+.platense { 
+  border: 4px solid #463219;
+}
+
+.boca {
+  border: 4px solid #23447f;
+}
+
 .skip-link:focus {
   top: 0;
   outline: 3px solid var(--color-primary-dark);
